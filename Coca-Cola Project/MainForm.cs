@@ -8,10 +8,9 @@ namespace Coca_Cola_Project
 
     /// <summary>
     /// Main class for a Coca-Cola Freestyle machine program.
-    /// Written by Jesus Aguilar-Andrade
     /// First version, Written Date: 2021
     /// 
-    /// My first project used to learn how to program.
+    /// Project used to learn how to program.
     /// If any changes are made, be sure to trace variables,
     /// variables can be tightly coupled.
     /// </summary>
