@@ -1,0 +1,35 @@
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore logs, database, and other sensitive information
+*.log
+*.pdb
+*.cache
+*.db
+
+# Ignore IDE-specific files
+.vscode/
+.vs/
+*.code-workspace
+
+# Ignore temporary files
+[Tt]humbs.db
+[Dd]esktop.ini
+*.DS_Store
+
+# Ignore package manager folders
+packages/
+node_modules/
+*.nupkg
+*.snupkg
+
+# Ignore publish outputs
+publish/
+wwwroot/
