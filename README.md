@@ -8,6 +8,8 @@ This project outlines the proposed design for the Coke Freestyle Machine, aiming
 
 The Freestyle Machine software will feature a user-friendly interface allowing consumers to select and customize their drinks, including mixing up to three flavors. It will also dispense precise quantities based on selected cup sizes, minimizing waste. The machine owners will have access to features for syrup and CO₂ level monitoring, manual reordering, and viewing usage statistics.
 
+![image](https://github.com/user-attachments/assets/15fa6dc9-a87a-4d2d-8760-dcc494dfacbd)
+
 ## Design Considerations
 
 This project considers both hardware and software requirements, including:
@@ -45,6 +47,9 @@ Key objectives include:
 ## Development Methods
 
 The software adopts a modular approach with private subroutines (subs) to streamline coding, enhance readability, and ease future updates. A Visual Studio environment is used to support a dataset-driven SQL database connection.
+
+### Data Base
+![image](https://github.com/user-attachments/assets/63b7b172-1682-4d04-9772-493c1d4a4f6e)
 
 ## Architectural Strategies
 
