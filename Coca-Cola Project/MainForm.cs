@@ -81,52 +81,52 @@ namespace Coca_Cola_Project
         // Event handlers for each soda button click
         private void picCola_Click(object sender, EventArgs e)
         {
-            SelectFlavor(1, lblCola, 1);
+            SelectFlavor(0, lblCola, 1);
         }
 
         private void picColaDiet_Click(object sender, EventArgs e)
         {
-            SelectFlavor(2, lblDietCola, 2);
+            SelectFlavor(1, lblDietCola, 2);
         }
 
         private void picColaZero_Click(object sender, EventArgs e)
         {
-            SelectFlavor(3, lblZeroCola, 3);
+            SelectFlavor(2, lblZeroCola, 3);
         }
 
         private void picFanta_Click(object sender, EventArgs e)
         {
-            SelectFlavor(4, lblFanta, 4);
+            SelectFlavor(3, lblFanta, 4);
         }
 
         private void picDrPepper_Click(object sender, EventArgs e)
         {
-            SelectFlavor(5, lblDrPepper, 5);
+            SelectFlavor(4, lblDrPepper, 5);
         }
 
         private void picSprite_Click(object sender, EventArgs e)
         {
-            SelectFlavor(6, lblSprite, 6);
+            SelectFlavor(5, lblSprite, 6);
         }
 
         private void picSpriteZero_Click(object sender, EventArgs e)
         {
-            SelectFlavor(7, lblSpriteZero, 7);
+            SelectFlavor(6, lblSpriteZero, 7);
         }
 
         private void picMMLemon_Click(object sender, EventArgs e)
         {
-            SelectFlavor(8, lblMntMaid, 8);
+            SelectFlavor(7, lblMntMaid, 8);
         }
 
         private void picMMLemonZero_Click(object sender, EventArgs e)
         {
-            SelectFlavor(9, lblMntMaidZero, 9);
+            SelectFlavor(8, lblMntMaidZero, 9);
         }
 
         private void picRootBeer_Click(object sender, EventArgs e)
         {
-            SelectFlavor(10, lblRootBeer, 10);
+            SelectFlavor(9, lblRootBeer, 10);
         }
 
 
