@@ -13,6 +13,7 @@ namespace Coca_Cola_Project
     /// Project used to learn how to program.
     /// If any changes are made, be sure to trace variables,
     /// MixCount is tightly coupled.
+    /// 
     /// </summary>
     public partial class MainForm
     {
@@ -25,10 +26,11 @@ namespace Coca_Cola_Project
         private int SecondFlavorID;
         private string ThirdFlavor = "N/A";
         private int ThirdFlavorID;
-        private int IndexFlavor = 0;
         private double OzPicked = 0d;
         private double OzOfFlavor = 0d;
         private double OzOfCo2 = 0d;
+        // keep as global
+        private int IndexFlavor = 0;
         // Array to keep track of Syrup Used
         private double[] dblSyrupBoxs = new double[] { 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d };
         private string[] StrSodaNames = new string[] { "Coca-Cola", "Coca-Cola Diet", "Coca-Cola Zero", "Fanta", "Dr Pepper", "Sprite", "Sprite Zero", "Minute Maid Lemonade", "Minute Maid Lemonade Zero", "Root Beer" };
@@ -1083,12 +1085,18 @@ namespace Coca_Cola_Project
             flavorAvailability = new bool[] { true, true, true };
         }
 
-        // private sub to close application
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Close();
+        //public void setFlavorAvailability(double[] dblSyrupBoxs, double OzOfFlavor, int[] flavorIDs, boolean[] flavorAvailability)
+        //{
+        //    for (int i = 0; i < flavorIDs.length; i++)
+        //    {
+        //        if (dblSyrupBoxs[flavorIDs[i]] - OzOfFlavor <= 0d)
+        //        {
+        //            flavorAvailability[i] = false;
+        //        }
+        //    }
+        //}
 
-        }
+
         // substract the amount of liquid use from eaither the syrupbox or the co2 box
         private void SubtractLiquidUsed()
         {
@@ -1237,6 +1245,14 @@ namespace Coca_Cola_Project
 
             // Retrive data from data base and store it in data set object
             OrderFluidInfoTableAdapter.Fill(FreeStyleDBDataSet.OrderFluidInfo);
+        }
+
+
+        // private sub to close application
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Close();
+
         }
 
         // Hides the lbls used to show selections

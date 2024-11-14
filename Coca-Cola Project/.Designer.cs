@@ -36,1086 +36,1148 @@ namespace Coca_Cola_Project
         [DebuggerStepThrough()]
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            picCola = new PictureBox();
-            picCola.Click += new EventHandler(picCola_Click);
-            picColaDiet = new PictureBox();
-            picColaDiet.Click += new EventHandler(picColaDiet_Click);
-            picColaZero = new PictureBox();
-            picColaZero.Click += new EventHandler(picColaZero_Click);
-            picFanta = new PictureBox();
-            picFanta.Click += new EventHandler(picFanta_Click);
-            picDrPepper = new PictureBox();
-            picDrPepper.Click += new EventHandler(picDrPepper_Click);
-            picSprite = new PictureBox();
-            picSprite.Click += new EventHandler(picSprite_Click);
-            picSpriteZero = new PictureBox();
-            picSpriteZero.Click += new EventHandler(picSpriteZero_Click);
-            picMMLemon = new PictureBox();
-            picMMLemon.Click += new EventHandler(picMMLemon_Click);
-            picMMLemonZero = new PictureBox();
-            picMMLemonZero.Click += new EventHandler(picMMLemonZero_Click);
-            picRootBeer = new PictureBox();
-            picRootBeer.Click += new EventHandler(picRootBeer_Click);
-            btnReOrder = new Button();
-            btnReOrder.Click += new EventHandler(btnReOrder_Click);
-            btnInventoryRp = new Button();
-            btnInventoryRp.Click += new EventHandler(btnSyrupSt_Click);
-            btnOrderRp = new Button();
-            btnOrderRp.Click += new EventHandler(btnSodaSt_Click);
-            btnMixDisp = new Button();
-            btnMixDisp.Click += new EventHandler(btnMixDisp_Click);
-            lblSize = new Label();
-            grpSize = new GroupBox();
-            rdThirtyTwoOz = new RadioButton();
-            rdThirtyTwoOz.Click += new EventHandler(rdThirtyTwoOz_Click);
-            rdTwentyFourOz = new RadioButton();
-            rdTwentyFourOz.Click += new EventHandler(rdTwentyFourOz_Click);
-            rdSixTeenOz = new RadioButton();
-            rdSixTeenOz.Click += new EventHandler(rdSixTeenOz_Click);
-            rdEightOz = new RadioButton();
-            rdEightOz.Click += new EventHandler(rdEightOz_Click);
-            btnBack = new Button();
-            btnBack.Click += new EventHandler(btnBack_Click);
-            btnExit = new Button();
-            btnExit.Click += new EventHandler(Button1_Click);
-            btnResetFlavors = new Button();
-            btnResetFlavors.Click += new EventHandler(btnResetFlavors_Click);
-            lblFlavorCount = new Label();
-            lblCola = new Label();
-            lblDietCola = new Label();
-            lblZeroCola = new Label();
-            lblFanta = new Label();
-            lblDrPepper = new Label();
-            lblRootBeer = new Label();
-            lblMntMaidZero = new Label();
-            lblMntMaid = new Label();
-            lblSpriteZero = new Label();
-            lblSprite = new Label();
-            InventoryBindingSource = new BindingSource(components);
-            FreeStyleDBDataSet = new FreeStyleDBDataSet();
-            OrdersDataGridView = new DataGridView();
-            DataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            OrdersBindingSource = new BindingSource(components);
-            OrderFluidInfoDataGridView = new DataGridView();
-            DataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
-            OrderFluidInfoBindingSource = new BindingSource(components);
-            InventoryDataGridView = new DataGridView();
-            DataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
-            btnMaintenanceRp = new Button();
-            btnMaintenanceRp.Click += new EventHandler(btnMaintenanceRp_Click);
-            btnLocationMgRp = new Button();
-            btnLocationMgRp.Click += new EventHandler(btnLocationMgRp_Click);
-            cklbInventory = new CheckedListBox();
-            btnOrderInventoryAfterSelection = new Button();
-            btnOrderInventoryAfterSelection.Click += new EventHandler(btnOrderInventoryAfterSelection_Click);
-            DTPStart = new DateTimePicker();
-            DTPEnd = new DateTimePicker();
-            lblStartDate = new Label();
-            lblEndDate = new Label();
-            btnGetOrderReport = new Button();
-            btnGetOrderReport.Click += new EventHandler(btnGetOrderReport_Click);
-            InventoryTableAdapter = new FreeStyleDBDataSetTableAdapters.InventoryTableAdapter();
-            TableAdapterManager = new FreeStyleDBDataSetTableAdapters.TableAdapterManager();
-            OrderFluidInfoTableAdapter = new FreeStyleDBDataSetTableAdapters.OrderFluidInfoTableAdapter();
-            OrdersTableAdapter = new FreeStyleDBDataSetTableAdapters.OrdersTableAdapter();
-            DataGridViewTextBoxColumn17 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn16 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
-            OrdersDataGridViewWDP = new DataGridView();
-            StartDateToolStripLabel = new ToolStripLabel();
-            StartDateToolStripTextBox = new ToolStripTextBox();
-            EndDateToolStripLabel = new ToolStripLabel();
-            EndDateToolStripTextBox = new ToolStripTextBox();
-            FillByOrdersToolStripButton = new ToolStripButton();
-            FillByOrdersToolStripButton.Click += new EventHandler(FillByOrdersToolStripButton_Click_1);
-            FillByOrdersToolStrip = new ToolStrip();
-            BindingNavigatorMoveFirstItem = new ToolStripButton();
-            BindingNavigatorMovePreviousItem = new ToolStripButton();
-            BindingNavigatorSeparator = new ToolStripSeparator();
-            BindingNavigatorPositionItem = new ToolStripTextBox();
-            BindingNavigatorCountItem = new ToolStripLabel();
-            BindingNavigatorSeparator1 = new ToolStripSeparator();
-            BindingNavigatorMoveNextItem = new ToolStripButton();
-            BindingNavigatorMoveLastItem = new ToolStripButton();
-            BindingNavigatorSeparator2 = new ToolStripSeparator();
-            BindingNavigatorAddNewItem = new ToolStripButton();
-            BindingNavigatorDeleteItem = new ToolStripButton();
-            InventoryBindingNavigatorSaveItem = new ToolStripButton();
-            InventoryBindingNavigatorSaveItem.Click += new EventHandler(InventoryBindingNavigatorSaveItem_Click);
-            InventoryBindingNavigator = new BindingNavigator(components);
-            ((System.ComponentModel.ISupportInitialize)picCola).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picColaDiet).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picColaZero).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picFanta).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picDrPepper).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picSprite).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picSpriteZero).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picMMLemon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picMMLemonZero).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picRootBeer).BeginInit();
-            grpSize.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)InventoryBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)FreeStyleDBDataSet).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)OrdersDataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)OrdersBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)OrderFluidInfoDataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)OrderFluidInfoBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)InventoryDataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)OrdersDataGridViewWDP).BeginInit();
-            FillByOrdersToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)InventoryBindingNavigator).BeginInit();
-            InventoryBindingNavigator.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.picCola = new System.Windows.Forms.PictureBox();
+            this.picColaDiet = new System.Windows.Forms.PictureBox();
+            this.picColaZero = new System.Windows.Forms.PictureBox();
+            this.picFanta = new System.Windows.Forms.PictureBox();
+            this.picDrPepper = new System.Windows.Forms.PictureBox();
+            this.picSprite = new System.Windows.Forms.PictureBox();
+            this.picSpriteZero = new System.Windows.Forms.PictureBox();
+            this.picMMLemon = new System.Windows.Forms.PictureBox();
+            this.picMMLemonZero = new System.Windows.Forms.PictureBox();
+            this.picRootBeer = new System.Windows.Forms.PictureBox();
+            this.btnReOrder = new System.Windows.Forms.Button();
+            this.btnInventoryRp = new System.Windows.Forms.Button();
+            this.btnOrderRp = new System.Windows.Forms.Button();
+            this.btnMixDisp = new System.Windows.Forms.Button();
+            this.lblSize = new System.Windows.Forms.Label();
+            this.grpSize = new System.Windows.Forms.GroupBox();
+            this.rdThirtyTwoOz = new System.Windows.Forms.RadioButton();
+            this.rdTwentyFourOz = new System.Windows.Forms.RadioButton();
+            this.rdSixTeenOz = new System.Windows.Forms.RadioButton();
+            this.rdEightOz = new System.Windows.Forms.RadioButton();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnResetFlavors = new System.Windows.Forms.Button();
+            this.lblFlavorCount = new System.Windows.Forms.Label();
+            this.lblCola = new System.Windows.Forms.Label();
+            this.lblDietCola = new System.Windows.Forms.Label();
+            this.lblZeroCola = new System.Windows.Forms.Label();
+            this.lblFanta = new System.Windows.Forms.Label();
+            this.lblDrPepper = new System.Windows.Forms.Label();
+            this.lblRootBeer = new System.Windows.Forms.Label();
+            this.lblMntMaidZero = new System.Windows.Forms.Label();
+            this.lblMntMaid = new System.Windows.Forms.Label();
+            this.lblSpriteZero = new System.Windows.Forms.Label();
+            this.lblSprite = new System.Windows.Forms.Label();
+            this.InventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.FreeStyleDBDataSet = new Coca_Cola_Project.FreeStyleDBDataSet();
+            this.OrdersDataGridView = new System.Windows.Forms.DataGridView();
+            this.DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.OrderFluidInfoDataGridView = new System.Windows.Forms.DataGridView();
+            this.DataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderFluidInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.InventoryDataGridView = new System.Windows.Forms.DataGridView();
+            this.DataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnMaintenanceRp = new System.Windows.Forms.Button();
+            this.btnLocationMgRp = new System.Windows.Forms.Button();
+            this.cklbInventory = new System.Windows.Forms.CheckedListBox();
+            this.btnOrderInventoryAfterSelection = new System.Windows.Forms.Button();
+            this.DTPStart = new System.Windows.Forms.DateTimePicker();
+            this.DTPEnd = new System.Windows.Forms.DateTimePicker();
+            this.lblStartDate = new System.Windows.Forms.Label();
+            this.lblEndDate = new System.Windows.Forms.Label();
+            this.btnGetOrderReport = new System.Windows.Forms.Button();
+            this.InventoryTableAdapter = new Coca_Cola_Project.FreeStyleDBDataSetTableAdapters.InventoryTableAdapter();
+            this.TableAdapterManager = new Coca_Cola_Project.FreeStyleDBDataSetTableAdapters.TableAdapterManager();
+            this.OrderFluidInfoTableAdapter = new Coca_Cola_Project.FreeStyleDBDataSetTableAdapters.OrderFluidInfoTableAdapter();
+            this.OrdersTableAdapter = new Coca_Cola_Project.FreeStyleDBDataSetTableAdapters.OrdersTableAdapter();
+            this.DataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrdersDataGridViewWDP = new System.Windows.Forms.DataGridView();
+            this.StartDateToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.StartDateToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.EndDateToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.EndDateToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.FillByOrdersToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.FillByOrdersToolStrip = new System.Windows.Forms.ToolStrip();
+            this.BindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.BindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.BindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.BindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.BindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.BindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.BindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.BindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.BindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.BindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.BindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.InventoryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.InventoryBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.picCola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picColaDiet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picColaZero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFanta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDrPepper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSprite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSpriteZero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMMLemon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMMLemonZero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRootBeer)).BeginInit();
+            this.grpSize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FreeStyleDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderFluidInfoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderFluidInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridViewWDP)).BeginInit();
+            this.FillByOrdersToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryBindingNavigator)).BeginInit();
+            this.InventoryBindingNavigator.SuspendLayout();
+            this.SuspendLayout();
             // 
             // picCola
             // 
-            picCola.Image = (Image)resources.GetObject("picCola.Image");
-            picCola.Location = new Point(53, 43);
-            picCola.Margin = new Padding(3, 2, 3, 2);
-            picCola.Name = "picCola";
-            picCola.Size = new Size(163, 148);
-            picCola.SizeMode = PictureBoxSizeMode.Zoom;
-            picCola.TabIndex = 0;
-            picCola.TabStop = false;
+            this.picCola.Image = ((System.Drawing.Image)(resources.GetObject("picCola.Image")));
+            this.picCola.Location = new System.Drawing.Point(53, 43);
+            this.picCola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picCola.Name = "picCola";
+            this.picCola.Size = new System.Drawing.Size(163, 148);
+            this.picCola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCola.TabIndex = 0;
+            this.picCola.TabStop = false;
+            this.picCola.Click += new System.EventHandler(this.picCola_Click);
             // 
             // picColaDiet
             // 
-            picColaDiet.Image = (Image)resources.GetObject("picColaDiet.Image");
-            picColaDiet.Location = new Point(243, 43);
-            picColaDiet.Margin = new Padding(3, 2, 3, 2);
-            picColaDiet.Name = "picColaDiet";
-            picColaDiet.Size = new Size(163, 148);
-            picColaDiet.SizeMode = PictureBoxSizeMode.Zoom;
-            picColaDiet.TabIndex = 1;
-            picColaDiet.TabStop = false;
+            this.picColaDiet.Image = ((System.Drawing.Image)(resources.GetObject("picColaDiet.Image")));
+            this.picColaDiet.Location = new System.Drawing.Point(243, 43);
+            this.picColaDiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picColaDiet.Name = "picColaDiet";
+            this.picColaDiet.Size = new System.Drawing.Size(163, 148);
+            this.picColaDiet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picColaDiet.TabIndex = 1;
+            this.picColaDiet.TabStop = false;
+            this.picColaDiet.Click += new System.EventHandler(this.picColaDiet_Click);
             // 
             // picColaZero
             // 
-            picColaZero.Image = (Image)resources.GetObject("picColaZero.Image");
-            picColaZero.Location = new Point(432, 43);
-            picColaZero.Margin = new Padding(3, 2, 3, 2);
-            picColaZero.Name = "picColaZero";
-            picColaZero.Size = new Size(163, 148);
-            picColaZero.SizeMode = PictureBoxSizeMode.Zoom;
-            picColaZero.TabIndex = 2;
-            picColaZero.TabStop = false;
+            this.picColaZero.Image = ((System.Drawing.Image)(resources.GetObject("picColaZero.Image")));
+            this.picColaZero.Location = new System.Drawing.Point(432, 43);
+            this.picColaZero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picColaZero.Name = "picColaZero";
+            this.picColaZero.Size = new System.Drawing.Size(163, 148);
+            this.picColaZero.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picColaZero.TabIndex = 2;
+            this.picColaZero.TabStop = false;
+            this.picColaZero.Click += new System.EventHandler(this.picColaZero_Click);
             // 
             // picFanta
             // 
-            picFanta.Image = (Image)resources.GetObject("picFanta.Image");
-            picFanta.Location = new Point(621, 43);
-            picFanta.Margin = new Padding(3, 2, 3, 2);
-            picFanta.Name = "picFanta";
-            picFanta.Size = new Size(163, 148);
-            picFanta.SizeMode = PictureBoxSizeMode.Zoom;
-            picFanta.TabIndex = 3;
-            picFanta.TabStop = false;
+            this.picFanta.Image = ((System.Drawing.Image)(resources.GetObject("picFanta.Image")));
+            this.picFanta.Location = new System.Drawing.Point(621, 43);
+            this.picFanta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picFanta.Name = "picFanta";
+            this.picFanta.Size = new System.Drawing.Size(163, 148);
+            this.picFanta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFanta.TabIndex = 3;
+            this.picFanta.TabStop = false;
+            this.picFanta.Click += new System.EventHandler(this.picFanta_Click);
             // 
             // picDrPepper
             // 
-            picDrPepper.Image = (Image)resources.GetObject("picDrPepper.Image");
-            picDrPepper.Location = new Point(811, 43);
-            picDrPepper.Margin = new Padding(3, 2, 3, 2);
-            picDrPepper.Name = "picDrPepper";
-            picDrPepper.Size = new Size(163, 148);
-            picDrPepper.SizeMode = PictureBoxSizeMode.Zoom;
-            picDrPepper.TabIndex = 4;
-            picDrPepper.TabStop = false;
+            this.picDrPepper.Image = ((System.Drawing.Image)(resources.GetObject("picDrPepper.Image")));
+            this.picDrPepper.Location = new System.Drawing.Point(811, 43);
+            this.picDrPepper.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picDrPepper.Name = "picDrPepper";
+            this.picDrPepper.Size = new System.Drawing.Size(163, 148);
+            this.picDrPepper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDrPepper.TabIndex = 4;
+            this.picDrPepper.TabStop = false;
+            this.picDrPepper.Click += new System.EventHandler(this.picDrPepper_Click);
             // 
             // picSprite
             // 
-            picSprite.Image = (Image)resources.GetObject("picSprite.Image");
-            picSprite.Location = new Point(53, 233);
-            picSprite.Margin = new Padding(3, 2, 3, 2);
-            picSprite.Name = "picSprite";
-            picSprite.Size = new Size(163, 148);
-            picSprite.SizeMode = PictureBoxSizeMode.Zoom;
-            picSprite.TabIndex = 5;
-            picSprite.TabStop = false;
+            this.picSprite.Image = ((System.Drawing.Image)(resources.GetObject("picSprite.Image")));
+            this.picSprite.Location = new System.Drawing.Point(53, 233);
+            this.picSprite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picSprite.Name = "picSprite";
+            this.picSprite.Size = new System.Drawing.Size(163, 148);
+            this.picSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSprite.TabIndex = 5;
+            this.picSprite.TabStop = false;
+            this.picSprite.Click += new System.EventHandler(this.picSprite_Click);
             // 
             // picSpriteZero
             // 
-            picSpriteZero.Image = (Image)resources.GetObject("picSpriteZero.Image");
-            picSpriteZero.Location = new Point(243, 233);
-            picSpriteZero.Margin = new Padding(3, 2, 3, 2);
-            picSpriteZero.Name = "picSpriteZero";
-            picSpriteZero.Size = new Size(163, 148);
-            picSpriteZero.SizeMode = PictureBoxSizeMode.Zoom;
-            picSpriteZero.TabIndex = 6;
-            picSpriteZero.TabStop = false;
+            this.picSpriteZero.Image = ((System.Drawing.Image)(resources.GetObject("picSpriteZero.Image")));
+            this.picSpriteZero.Location = new System.Drawing.Point(243, 233);
+            this.picSpriteZero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picSpriteZero.Name = "picSpriteZero";
+            this.picSpriteZero.Size = new System.Drawing.Size(163, 148);
+            this.picSpriteZero.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSpriteZero.TabIndex = 6;
+            this.picSpriteZero.TabStop = false;
+            this.picSpriteZero.Click += new System.EventHandler(this.picSpriteZero_Click);
             // 
             // picMMLemon
             // 
-            picMMLemon.Image = (Image)resources.GetObject("picMMLemon.Image");
-            picMMLemon.Location = new Point(432, 233);
-            picMMLemon.Margin = new Padding(3, 2, 3, 2);
-            picMMLemon.Name = "picMMLemon";
-            picMMLemon.Size = new Size(163, 148);
-            picMMLemon.SizeMode = PictureBoxSizeMode.Zoom;
-            picMMLemon.TabIndex = 7;
-            picMMLemon.TabStop = false;
+            this.picMMLemon.Image = ((System.Drawing.Image)(resources.GetObject("picMMLemon.Image")));
+            this.picMMLemon.Location = new System.Drawing.Point(432, 233);
+            this.picMMLemon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picMMLemon.Name = "picMMLemon";
+            this.picMMLemon.Size = new System.Drawing.Size(163, 148);
+            this.picMMLemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMMLemon.TabIndex = 7;
+            this.picMMLemon.TabStop = false;
+            this.picMMLemon.Click += new System.EventHandler(this.picMMLemon_Click);
             // 
             // picMMLemonZero
             // 
-            picMMLemonZero.Image = (Image)resources.GetObject("picMMLemonZero.Image");
-            picMMLemonZero.Location = new Point(621, 233);
-            picMMLemonZero.Margin = new Padding(3, 2, 3, 2);
-            picMMLemonZero.Name = "picMMLemonZero";
-            picMMLemonZero.Size = new Size(163, 148);
-            picMMLemonZero.SizeMode = PictureBoxSizeMode.Zoom;
-            picMMLemonZero.TabIndex = 8;
-            picMMLemonZero.TabStop = false;
+            this.picMMLemonZero.Image = ((System.Drawing.Image)(resources.GetObject("picMMLemonZero.Image")));
+            this.picMMLemonZero.Location = new System.Drawing.Point(621, 233);
+            this.picMMLemonZero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picMMLemonZero.Name = "picMMLemonZero";
+            this.picMMLemonZero.Size = new System.Drawing.Size(163, 148);
+            this.picMMLemonZero.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMMLemonZero.TabIndex = 8;
+            this.picMMLemonZero.TabStop = false;
+            this.picMMLemonZero.Click += new System.EventHandler(this.picMMLemonZero_Click);
             // 
             // picRootBeer
             // 
-            picRootBeer.Image = (Image)resources.GetObject("picRootBeer.Image");
-            picRootBeer.Location = new Point(811, 233);
-            picRootBeer.Margin = new Padding(3, 2, 3, 2);
-            picRootBeer.Name = "picRootBeer";
-            picRootBeer.Size = new Size(163, 148);
-            picRootBeer.SizeMode = PictureBoxSizeMode.Zoom;
-            picRootBeer.TabIndex = 9;
-            picRootBeer.TabStop = false;
+            this.picRootBeer.Image = ((System.Drawing.Image)(resources.GetObject("picRootBeer.Image")));
+            this.picRootBeer.Location = new System.Drawing.Point(811, 233);
+            this.picRootBeer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picRootBeer.Name = "picRootBeer";
+            this.picRootBeer.Size = new System.Drawing.Size(163, 148);
+            this.picRootBeer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRootBeer.TabIndex = 9;
+            this.picRootBeer.TabStop = false;
+            this.picRootBeer.Click += new System.EventHandler(this.picRootBeer_Click);
             // 
             // btnReOrder
             // 
-            btnReOrder.Location = new Point(64, 414);
-            btnReOrder.Margin = new Padding(3, 2, 3, 2);
-            btnReOrder.Name = "btnReOrder";
-            btnReOrder.Size = new Size(163, 47);
-            btnReOrder.TabIndex = 0;
-            btnReOrder.Text = "&Reorder Inventory";
-            btnReOrder.UseVisualStyleBackColor = true;
+            this.btnReOrder.BackColor = System.Drawing.Color.Chocolate;
+            this.btnReOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReOrder.Location = new System.Drawing.Point(64, 414);
+            this.btnReOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReOrder.Name = "btnReOrder";
+            this.btnReOrder.Size = new System.Drawing.Size(163, 47);
+            this.btnReOrder.TabIndex = 0;
+            this.btnReOrder.Text = "&Reorder Inventory";
+            this.btnReOrder.UseVisualStyleBackColor = false;
+            this.btnReOrder.Click += new System.EventHandler(this.btnReOrder_Click);
             // 
             // btnInventoryRp
             // 
-            btnInventoryRp.Location = new Point(64, 478);
-            btnInventoryRp.Margin = new Padding(3, 2, 3, 2);
-            btnInventoryRp.Name = "btnInventoryRp";
-            btnInventoryRp.Size = new Size(163, 47);
-            btnInventoryRp.TabIndex = 1;
-            btnInventoryRp.Text = "&Fluid Lvl Report";
-            btnInventoryRp.UseVisualStyleBackColor = true;
+            this.btnInventoryRp.BackColor = System.Drawing.Color.Chocolate;
+            this.btnInventoryRp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventoryRp.Location = new System.Drawing.Point(64, 478);
+            this.btnInventoryRp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInventoryRp.Name = "btnInventoryRp";
+            this.btnInventoryRp.Size = new System.Drawing.Size(163, 47);
+            this.btnInventoryRp.TabIndex = 1;
+            this.btnInventoryRp.Text = "&Fluid Lvl Report";
+            this.btnInventoryRp.UseVisualStyleBackColor = false;
+            this.btnInventoryRp.Click += new System.EventHandler(this.btnSyrupSt_Click);
             // 
             // btnOrderRp
             // 
-            btnOrderRp.Location = new Point(64, 602);
-            btnOrderRp.Margin = new Padding(3, 2, 3, 2);
-            btnOrderRp.Name = "btnOrderRp";
-            btnOrderRp.Size = new Size(163, 48);
-            btnOrderRp.TabIndex = 2;
-            btnOrderRp.Text = "&Order Report";
-            btnOrderRp.UseVisualStyleBackColor = true;
+            this.btnOrderRp.BackColor = System.Drawing.Color.Chocolate;
+            this.btnOrderRp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderRp.Location = new System.Drawing.Point(64, 602);
+            this.btnOrderRp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrderRp.Name = "btnOrderRp";
+            this.btnOrderRp.Size = new System.Drawing.Size(163, 48);
+            this.btnOrderRp.TabIndex = 2;
+            this.btnOrderRp.Text = "&Order Report";
+            this.btnOrderRp.UseVisualStyleBackColor = false;
+            this.btnOrderRp.Click += new System.EventHandler(this.btnSodaSt_Click);
             // 
             // btnMixDisp
             // 
-            btnMixDisp.Location = new Point(781, 551);
-            btnMixDisp.Margin = new Padding(3, 2, 3, 2);
-            btnMixDisp.Name = "btnMixDisp";
-            btnMixDisp.Size = new Size(181, 119);
-            btnMixDisp.TabIndex = 5;
-            btnMixDisp.Text = "&Mix Flavors / Dispense";
-            btnMixDisp.UseVisualStyleBackColor = true;
+            this.btnMixDisp.BackColor = System.Drawing.Color.Chocolate;
+            this.btnMixDisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMixDisp.Location = new System.Drawing.Point(781, 551);
+            this.btnMixDisp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMixDisp.Name = "btnMixDisp";
+            this.btnMixDisp.Size = new System.Drawing.Size(181, 119);
+            this.btnMixDisp.TabIndex = 5;
+            this.btnMixDisp.Text = "&Mix Flavors / Dispense";
+            this.btnMixDisp.UseVisualStyleBackColor = false;
+            this.btnMixDisp.Click += new System.EventHandler(this.btnMixDisp_Click);
             // 
             // lblSize
             // 
-            lblSize.BorderStyle = BorderStyle.FixedSingle;
-            lblSize.Font = new Font("Microsoft Sans Serif", 12.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSize.ForeColor = Color.White;
-            lblSize.Location = new Point(21, 39);
-            lblSize.Name = "lblSize";
-            lblSize.Size = new Size(195, 41);
-            lblSize.TabIndex = 0;
-            lblSize.Text = "Choose Your Size:";
+            this.lblSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSize.ForeColor = System.Drawing.Color.White;
+            this.lblSize.Location = new System.Drawing.Point(21, 39);
+            this.lblSize.Name = "lblSize";
+            this.lblSize.Size = new System.Drawing.Size(195, 41);
+            this.lblSize.TabIndex = 0;
+            this.lblSize.Text = "Choose Your Size:";
             // 
             // grpSize
             // 
-            grpSize.Controls.Add(rdThirtyTwoOz);
-            grpSize.Controls.Add(rdTwentyFourOz);
-            grpSize.Controls.Add(rdSixTeenOz);
-            grpSize.Controls.Add(rdEightOz);
-            grpSize.Controls.Add(btnBack);
-            grpSize.Controls.Add(lblSize);
-            grpSize.Location = new Point(325, 402);
-            grpSize.Margin = new Padding(3, 2, 3, 2);
-            grpSize.Name = "grpSize";
-            grpSize.Padding = new Padding(3, 2, 3, 2);
-            grpSize.Size = new Size(395, 345);
-            grpSize.TabIndex = 6;
-            grpSize.TabStop = false;
+            this.grpSize.Controls.Add(this.rdThirtyTwoOz);
+            this.grpSize.Controls.Add(this.rdTwentyFourOz);
+            this.grpSize.Controls.Add(this.rdSixTeenOz);
+            this.grpSize.Controls.Add(this.rdEightOz);
+            this.grpSize.Controls.Add(this.btnBack);
+            this.grpSize.Controls.Add(this.lblSize);
+            this.grpSize.Location = new System.Drawing.Point(325, 402);
+            this.grpSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpSize.Name = "grpSize";
+            this.grpSize.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpSize.Size = new System.Drawing.Size(395, 345);
+            this.grpSize.TabIndex = 6;
+            this.grpSize.TabStop = false;
             // 
             // rdThirtyTwoOz
             // 
-            rdThirtyTwoOz.AutoSize = true;
-            rdThirtyTwoOz.Font = new Font("Microsoft Sans Serif", 11.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdThirtyTwoOz.ForeColor = Color.White;
-            rdThirtyTwoOz.Location = new Point(304, 208);
-            rdThirtyTwoOz.Margin = new Padding(3, 2, 3, 2);
-            rdThirtyTwoOz.Name = "rdThirtyTwoOz";
-            rdThirtyTwoOz.Size = new Size(76, 28);
-            rdThirtyTwoOz.TabIndex = 8;
-            rdThirtyTwoOz.TabStop = true;
-            rdThirtyTwoOz.Text = "32 oz";
-            rdThirtyTwoOz.UseVisualStyleBackColor = true;
+            this.rdThirtyTwoOz.AutoSize = true;
+            this.rdThirtyTwoOz.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdThirtyTwoOz.ForeColor = System.Drawing.Color.White;
+            this.rdThirtyTwoOz.Location = new System.Drawing.Point(304, 208);
+            this.rdThirtyTwoOz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdThirtyTwoOz.Name = "rdThirtyTwoOz";
+            this.rdThirtyTwoOz.Size = new System.Drawing.Size(76, 28);
+            this.rdThirtyTwoOz.TabIndex = 8;
+            this.rdThirtyTwoOz.TabStop = true;
+            this.rdThirtyTwoOz.Text = "32 oz";
+            this.rdThirtyTwoOz.UseVisualStyleBackColor = true;
+            this.rdThirtyTwoOz.Click += new System.EventHandler(this.rdThirtyTwoOz_Click);
             // 
             // rdTwentyFourOz
             // 
-            rdTwentyFourOz.AutoSize = true;
-            rdTwentyFourOz.Font = new Font("Microsoft Sans Serif", 11.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdTwentyFourOz.ForeColor = Color.White;
-            rdTwentyFourOz.Location = new Point(304, 156);
-            rdTwentyFourOz.Margin = new Padding(3, 2, 3, 2);
-            rdTwentyFourOz.Name = "rdTwentyFourOz";
-            rdTwentyFourOz.Size = new Size(76, 28);
-            rdTwentyFourOz.TabIndex = 7;
-            rdTwentyFourOz.TabStop = true;
-            rdTwentyFourOz.Text = "24 oz";
-            rdTwentyFourOz.UseVisualStyleBackColor = true;
+            this.rdTwentyFourOz.AutoSize = true;
+            this.rdTwentyFourOz.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdTwentyFourOz.ForeColor = System.Drawing.Color.White;
+            this.rdTwentyFourOz.Location = new System.Drawing.Point(304, 156);
+            this.rdTwentyFourOz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdTwentyFourOz.Name = "rdTwentyFourOz";
+            this.rdTwentyFourOz.Size = new System.Drawing.Size(76, 28);
+            this.rdTwentyFourOz.TabIndex = 7;
+            this.rdTwentyFourOz.TabStop = true;
+            this.rdTwentyFourOz.Text = "24 oz";
+            this.rdTwentyFourOz.UseVisualStyleBackColor = true;
+            this.rdTwentyFourOz.Click += new System.EventHandler(this.rdTwentyFourOz_Click);
             // 
             // rdSixTeenOz
             // 
-            rdSixTeenOz.AutoSize = true;
-            rdSixTeenOz.Font = new Font("Microsoft Sans Serif", 11.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdSixTeenOz.ForeColor = Color.White;
-            rdSixTeenOz.Location = new Point(304, 103);
-            rdSixTeenOz.Margin = new Padding(3, 2, 3, 2);
-            rdSixTeenOz.Name = "rdSixTeenOz";
-            rdSixTeenOz.Size = new Size(76, 28);
-            rdSixTeenOz.TabIndex = 6;
-            rdSixTeenOz.TabStop = true;
-            rdSixTeenOz.Text = "16 oz";
-            rdSixTeenOz.UseVisualStyleBackColor = true;
+            this.rdSixTeenOz.AutoSize = true;
+            this.rdSixTeenOz.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdSixTeenOz.ForeColor = System.Drawing.Color.White;
+            this.rdSixTeenOz.Location = new System.Drawing.Point(304, 103);
+            this.rdSixTeenOz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdSixTeenOz.Name = "rdSixTeenOz";
+            this.rdSixTeenOz.Size = new System.Drawing.Size(76, 28);
+            this.rdSixTeenOz.TabIndex = 6;
+            this.rdSixTeenOz.TabStop = true;
+            this.rdSixTeenOz.Text = "16 oz";
+            this.rdSixTeenOz.UseVisualStyleBackColor = true;
+            this.rdSixTeenOz.Click += new System.EventHandler(this.rdSixTeenOz_Click);
             // 
             // rdEightOz
             // 
-            rdEightOz.AutoSize = true;
-            rdEightOz.Font = new Font("Microsoft Sans Serif", 11.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdEightOz.ForeColor = Color.White;
-            rdEightOz.Location = new Point(304, 52);
-            rdEightOz.Margin = new Padding(3, 2, 3, 2);
-            rdEightOz.Name = "rdEightOz";
-            rdEightOz.Size = new Size(66, 28);
-            rdEightOz.TabIndex = 5;
-            rdEightOz.TabStop = true;
-            rdEightOz.Text = "8 oz";
-            rdEightOz.UseVisualStyleBackColor = true;
+            this.rdEightOz.AutoSize = true;
+            this.rdEightOz.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdEightOz.ForeColor = System.Drawing.Color.White;
+            this.rdEightOz.Location = new System.Drawing.Point(304, 52);
+            this.rdEightOz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdEightOz.Name = "rdEightOz";
+            this.rdEightOz.Size = new System.Drawing.Size(66, 28);
+            this.rdEightOz.TabIndex = 5;
+            this.rdEightOz.TabStop = true;
+            this.rdEightOz.Text = "8 oz";
+            this.rdEightOz.UseVisualStyleBackColor = true;
+            this.rdEightOz.Click += new System.EventHandler(this.rdEightOz_Click);
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(21, 222);
-            btnBack.Margin = new Padding(3, 2, 3, 2);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(159, 47);
-            btnBack.TabIndex = 4;
-            btnBack.Text = "&Back";
-            btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Location = new System.Drawing.Point(21, 222);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(159, 47);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "&Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(800, 699);
-            btnExit.Margin = new Padding(3, 2, 3, 2);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(163, 48);
-            btnExit.TabIndex = 3;
-            btnExit.Text = "E&xit";
-            btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.BackColor = System.Drawing.Color.Chocolate;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(800, 699);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(163, 48);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "E&xit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btnResetFlavors
             // 
-            btnResetFlavors.Location = new Point(781, 466);
-            btnResetFlavors.Margin = new Padding(3, 2, 3, 2);
-            btnResetFlavors.Name = "btnResetFlavors";
-            btnResetFlavors.Size = new Size(181, 68);
-            btnResetFlavors.TabIndex = 4;
-            btnResetFlavors.Text = "R&eset Flavors";
-            btnResetFlavors.UseVisualStyleBackColor = true;
+            this.btnResetFlavors.BackColor = System.Drawing.Color.Chocolate;
+            this.btnResetFlavors.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetFlavors.ForeColor = System.Drawing.Color.Black;
+            this.btnResetFlavors.Location = new System.Drawing.Point(781, 466);
+            this.btnResetFlavors.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnResetFlavors.Name = "btnResetFlavors";
+            this.btnResetFlavors.Size = new System.Drawing.Size(181, 68);
+            this.btnResetFlavors.TabIndex = 4;
+            this.btnResetFlavors.Text = "R&eset Flavors";
+            this.btnResetFlavors.UseVisualStyleBackColor = false;
+            this.btnResetFlavors.Click += new System.EventHandler(this.btnResetFlavors_Click);
             // 
             // lblFlavorCount
             // 
-            lblFlavorCount.BorderStyle = BorderStyle.FixedSingle;
-            lblFlavorCount.ForeColor = Color.White;
-            lblFlavorCount.Location = new Point(781, 414);
-            lblFlavorCount.Name = "lblFlavorCount";
-            lblFlavorCount.Size = new Size(182, 39);
-            lblFlavorCount.TabIndex = 10;
-            lblFlavorCount.Text = "Flavors Picked: 0";
+            this.lblFlavorCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFlavorCount.ForeColor = System.Drawing.Color.White;
+            this.lblFlavorCount.Location = new System.Drawing.Point(781, 414);
+            this.lblFlavorCount.Name = "lblFlavorCount";
+            this.lblFlavorCount.Size = new System.Drawing.Size(182, 39);
+            this.lblFlavorCount.TabIndex = 10;
+            this.lblFlavorCount.Text = "Flavors Picked: 0";
             // 
             // lblCola
             // 
-            lblCola.BackColor = Color.White;
-            lblCola.ForeColor = Color.White;
-            lblCola.Location = new Point(47, 36);
-            lblCola.Name = "lblCola";
-            lblCola.Size = new Size(176, 164);
-            lblCola.TabIndex = 20;
-            lblCola.Text = "Label10";
+            this.lblCola.BackColor = System.Drawing.Color.White;
+            this.lblCola.ForeColor = System.Drawing.Color.White;
+            this.lblCola.Location = new System.Drawing.Point(47, 36);
+            this.lblCola.Name = "lblCola";
+            this.lblCola.Size = new System.Drawing.Size(176, 164);
+            this.lblCola.TabIndex = 20;
+            this.lblCola.Text = "Label10";
             // 
             // lblDietCola
             // 
-            lblDietCola.BackColor = Color.White;
-            lblDietCola.ForeColor = Color.White;
-            lblDietCola.Location = new Point(236, 36);
-            lblDietCola.Name = "lblDietCola";
-            lblDietCola.Size = new Size(176, 164);
-            lblDietCola.TabIndex = 21;
-            lblDietCola.Text = "Label1";
+            this.lblDietCola.BackColor = System.Drawing.Color.White;
+            this.lblDietCola.ForeColor = System.Drawing.Color.White;
+            this.lblDietCola.Location = new System.Drawing.Point(236, 36);
+            this.lblDietCola.Name = "lblDietCola";
+            this.lblDietCola.Size = new System.Drawing.Size(176, 164);
+            this.lblDietCola.TabIndex = 21;
+            this.lblDietCola.Text = "Label1";
             // 
             // lblZeroCola
             // 
-            lblZeroCola.BackColor = Color.White;
-            lblZeroCola.ForeColor = Color.White;
-            lblZeroCola.Location = new Point(425, 36);
-            lblZeroCola.Name = "lblZeroCola";
-            lblZeroCola.Size = new Size(176, 164);
-            lblZeroCola.TabIndex = 22;
-            lblZeroCola.Text = "Label2";
+            this.lblZeroCola.BackColor = System.Drawing.Color.White;
+            this.lblZeroCola.ForeColor = System.Drawing.Color.White;
+            this.lblZeroCola.Location = new System.Drawing.Point(425, 36);
+            this.lblZeroCola.Name = "lblZeroCola";
+            this.lblZeroCola.Size = new System.Drawing.Size(176, 164);
+            this.lblZeroCola.TabIndex = 22;
+            this.lblZeroCola.Text = "Label2";
             // 
             // lblFanta
             // 
-            lblFanta.BackColor = Color.White;
-            lblFanta.ForeColor = Color.White;
-            lblFanta.Location = new Point(613, 36);
-            lblFanta.Name = "lblFanta";
-            lblFanta.Size = new Size(176, 164);
-            lblFanta.TabIndex = 23;
-            lblFanta.Text = "Label3";
+            this.lblFanta.BackColor = System.Drawing.Color.White;
+            this.lblFanta.ForeColor = System.Drawing.Color.White;
+            this.lblFanta.Location = new System.Drawing.Point(613, 36);
+            this.lblFanta.Name = "lblFanta";
+            this.lblFanta.Size = new System.Drawing.Size(176, 164);
+            this.lblFanta.TabIndex = 23;
+            this.lblFanta.Text = "Label3";
             // 
             // lblDrPepper
             // 
-            lblDrPepper.BackColor = Color.White;
-            lblDrPepper.ForeColor = Color.White;
-            lblDrPepper.Location = new Point(803, 36);
-            lblDrPepper.Name = "lblDrPepper";
-            lblDrPepper.Size = new Size(176, 164);
-            lblDrPepper.TabIndex = 24;
-            lblDrPepper.Text = "Label4";
+            this.lblDrPepper.BackColor = System.Drawing.Color.White;
+            this.lblDrPepper.ForeColor = System.Drawing.Color.White;
+            this.lblDrPepper.Location = new System.Drawing.Point(803, 36);
+            this.lblDrPepper.Name = "lblDrPepper";
+            this.lblDrPepper.Size = new System.Drawing.Size(176, 164);
+            this.lblDrPepper.TabIndex = 24;
+            this.lblDrPepper.Text = "Label4";
             // 
             // lblRootBeer
             // 
-            lblRootBeer.BackColor = Color.White;
-            lblRootBeer.ForeColor = Color.White;
-            lblRootBeer.Location = new Point(803, 226);
-            lblRootBeer.Name = "lblRootBeer";
-            lblRootBeer.Size = new Size(176, 164);
-            lblRootBeer.TabIndex = 25;
-            lblRootBeer.Text = "Label5";
+            this.lblRootBeer.BackColor = System.Drawing.Color.White;
+            this.lblRootBeer.ForeColor = System.Drawing.Color.White;
+            this.lblRootBeer.Location = new System.Drawing.Point(803, 226);
+            this.lblRootBeer.Name = "lblRootBeer";
+            this.lblRootBeer.Size = new System.Drawing.Size(176, 164);
+            this.lblRootBeer.TabIndex = 25;
+            this.lblRootBeer.Text = "Label5";
             // 
             // lblMntMaidZero
             // 
-            lblMntMaidZero.BackColor = Color.White;
-            lblMntMaidZero.ForeColor = Color.White;
-            lblMntMaidZero.Location = new Point(613, 226);
-            lblMntMaidZero.Name = "lblMntMaidZero";
-            lblMntMaidZero.Size = new Size(176, 164);
-            lblMntMaidZero.TabIndex = 26;
-            lblMntMaidZero.Text = "Label6";
+            this.lblMntMaidZero.BackColor = System.Drawing.Color.White;
+            this.lblMntMaidZero.ForeColor = System.Drawing.Color.White;
+            this.lblMntMaidZero.Location = new System.Drawing.Point(613, 226);
+            this.lblMntMaidZero.Name = "lblMntMaidZero";
+            this.lblMntMaidZero.Size = new System.Drawing.Size(176, 164);
+            this.lblMntMaidZero.TabIndex = 26;
+            this.lblMntMaidZero.Text = "Label6";
             // 
             // lblMntMaid
             // 
-            lblMntMaid.BackColor = Color.White;
-            lblMntMaid.ForeColor = Color.White;
-            lblMntMaid.Location = new Point(425, 226);
-            lblMntMaid.Name = "lblMntMaid";
-            lblMntMaid.Size = new Size(176, 164);
-            lblMntMaid.TabIndex = 27;
-            lblMntMaid.Text = "Label7";
+            this.lblMntMaid.BackColor = System.Drawing.Color.White;
+            this.lblMntMaid.ForeColor = System.Drawing.Color.White;
+            this.lblMntMaid.Location = new System.Drawing.Point(425, 226);
+            this.lblMntMaid.Name = "lblMntMaid";
+            this.lblMntMaid.Size = new System.Drawing.Size(176, 164);
+            this.lblMntMaid.TabIndex = 27;
+            this.lblMntMaid.Text = "Label7";
             // 
             // lblSpriteZero
             // 
-            lblSpriteZero.BackColor = Color.White;
-            lblSpriteZero.ForeColor = Color.White;
-            lblSpriteZero.Location = new Point(236, 226);
-            lblSpriteZero.Name = "lblSpriteZero";
-            lblSpriteZero.Size = new Size(176, 164);
-            lblSpriteZero.TabIndex = 28;
-            lblSpriteZero.Text = "Label8";
+            this.lblSpriteZero.BackColor = System.Drawing.Color.White;
+            this.lblSpriteZero.ForeColor = System.Drawing.Color.White;
+            this.lblSpriteZero.Location = new System.Drawing.Point(236, 226);
+            this.lblSpriteZero.Name = "lblSpriteZero";
+            this.lblSpriteZero.Size = new System.Drawing.Size(176, 164);
+            this.lblSpriteZero.TabIndex = 28;
+            this.lblSpriteZero.Text = "Label8";
             // 
             // lblSprite
             // 
-            lblSprite.BackColor = Color.White;
-            lblSprite.ForeColor = Color.White;
-            lblSprite.Location = new Point(47, 226);
-            lblSprite.Name = "lblSprite";
-            lblSprite.Size = new Size(176, 164);
-            lblSprite.TabIndex = 29;
-            lblSprite.Text = "Label9";
+            this.lblSprite.BackColor = System.Drawing.Color.White;
+            this.lblSprite.ForeColor = System.Drawing.Color.White;
+            this.lblSprite.Location = new System.Drawing.Point(47, 226);
+            this.lblSprite.Name = "lblSprite";
+            this.lblSprite.Size = new System.Drawing.Size(176, 164);
+            this.lblSprite.TabIndex = 29;
+            this.lblSprite.Text = "Label9";
             // 
             // InventoryBindingSource
             // 
-            InventoryBindingSource.DataMember = "Inventory";
-            InventoryBindingSource.DataSource = FreeStyleDBDataSet;
+            this.InventoryBindingSource.DataMember = "Inventory";
+            this.InventoryBindingSource.DataSource = this.FreeStyleDBDataSet;
             // 
             // FreeStyleDBDataSet
             // 
-            FreeStyleDBDataSet.DataSetName = "FreeStyleDBDataSet";
-            FreeStyleDBDataSet.SchemaSerializationMode = SchemaSerializationMode.IncludeSchema;
+            this.FreeStyleDBDataSet.DataSetName = "FreeStyleDBDataSet";
+            this.FreeStyleDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // OrdersDataGridView
             // 
-            OrdersDataGridView.AllowUserToAddRows = false;
-            OrdersDataGridView.AllowUserToDeleteRows = false;
-            OrdersDataGridView.AutoGenerateColumns = false;
-            OrdersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OrdersDataGridView.Columns.AddRange(new DataGridViewColumn[] { DataGridViewTextBoxColumn1, DataGridViewTextBoxColumn2, DataGridViewTextBoxColumn3 });
-            OrdersDataGridView.DataSource = OrdersBindingSource;
-            OrdersDataGridView.Location = new Point(1009, 293);
-            OrdersDataGridView.Margin = new Padding(3, 2, 3, 2);
-            OrdersDataGridView.Name = "OrdersDataGridView";
-            OrdersDataGridView.ReadOnly = true;
-            OrdersDataGridView.RowHeadersWidth = 51;
-            OrdersDataGridView.RowTemplate.Height = 24;
-            OrdersDataGridView.Size = new Size(432, 206);
-            OrdersDataGridView.TabIndex = 30;
+            this.OrdersDataGridView.AllowUserToAddRows = false;
+            this.OrdersDataGridView.AllowUserToDeleteRows = false;
+            this.OrdersDataGridView.AutoGenerateColumns = false;
+            this.OrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OrdersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridViewTextBoxColumn1,
+            this.DataGridViewTextBoxColumn2,
+            this.DataGridViewTextBoxColumn3});
+            this.OrdersDataGridView.DataSource = this.OrdersBindingSource;
+            this.OrdersDataGridView.Location = new System.Drawing.Point(1009, 293);
+            this.OrdersDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.OrdersDataGridView.Name = "OrdersDataGridView";
+            this.OrdersDataGridView.ReadOnly = true;
+            this.OrdersDataGridView.RowHeadersWidth = 51;
+            this.OrdersDataGridView.RowTemplate.Height = 24;
+            this.OrdersDataGridView.Size = new System.Drawing.Size(432, 206);
+            this.OrdersDataGridView.TabIndex = 30;
             // 
             // DataGridViewTextBoxColumn1
             // 
-            DataGridViewTextBoxColumn1.DataPropertyName = "OrderID";
-            DataGridViewTextBoxColumn1.HeaderText = "OrderID";
-            DataGridViewTextBoxColumn1.MinimumWidth = 6;
-            DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1";
-            DataGridViewTextBoxColumn1.ReadOnly = true;
-            DataGridViewTextBoxColumn1.Width = 125;
+            this.DataGridViewTextBoxColumn1.DataPropertyName = "OrderID";
+            this.DataGridViewTextBoxColumn1.HeaderText = "OrderID";
+            this.DataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1";
+            this.DataGridViewTextBoxColumn1.ReadOnly = true;
+            this.DataGridViewTextBoxColumn1.Width = 125;
             // 
             // DataGridViewTextBoxColumn2
             // 
-            DataGridViewTextBoxColumn2.DataPropertyName = "OrderAmount";
-            DataGridViewTextBoxColumn2.HeaderText = "OrderAmount";
-            DataGridViewTextBoxColumn2.MinimumWidth = 6;
-            DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2";
-            DataGridViewTextBoxColumn2.ReadOnly = true;
-            DataGridViewTextBoxColumn2.Width = 125;
+            this.DataGridViewTextBoxColumn2.DataPropertyName = "OrderAmount";
+            this.DataGridViewTextBoxColumn2.HeaderText = "OrderAmount";
+            this.DataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2";
+            this.DataGridViewTextBoxColumn2.ReadOnly = true;
+            this.DataGridViewTextBoxColumn2.Width = 125;
             // 
             // DataGridViewTextBoxColumn3
             // 
-            DataGridViewTextBoxColumn3.DataPropertyName = "DateOfOrder";
-            DataGridViewTextBoxColumn3.HeaderText = "DateOfOrder";
-            DataGridViewTextBoxColumn3.MinimumWidth = 6;
-            DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3";
-            DataGridViewTextBoxColumn3.ReadOnly = true;
-            DataGridViewTextBoxColumn3.Width = 125;
+            this.DataGridViewTextBoxColumn3.DataPropertyName = "DateOfOrder";
+            this.DataGridViewTextBoxColumn3.HeaderText = "DateOfOrder";
+            this.DataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3";
+            this.DataGridViewTextBoxColumn3.ReadOnly = true;
+            this.DataGridViewTextBoxColumn3.Width = 125;
             // 
             // OrdersBindingSource
             // 
-            OrdersBindingSource.DataMember = "Orders";
-            OrdersBindingSource.DataSource = FreeStyleDBDataSet;
+            this.OrdersBindingSource.DataMember = "Orders";
+            this.OrdersBindingSource.DataSource = this.FreeStyleDBDataSet;
             // 
             // OrderFluidInfoDataGridView
             // 
-            OrderFluidInfoDataGridView.AutoGenerateColumns = false;
-            OrderFluidInfoDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OrderFluidInfoDataGridView.Columns.AddRange(new DataGridViewColumn[] { DataGridViewTextBoxColumn10, DataGridViewTextBoxColumn11, DataGridViewTextBoxColumn12, DataGridViewTextBoxColumn13 });
-            OrderFluidInfoDataGridView.DataSource = OrderFluidInfoBindingSource;
-            OrderFluidInfoDataGridView.Location = new Point(1009, 527);
-            OrderFluidInfoDataGridView.Margin = new Padding(3, 2, 3, 2);
-            OrderFluidInfoDataGridView.Name = "OrderFluidInfoDataGridView";
-            OrderFluidInfoDataGridView.RowHeadersWidth = 51;
-            OrderFluidInfoDataGridView.RowTemplate.Height = 24;
-            OrderFluidInfoDataGridView.Size = new Size(432, 220);
-            OrderFluidInfoDataGridView.TabIndex = 31;
+            this.OrderFluidInfoDataGridView.AutoGenerateColumns = false;
+            this.OrderFluidInfoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OrderFluidInfoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridViewTextBoxColumn10,
+            this.DataGridViewTextBoxColumn11,
+            this.DataGridViewTextBoxColumn12,
+            this.DataGridViewTextBoxColumn13});
+            this.OrderFluidInfoDataGridView.DataSource = this.OrderFluidInfoBindingSource;
+            this.OrderFluidInfoDataGridView.Location = new System.Drawing.Point(1009, 527);
+            this.OrderFluidInfoDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.OrderFluidInfoDataGridView.Name = "OrderFluidInfoDataGridView";
+            this.OrderFluidInfoDataGridView.RowHeadersWidth = 51;
+            this.OrderFluidInfoDataGridView.RowTemplate.Height = 24;
+            this.OrderFluidInfoDataGridView.Size = new System.Drawing.Size(432, 220);
+            this.OrderFluidInfoDataGridView.TabIndex = 31;
             // 
             // DataGridViewTextBoxColumn10
             // 
-            DataGridViewTextBoxColumn10.DataPropertyName = "OrderID";
-            DataGridViewTextBoxColumn10.HeaderText = "OrderID";
-            DataGridViewTextBoxColumn10.MinimumWidth = 6;
-            DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10";
-            DataGridViewTextBoxColumn10.Width = 125;
+            this.DataGridViewTextBoxColumn10.DataPropertyName = "OrderID";
+            this.DataGridViewTextBoxColumn10.HeaderText = "OrderID";
+            this.DataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10";
+            this.DataGridViewTextBoxColumn10.Width = 125;
             // 
             // DataGridViewTextBoxColumn11
             // 
-            DataGridViewTextBoxColumn11.DataPropertyName = "FluidID";
-            DataGridViewTextBoxColumn11.HeaderText = "FluidID";
-            DataGridViewTextBoxColumn11.MinimumWidth = 6;
-            DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11";
-            DataGridViewTextBoxColumn11.Width = 125;
+            this.DataGridViewTextBoxColumn11.DataPropertyName = "FluidID";
+            this.DataGridViewTextBoxColumn11.HeaderText = "FluidID";
+            this.DataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11";
+            this.DataGridViewTextBoxColumn11.Width = 125;
             // 
             // DataGridViewTextBoxColumn12
             // 
-            DataGridViewTextBoxColumn12.DataPropertyName = "IsFluidMix";
-            DataGridViewTextBoxColumn12.HeaderText = "IsFluidMix";
-            DataGridViewTextBoxColumn12.MinimumWidth = 6;
-            DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12";
-            DataGridViewTextBoxColumn12.Width = 125;
+            this.DataGridViewTextBoxColumn12.DataPropertyName = "IsFluidMix";
+            this.DataGridViewTextBoxColumn12.HeaderText = "IsFluidMix";
+            this.DataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12";
+            this.DataGridViewTextBoxColumn12.Width = 125;
             // 
             // DataGridViewTextBoxColumn13
             // 
-            DataGridViewTextBoxColumn13.DataPropertyName = "UsedOz";
-            DataGridViewTextBoxColumn13.HeaderText = "UsedOz";
-            DataGridViewTextBoxColumn13.MinimumWidth = 6;
-            DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13";
-            DataGridViewTextBoxColumn13.Width = 125;
+            this.DataGridViewTextBoxColumn13.DataPropertyName = "UsedOz";
+            this.DataGridViewTextBoxColumn13.HeaderText = "UsedOz";
+            this.DataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13";
+            this.DataGridViewTextBoxColumn13.Width = 125;
             // 
             // OrderFluidInfoBindingSource
             // 
-            OrderFluidInfoBindingSource.DataMember = "OrderFluidInfo";
-            OrderFluidInfoBindingSource.DataSource = FreeStyleDBDataSet;
+            this.OrderFluidInfoBindingSource.DataMember = "OrderFluidInfo";
+            this.OrderFluidInfoBindingSource.DataSource = this.FreeStyleDBDataSet;
             // 
             // InventoryDataGridView
             // 
-            InventoryDataGridView.AutoGenerateColumns = false;
-            InventoryDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            InventoryDataGridView.Columns.AddRange(new DataGridViewColumn[] { DataGridViewTextBoxColumn4, DataGridViewTextBoxColumn5, DataGridViewTextBoxColumn6, DataGridViewTextBoxColumn7, DataGridViewTextBoxColumn8, DataGridViewTextBoxColumn9, DataGridViewTextBoxColumn14 });
-            InventoryDataGridView.DataSource = InventoryBindingSource;
-            InventoryDataGridView.Location = new Point(1009, 50);
-            InventoryDataGridView.Margin = new Padding(3, 2, 3, 2);
-            InventoryDataGridView.Name = "InventoryDataGridView";
-            InventoryDataGridView.RowHeadersWidth = 51;
-            InventoryDataGridView.RowTemplate.Height = 24;
-            InventoryDataGridView.Size = new Size(432, 220);
-            InventoryDataGridView.TabIndex = 31;
+            this.InventoryDataGridView.AutoGenerateColumns = false;
+            this.InventoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.InventoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridViewTextBoxColumn4,
+            this.DataGridViewTextBoxColumn5,
+            this.DataGridViewTextBoxColumn6,
+            this.DataGridViewTextBoxColumn7,
+            this.DataGridViewTextBoxColumn8,
+            this.DataGridViewTextBoxColumn9,
+            this.DataGridViewTextBoxColumn14});
+            this.InventoryDataGridView.DataSource = this.InventoryBindingSource;
+            this.InventoryDataGridView.Location = new System.Drawing.Point(1009, 50);
+            this.InventoryDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.InventoryDataGridView.Name = "InventoryDataGridView";
+            this.InventoryDataGridView.RowHeadersWidth = 51;
+            this.InventoryDataGridView.RowTemplate.Height = 24;
+            this.InventoryDataGridView.Size = new System.Drawing.Size(432, 220);
+            this.InventoryDataGridView.TabIndex = 31;
             // 
             // DataGridViewTextBoxColumn4
             // 
-            DataGridViewTextBoxColumn4.DataPropertyName = "FluidID";
-            DataGridViewTextBoxColumn4.HeaderText = "FluidID";
-            DataGridViewTextBoxColumn4.MinimumWidth = 6;
-            DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4";
-            DataGridViewTextBoxColumn4.Width = 125;
+            this.DataGridViewTextBoxColumn4.DataPropertyName = "FluidID";
+            this.DataGridViewTextBoxColumn4.HeaderText = "FluidID";
+            this.DataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4";
+            this.DataGridViewTextBoxColumn4.Width = 125;
             // 
             // DataGridViewTextBoxColumn5
             // 
-            DataGridViewTextBoxColumn5.DataPropertyName = "FluidName";
-            DataGridViewTextBoxColumn5.HeaderText = "FluidName";
-            DataGridViewTextBoxColumn5.MinimumWidth = 6;
-            DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5";
-            DataGridViewTextBoxColumn5.Width = 125;
+            this.DataGridViewTextBoxColumn5.DataPropertyName = "FluidName";
+            this.DataGridViewTextBoxColumn5.HeaderText = "FluidName";
+            this.DataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5";
+            this.DataGridViewTextBoxColumn5.Width = 125;
             // 
             // DataGridViewTextBoxColumn6
             // 
-            DataGridViewTextBoxColumn6.DataPropertyName = "FluidType";
-            DataGridViewTextBoxColumn6.HeaderText = "FluidType";
-            DataGridViewTextBoxColumn6.MinimumWidth = 6;
-            DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6";
-            DataGridViewTextBoxColumn6.Width = 125;
+            this.DataGridViewTextBoxColumn6.DataPropertyName = "FluidType";
+            this.DataGridViewTextBoxColumn6.HeaderText = "FluidType";
+            this.DataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6";
+            this.DataGridViewTextBoxColumn6.Width = 125;
             // 
             // DataGridViewTextBoxColumn7
             // 
-            DataGridViewTextBoxColumn7.DataPropertyName = "Capacity(oz)";
-            DataGridViewTextBoxColumn7.HeaderText = "Capacity(oz)";
-            DataGridViewTextBoxColumn7.MinimumWidth = 6;
-            DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7";
-            DataGridViewTextBoxColumn7.Width = 125;
+            this.DataGridViewTextBoxColumn7.DataPropertyName = "Capacity(oz)";
+            this.DataGridViewTextBoxColumn7.HeaderText = "Capacity(oz)";
+            this.DataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7";
+            this.DataGridViewTextBoxColumn7.Width = 125;
             // 
             // DataGridViewTextBoxColumn8
             // 
-            DataGridViewTextBoxColumn8.DataPropertyName = "CurrentAmount";
-            DataGridViewTextBoxColumn8.HeaderText = "CurrentAmount";
-            DataGridViewTextBoxColumn8.MinimumWidth = 6;
-            DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8";
-            DataGridViewTextBoxColumn8.Width = 125;
+            this.DataGridViewTextBoxColumn8.DataPropertyName = "CurrentAmount";
+            this.DataGridViewTextBoxColumn8.HeaderText = "CurrentAmount";
+            this.DataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8";
+            this.DataGridViewTextBoxColumn8.Width = 125;
             // 
             // DataGridViewTextBoxColumn9
             // 
-            DataGridViewTextBoxColumn9.DataPropertyName = "ExpirationDate";
-            DataGridViewTextBoxColumn9.HeaderText = "ExpirationDate";
-            DataGridViewTextBoxColumn9.MinimumWidth = 6;
-            DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9";
-            DataGridViewTextBoxColumn9.Width = 125;
+            this.DataGridViewTextBoxColumn9.DataPropertyName = "ExpirationDate";
+            this.DataGridViewTextBoxColumn9.HeaderText = "ExpirationDate";
+            this.DataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9";
+            this.DataGridViewTextBoxColumn9.Width = 125;
             // 
             // DataGridViewTextBoxColumn14
             // 
-            DataGridViewTextBoxColumn14.DataPropertyName = "Last Fill Date";
-            DataGridViewTextBoxColumn14.HeaderText = "Last Fill Date";
-            DataGridViewTextBoxColumn14.MinimumWidth = 6;
-            DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14";
-            DataGridViewTextBoxColumn14.Width = 125;
+            this.DataGridViewTextBoxColumn14.DataPropertyName = "Last Fill Date";
+            this.DataGridViewTextBoxColumn14.HeaderText = "Last Fill Date";
+            this.DataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14";
+            this.DataGridViewTextBoxColumn14.Width = 125;
             // 
             // btnMaintenanceRp
             // 
-            btnMaintenanceRp.Location = new Point(64, 539);
-            btnMaintenanceRp.Margin = new Padding(3, 2, 3, 2);
-            btnMaintenanceRp.Name = "btnMaintenanceRp";
-            btnMaintenanceRp.Size = new Size(163, 47);
-            btnMaintenanceRp.TabIndex = 32;
-            btnMaintenanceRp.Text = "M&aintenance Report";
-            btnMaintenanceRp.UseVisualStyleBackColor = true;
+            this.btnMaintenanceRp.BackColor = System.Drawing.Color.Chocolate;
+            this.btnMaintenanceRp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintenanceRp.Location = new System.Drawing.Point(64, 539);
+            this.btnMaintenanceRp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaintenanceRp.Name = "btnMaintenanceRp";
+            this.btnMaintenanceRp.Size = new System.Drawing.Size(163, 47);
+            this.btnMaintenanceRp.TabIndex = 32;
+            this.btnMaintenanceRp.Text = "M&aintenance Report";
+            this.btnMaintenanceRp.UseVisualStyleBackColor = false;
+            this.btnMaintenanceRp.Click += new System.EventHandler(this.btnMaintenanceRp_Click);
             // 
             // btnLocationMgRp
             // 
-            btnLocationMgRp.Location = new Point(64, 668);
-            btnLocationMgRp.Margin = new Padding(3, 2, 3, 2);
-            btnLocationMgRp.Name = "btnLocationMgRp";
-            btnLocationMgRp.Size = new Size(163, 47);
-            btnLocationMgRp.TabIndex = 33;
-            btnLocationMgRp.Text = "&Location Management Report";
-            btnLocationMgRp.UseVisualStyleBackColor = true;
+            this.btnLocationMgRp.BackColor = System.Drawing.Color.Chocolate;
+            this.btnLocationMgRp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocationMgRp.Location = new System.Drawing.Point(64, 668);
+            this.btnLocationMgRp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLocationMgRp.Name = "btnLocationMgRp";
+            this.btnLocationMgRp.Size = new System.Drawing.Size(163, 47);
+            this.btnLocationMgRp.TabIndex = 33;
+            this.btnLocationMgRp.Text = "&Location Management Report";
+            this.btnLocationMgRp.UseVisualStyleBackColor = false;
+            this.btnLocationMgRp.Click += new System.EventHandler(this.btnLocationMgRp_Click);
             // 
             // cklbInventory
             // 
-            cklbInventory.FormattingEnabled = true;
-            cklbInventory.Items.AddRange(new object[] { "Cola", "Diet Cola", "Zero Cola", "Fanta", "DrPepper", "Sprite", "Zero Sprite", "Minute Maid", "Zero Minute Maid", "RootBeer", "Co2" });
-            cklbInventory.Location = new Point(233, 410);
-            cklbInventory.Margin = new Padding(3, 2, 3, 2);
-            cklbInventory.Name = "cklbInventory";
-            cklbInventory.Size = new Size(173, 191);
-            cklbInventory.TabIndex = 9;
+            this.cklbInventory.FormattingEnabled = true;
+            this.cklbInventory.Items.AddRange(new object[] {
+            "Cola",
+            "Diet Cola",
+            "Zero Cola",
+            "Fanta",
+            "DrPepper",
+            "Sprite",
+            "Zero Sprite",
+            "Minute Maid",
+            "Zero Minute Maid",
+            "RootBeer",
+            "Co2"});
+            this.cklbInventory.Location = new System.Drawing.Point(233, 410);
+            this.cklbInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cklbInventory.Name = "cklbInventory";
+            this.cklbInventory.Size = new System.Drawing.Size(173, 191);
+            this.cklbInventory.TabIndex = 9;
             // 
             // btnOrderInventoryAfterSelection
             // 
-            btnOrderInventoryAfterSelection.Location = new Point(239, 624);
-            btnOrderInventoryAfterSelection.Margin = new Padding(3, 2, 3, 2);
-            btnOrderInventoryAfterSelection.Name = "btnOrderInventoryAfterSelection";
-            btnOrderInventoryAfterSelection.Size = new Size(124, 32);
-            btnOrderInventoryAfterSelection.TabIndex = 34;
-            btnOrderInventoryAfterSelection.Text = "Order &Inventory";
-            btnOrderInventoryAfterSelection.UseVisualStyleBackColor = true;
+            this.btnOrderInventoryAfterSelection.Location = new System.Drawing.Point(239, 624);
+            this.btnOrderInventoryAfterSelection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrderInventoryAfterSelection.Name = "btnOrderInventoryAfterSelection";
+            this.btnOrderInventoryAfterSelection.Size = new System.Drawing.Size(124, 32);
+            this.btnOrderInventoryAfterSelection.TabIndex = 34;
+            this.btnOrderInventoryAfterSelection.Text = "Order &Inventory";
+            this.btnOrderInventoryAfterSelection.UseVisualStyleBackColor = true;
+            this.btnOrderInventoryAfterSelection.Click += new System.EventHandler(this.btnOrderInventoryAfterSelection_Click);
             // 
             // DTPStart
             // 
-            DTPStart.Location = new Point(233, 598);
-            DTPStart.Margin = new Padding(3, 2, 3, 2);
-            DTPStart.Name = "DTPStart";
-            DTPStart.Size = new Size(272, 22);
-            DTPStart.TabIndex = 35;
-            DTPStart.Visible = false;
+            this.DTPStart.Location = new System.Drawing.Point(233, 598);
+            this.DTPStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTPStart.Name = "DTPStart";
+            this.DTPStart.Size = new System.Drawing.Size(272, 22);
+            this.DTPStart.TabIndex = 35;
+            this.DTPStart.Visible = false;
             // 
             // DTPEnd
             // 
-            DTPEnd.Location = new Point(233, 654);
-            DTPEnd.Margin = new Padding(3, 2, 3, 2);
-            DTPEnd.Name = "DTPEnd";
-            DTPEnd.Size = new Size(272, 22);
-            DTPEnd.TabIndex = 36;
-            DTPEnd.Visible = false;
+            this.DTPEnd.Location = new System.Drawing.Point(233, 654);
+            this.DTPEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTPEnd.Name = "DTPEnd";
+            this.DTPEnd.Size = new System.Drawing.Size(272, 22);
+            this.DTPEnd.TabIndex = 36;
+            this.DTPEnd.Visible = false;
             // 
             // lblStartDate
             // 
-            lblStartDate.AutoSize = true;
-            lblStartDate.ForeColor = SystemColors.ButtonHighlight;
-            lblStartDate.Location = new Point(235, 575);
-            lblStartDate.Name = "lblStartDate";
-            lblStartDate.Size = new Size(76, 17);
-            lblStartDate.TabIndex = 37;
-            lblStartDate.Text = "&Start Date:";
-            lblStartDate.Visible = false;
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStartDate.Location = new System.Drawing.Point(235, 575);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(69, 16);
+            this.lblStartDate.TabIndex = 37;
+            this.lblStartDate.Text = "&Start Date:";
+            this.lblStartDate.Visible = false;
             // 
             // lblEndDate
             // 
-            lblEndDate.AutoSize = true;
-            lblEndDate.ForeColor = SystemColors.ButtonHighlight;
-            lblEndDate.Location = new Point(235, 626);
-            lblEndDate.Name = "lblEndDate";
-            lblEndDate.Size = new Size(71, 17);
-            lblEndDate.TabIndex = 38;
-            lblEndDate.Text = "&End Date:";
-            lblEndDate.Visible = false;
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEndDate.Location = new System.Drawing.Point(235, 626);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(66, 16);
+            this.lblEndDate.TabIndex = 38;
+            this.lblEndDate.Text = "&End Date:";
+            this.lblEndDate.Visible = false;
             // 
             // btnGetOrderReport
             // 
-            btnGetOrderReport.Location = new Point(239, 681);
-            btnGetOrderReport.Margin = new Padding(3, 2, 3, 2);
-            btnGetOrderReport.Name = "btnGetOrderReport";
-            btnGetOrderReport.Size = new Size(124, 34);
-            btnGetOrderReport.TabIndex = 39;
-            btnGetOrderReport.Text = "&Get Report";
-            btnGetOrderReport.UseVisualStyleBackColor = true;
-            btnGetOrderReport.Visible = false;
+            this.btnGetOrderReport.Location = new System.Drawing.Point(239, 681);
+            this.btnGetOrderReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGetOrderReport.Name = "btnGetOrderReport";
+            this.btnGetOrderReport.Size = new System.Drawing.Size(124, 34);
+            this.btnGetOrderReport.TabIndex = 39;
+            this.btnGetOrderReport.Text = "&Get Report";
+            this.btnGetOrderReport.UseVisualStyleBackColor = true;
+            this.btnGetOrderReport.Visible = false;
+            this.btnGetOrderReport.Click += new System.EventHandler(this.btnGetOrderReport_Click);
             // 
             // InventoryTableAdapter
             // 
-            InventoryTableAdapter.ClearBeforeFill = true;
+            this.InventoryTableAdapter.ClearBeforeFill = true;
             // 
             // TableAdapterManager
             // 
-            TableAdapterManager.BackupDataSetBeforeUpdate = false;
-            TableAdapterManager.InventoryTableAdapter = InventoryTableAdapter;
-            TableAdapterManager.OrderFluidInfoTableAdapter = OrderFluidInfoTableAdapter;
-            TableAdapterManager.OrdersTableAdapter = OrdersTableAdapter;
-            TableAdapterManager.UpdateOrder = FreeStyleDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.TableAdapterManager.InventoryTableAdapter = this.InventoryTableAdapter;
+            this.TableAdapterManager.OrderFluidInfoTableAdapter = this.OrderFluidInfoTableAdapter;
+            this.TableAdapterManager.OrdersTableAdapter = this.OrdersTableAdapter;
+            this.TableAdapterManager.UpdateOrder = Coca_Cola_Project.FreeStyleDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // OrderFluidInfoTableAdapter
             // 
-            OrderFluidInfoTableAdapter.ClearBeforeFill = true;
+            this.OrderFluidInfoTableAdapter.ClearBeforeFill = true;
             // 
             // OrdersTableAdapter
             // 
-            OrdersTableAdapter.ClearBeforeFill = true;
+            this.OrdersTableAdapter.ClearBeforeFill = true;
             // 
             // DataGridViewTextBoxColumn17
             // 
-            DataGridViewTextBoxColumn17.DataPropertyName = "DateOfOrder";
-            DataGridViewTextBoxColumn17.HeaderText = "DateOfOrder";
-            DataGridViewTextBoxColumn17.MinimumWidth = 6;
-            DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17";
-            DataGridViewTextBoxColumn17.Width = 125;
+            this.DataGridViewTextBoxColumn17.DataPropertyName = "DateOfOrder";
+            this.DataGridViewTextBoxColumn17.HeaderText = "DateOfOrder";
+            this.DataGridViewTextBoxColumn17.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17";
+            this.DataGridViewTextBoxColumn17.Width = 125;
             // 
             // DataGridViewTextBoxColumn16
             // 
-            DataGridViewTextBoxColumn16.DataPropertyName = "OrderAmount";
-            DataGridViewTextBoxColumn16.HeaderText = "OrderAmount";
-            DataGridViewTextBoxColumn16.MinimumWidth = 6;
-            DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16";
-            DataGridViewTextBoxColumn16.Width = 125;
+            this.DataGridViewTextBoxColumn16.DataPropertyName = "OrderAmount";
+            this.DataGridViewTextBoxColumn16.HeaderText = "OrderAmount";
+            this.DataGridViewTextBoxColumn16.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16";
+            this.DataGridViewTextBoxColumn16.Width = 125;
             // 
             // DataGridViewTextBoxColumn15
             // 
-            DataGridViewTextBoxColumn15.DataPropertyName = "OrderID";
-            DataGridViewTextBoxColumn15.HeaderText = "OrderID";
-            DataGridViewTextBoxColumn15.MinimumWidth = 6;
-            DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15";
-            DataGridViewTextBoxColumn15.ReadOnly = true;
-            DataGridViewTextBoxColumn15.Width = 125;
+            this.DataGridViewTextBoxColumn15.DataPropertyName = "OrderID";
+            this.DataGridViewTextBoxColumn15.HeaderText = "OrderID";
+            this.DataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15";
+            this.DataGridViewTextBoxColumn15.ReadOnly = true;
+            this.DataGridViewTextBoxColumn15.Width = 125;
             // 
             // OrdersDataGridViewWDP
             // 
-            OrdersDataGridViewWDP.AutoGenerateColumns = false;
-            OrdersDataGridViewWDP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OrdersDataGridViewWDP.Columns.AddRange(new DataGridViewColumn[] { DataGridViewTextBoxColumn15, DataGridViewTextBoxColumn16, DataGridViewTextBoxColumn17 });
-            OrdersDataGridViewWDP.DataSource = OrdersBindingSource;
-            OrdersDataGridViewWDP.Location = new Point(1461, 93);
-            OrdersDataGridViewWDP.Name = "OrdersDataGridViewWDP";
-            OrdersDataGridViewWDP.RowHeadersWidth = 51;
-            OrdersDataGridViewWDP.RowTemplate.Height = 24;
-            OrdersDataGridViewWDP.Size = new Size(388, 233);
-            OrdersDataGridViewWDP.TabIndex = 41;
+            this.OrdersDataGridViewWDP.AutoGenerateColumns = false;
+            this.OrdersDataGridViewWDP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OrdersDataGridViewWDP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridViewTextBoxColumn15,
+            this.DataGridViewTextBoxColumn16,
+            this.DataGridViewTextBoxColumn17});
+            this.OrdersDataGridViewWDP.DataSource = this.OrdersBindingSource;
+            this.OrdersDataGridViewWDP.Location = new System.Drawing.Point(1461, 93);
+            this.OrdersDataGridViewWDP.Name = "OrdersDataGridViewWDP";
+            this.OrdersDataGridViewWDP.RowHeadersWidth = 51;
+            this.OrdersDataGridViewWDP.RowTemplate.Height = 24;
+            this.OrdersDataGridViewWDP.Size = new System.Drawing.Size(388, 233);
+            this.OrdersDataGridViewWDP.TabIndex = 41;
             // 
             // StartDateToolStripLabel
             // 
-            StartDateToolStripLabel.Name = "StartDateToolStripLabel";
-            StartDateToolStripLabel.Size = new Size(75, 24);
-            StartDateToolStripLabel.Text = "StartDate:";
+            this.StartDateToolStripLabel.Name = "StartDateToolStripLabel";
+            this.StartDateToolStripLabel.Size = new System.Drawing.Size(75, 28);
+            this.StartDateToolStripLabel.Text = "StartDate:";
             // 
             // StartDateToolStripTextBox
             // 
-            StartDateToolStripTextBox.Font = new Font("Segoe UI", 9.0f);
-            StartDateToolStripTextBox.Name = "StartDateToolStripTextBox";
-            StartDateToolStripTextBox.Size = new Size(100, 27);
+            this.StartDateToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StartDateToolStripTextBox.Name = "StartDateToolStripTextBox";
+            this.StartDateToolStripTextBox.Size = new System.Drawing.Size(100, 31);
             // 
             // EndDateToolStripLabel
             // 
-            EndDateToolStripLabel.Name = "EndDateToolStripLabel";
-            EndDateToolStripLabel.Size = new Size(69, 24);
-            EndDateToolStripLabel.Text = "EndDate:";
+            this.EndDateToolStripLabel.Name = "EndDateToolStripLabel";
+            this.EndDateToolStripLabel.Size = new System.Drawing.Size(69, 28);
+            this.EndDateToolStripLabel.Text = "EndDate:";
             // 
             // EndDateToolStripTextBox
             // 
-            EndDateToolStripTextBox.Font = new Font("Segoe UI", 9.0f);
-            EndDateToolStripTextBox.Name = "EndDateToolStripTextBox";
-            EndDateToolStripTextBox.Size = new Size(100, 27);
+            this.EndDateToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.EndDateToolStripTextBox.Name = "EndDateToolStripTextBox";
+            this.EndDateToolStripTextBox.Size = new System.Drawing.Size(100, 31);
             // 
             // FillByOrdersToolStripButton
             // 
-            FillByOrdersToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            FillByOrdersToolStripButton.Name = "FillByOrdersToolStripButton";
-            FillByOrdersToolStripButton.Size = new Size(92, 24);
-            FillByOrdersToolStripButton.Text = "FillByOrders";
+            this.FillByOrdersToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.FillByOrdersToolStripButton.Name = "FillByOrdersToolStripButton";
+            this.FillByOrdersToolStripButton.Size = new System.Drawing.Size(92, 28);
+            this.FillByOrdersToolStripButton.Text = "FillByOrders";
+            this.FillByOrdersToolStripButton.Click += new System.EventHandler(this.FillByOrdersToolStripButton_Click_1);
             // 
             // FillByOrdersToolStrip
             // 
-            FillByOrdersToolStrip.ImageScalingSize = new Size(20, 20);
-            FillByOrdersToolStrip.Items.AddRange(new ToolStripItem[] { StartDateToolStripLabel, StartDateToolStripTextBox, EndDateToolStripLabel, EndDateToolStripTextBox, FillByOrdersToolStripButton });
-            FillByOrdersToolStrip.Location = new Point(0, 27);
-            FillByOrdersToolStrip.Name = "FillByOrdersToolStrip";
-            FillByOrdersToolStrip.Size = new Size(1002, 27);
-            FillByOrdersToolStrip.TabIndex = 42;
-            FillByOrdersToolStrip.Text = "FillByOrdersToolStrip";
+            this.FillByOrdersToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.FillByOrdersToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StartDateToolStripLabel,
+            this.StartDateToolStripTextBox,
+            this.EndDateToolStripLabel,
+            this.EndDateToolStripTextBox,
+            this.FillByOrdersToolStripButton});
+            this.FillByOrdersToolStrip.Location = new System.Drawing.Point(0, 31);
+            this.FillByOrdersToolStrip.Name = "FillByOrdersToolStrip";
+            this.FillByOrdersToolStrip.Size = new System.Drawing.Size(1002, 31);
+            this.FillByOrdersToolStrip.TabIndex = 42;
+            this.FillByOrdersToolStrip.Text = "FillByOrdersToolStrip";
             // 
             // BindingNavigatorMoveFirstItem
             // 
-            BindingNavigatorMoveFirstItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            BindingNavigatorMoveFirstItem.Image = (Image)resources.GetObject("BindingNavigatorMoveFirstItem.Image");
-            BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem";
-            BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            BindingNavigatorMoveFirstItem.Size = new Size(29, 24);
-            BindingNavigatorMoveFirstItem.Text = "Move first";
+            this.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMoveFirstItem.Image")));
+            this.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem";
+            this.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.BindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
+            this.BindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // BindingNavigatorMovePreviousItem
             // 
-            BindingNavigatorMovePreviousItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            BindingNavigatorMovePreviousItem.Image = (Image)resources.GetObject("BindingNavigatorMovePreviousItem.Image");
-            BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem";
-            BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            BindingNavigatorMovePreviousItem.Size = new Size(29, 24);
-            BindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMovePreviousItem.Image")));
+            this.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem";
+            this.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.BindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
+            this.BindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // BindingNavigatorSeparator
             // 
-            BindingNavigatorSeparator.Name = "BindingNavigatorSeparator";
-            BindingNavigatorSeparator.Size = new Size(6, 27);
+            this.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator";
+            this.BindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // BindingNavigatorPositionItem
             // 
-            BindingNavigatorPositionItem.AccessibleName = "Position";
-            BindingNavigatorPositionItem.AutoSize = false;
-            BindingNavigatorPositionItem.Font = new Font("Segoe UI", 9.0f);
-            BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem";
-            BindingNavigatorPositionItem.Size = new Size(49, 27);
-            BindingNavigatorPositionItem.Text = "0";
-            BindingNavigatorPositionItem.ToolTipText = "Current position";
+            this.BindingNavigatorPositionItem.AccessibleName = "Position";
+            this.BindingNavigatorPositionItem.AutoSize = false;
+            this.BindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem";
+            this.BindingNavigatorPositionItem.Size = new System.Drawing.Size(49, 27);
+            this.BindingNavigatorPositionItem.Text = "0";
+            this.BindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // BindingNavigatorCountItem
             // 
-            BindingNavigatorCountItem.Name = "BindingNavigatorCountItem";
-            BindingNavigatorCountItem.Size = new Size(45, 24);
-            BindingNavigatorCountItem.Text = "of {0}";
-            BindingNavigatorCountItem.ToolTipText = "Total number of items";
+            this.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem";
+            this.BindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
+            this.BindingNavigatorCountItem.Text = "of {0}";
+            this.BindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // BindingNavigatorSeparator1
             // 
-            BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1";
-            BindingNavigatorSeparator1.Size = new Size(6, 27);
+            this.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1";
+            this.BindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // BindingNavigatorMoveNextItem
             // 
-            BindingNavigatorMoveNextItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            BindingNavigatorMoveNextItem.Image = (Image)resources.GetObject("BindingNavigatorMoveNextItem.Image");
-            BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem";
-            BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            BindingNavigatorMoveNextItem.Size = new Size(29, 24);
-            BindingNavigatorMoveNextItem.Text = "Move next";
+            this.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMoveNextItem.Image")));
+            this.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem";
+            this.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.BindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
+            this.BindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // BindingNavigatorMoveLastItem
             // 
-            BindingNavigatorMoveLastItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            BindingNavigatorMoveLastItem.Image = (Image)resources.GetObject("BindingNavigatorMoveLastItem.Image");
-            BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem";
-            BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            BindingNavigatorMoveLastItem.Size = new Size(29, 24);
-            BindingNavigatorMoveLastItem.Text = "Move last";
+            this.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorMoveLastItem.Image")));
+            this.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem";
+            this.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.BindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
+            this.BindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // BindingNavigatorSeparator2
             // 
-            BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2";
-            BindingNavigatorSeparator2.Size = new Size(6, 27);
+            this.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2";
+            this.BindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // BindingNavigatorAddNewItem
             // 
-            BindingNavigatorAddNewItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            BindingNavigatorAddNewItem.Image = (Image)resources.GetObject("BindingNavigatorAddNewItem.Image");
-            BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem";
-            BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            BindingNavigatorAddNewItem.Size = new Size(29, 24);
-            BindingNavigatorAddNewItem.Text = "Add new";
+            this.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorAddNewItem.Image")));
+            this.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem";
+            this.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.BindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
+            this.BindingNavigatorAddNewItem.Text = "Add new";
             // 
             // BindingNavigatorDeleteItem
             // 
-            BindingNavigatorDeleteItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            BindingNavigatorDeleteItem.Image = (Image)resources.GetObject("BindingNavigatorDeleteItem.Image");
-            BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem";
-            BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            BindingNavigatorDeleteItem.Size = new Size(29, 24);
-            BindingNavigatorDeleteItem.Text = "Delete";
+            this.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("BindingNavigatorDeleteItem.Image")));
+            this.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem";
+            this.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.BindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
+            this.BindingNavigatorDeleteItem.Text = "Delete";
             // 
             // InventoryBindingNavigatorSaveItem
             // 
-            InventoryBindingNavigatorSaveItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            InventoryBindingNavigatorSaveItem.Image = (Image)resources.GetObject("InventoryBindingNavigatorSaveItem.Image");
-            InventoryBindingNavigatorSaveItem.Name = "InventoryBindingNavigatorSaveItem";
-            InventoryBindingNavigatorSaveItem.Size = new Size(29, 24);
-            InventoryBindingNavigatorSaveItem.Text = "Save Data";
+            this.InventoryBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.InventoryBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("InventoryBindingNavigatorSaveItem.Image")));
+            this.InventoryBindingNavigatorSaveItem.Name = "InventoryBindingNavigatorSaveItem";
+            this.InventoryBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 28);
+            this.InventoryBindingNavigatorSaveItem.Text = "Save Data";
+            this.InventoryBindingNavigatorSaveItem.Click += new System.EventHandler(this.InventoryBindingNavigatorSaveItem_Click);
             // 
             // InventoryBindingNavigator
             // 
-            InventoryBindingNavigator.AddNewItem = BindingNavigatorAddNewItem;
-            InventoryBindingNavigator.BindingSource = InventoryBindingSource;
-            InventoryBindingNavigator.CountItem = BindingNavigatorCountItem;
-            InventoryBindingNavigator.DeleteItem = BindingNavigatorDeleteItem;
-            InventoryBindingNavigator.ImageScalingSize = new Size(20, 20);
-            InventoryBindingNavigator.Items.AddRange(new ToolStripItem[] { BindingNavigatorMoveFirstItem, BindingNavigatorMovePreviousItem, BindingNavigatorSeparator, BindingNavigatorPositionItem, BindingNavigatorCountItem, BindingNavigatorSeparator1, BindingNavigatorMoveNextItem, BindingNavigatorMoveLastItem, BindingNavigatorSeparator2, BindingNavigatorAddNewItem, BindingNavigatorDeleteItem, InventoryBindingNavigatorSaveItem });
-            InventoryBindingNavigator.Location = new Point(0, 0);
-            InventoryBindingNavigator.MoveFirstItem = BindingNavigatorMoveFirstItem;
-            InventoryBindingNavigator.MoveLastItem = BindingNavigatorMoveLastItem;
-            InventoryBindingNavigator.MoveNextItem = BindingNavigatorMoveNextItem;
-            InventoryBindingNavigator.MovePreviousItem = BindingNavigatorMovePreviousItem;
-            InventoryBindingNavigator.Name = "InventoryBindingNavigator";
-            InventoryBindingNavigator.PositionItem = BindingNavigatorPositionItem;
-            InventoryBindingNavigator.Size = new Size(1002, 27);
-            InventoryBindingNavigator.TabIndex = 30;
-            InventoryBindingNavigator.Text = "BindingNavigator1";
+            this.InventoryBindingNavigator.AddNewItem = this.BindingNavigatorAddNewItem;
+            this.InventoryBindingNavigator.BindingSource = this.InventoryBindingSource;
+            this.InventoryBindingNavigator.CountItem = this.BindingNavigatorCountItem;
+            this.InventoryBindingNavigator.DeleteItem = this.BindingNavigatorDeleteItem;
+            this.InventoryBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.InventoryBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BindingNavigatorMoveFirstItem,
+            this.BindingNavigatorMovePreviousItem,
+            this.BindingNavigatorSeparator,
+            this.BindingNavigatorPositionItem,
+            this.BindingNavigatorCountItem,
+            this.BindingNavigatorSeparator1,
+            this.BindingNavigatorMoveNextItem,
+            this.BindingNavigatorMoveLastItem,
+            this.BindingNavigatorSeparator2,
+            this.BindingNavigatorAddNewItem,
+            this.BindingNavigatorDeleteItem,
+            this.InventoryBindingNavigatorSaveItem});
+            this.InventoryBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.InventoryBindingNavigator.MoveFirstItem = this.BindingNavigatorMoveFirstItem;
+            this.InventoryBindingNavigator.MoveLastItem = this.BindingNavigatorMoveLastItem;
+            this.InventoryBindingNavigator.MoveNextItem = this.BindingNavigatorMoveNextItem;
+            this.InventoryBindingNavigator.MovePreviousItem = this.BindingNavigatorMovePreviousItem;
+            this.InventoryBindingNavigator.Name = "InventoryBindingNavigator";
+            this.InventoryBindingNavigator.PositionItem = this.BindingNavigatorPositionItem;
+            this.InventoryBindingNavigator.Size = new System.Drawing.Size(1002, 31);
+            this.InventoryBindingNavigator.TabIndex = 30;
+            this.InventoryBindingNavigator.Text = "BindingNavigator1";
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8.0f, 16.0f);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
-            ClientSize = new Size(1002, 785);
-            Controls.Add(FillByOrdersToolStrip);
-            Controls.Add(OrdersDataGridViewWDP);
-            Controls.Add(btnGetOrderReport);
-            Controls.Add(lblEndDate);
-            Controls.Add(lblStartDate);
-            Controls.Add(DTPEnd);
-            Controls.Add(DTPStart);
-            Controls.Add(btnOrderInventoryAfterSelection);
-            Controls.Add(cklbInventory);
-            Controls.Add(btnLocationMgRp);
-            Controls.Add(btnMaintenanceRp);
-            Controls.Add(InventoryDataGridView);
-            Controls.Add(OrderFluidInfoDataGridView);
-            Controls.Add(OrdersDataGridView);
-            Controls.Add(InventoryBindingNavigator);
-            Controls.Add(lblFlavorCount);
-            Controls.Add(btnResetFlavors);
-            Controls.Add(btnExit);
-            Controls.Add(grpSize);
-            Controls.Add(btnMixDisp);
-            Controls.Add(btnOrderRp);
-            Controls.Add(btnInventoryRp);
-            Controls.Add(btnReOrder);
-            Controls.Add(picRootBeer);
-            Controls.Add(picMMLemonZero);
-            Controls.Add(picMMLemon);
-            Controls.Add(picSpriteZero);
-            Controls.Add(picSprite);
-            Controls.Add(picDrPepper);
-            Controls.Add(picFanta);
-            Controls.Add(picColaZero);
-            Controls.Add(picColaDiet);
-            Controls.Add(picCola);
-            Controls.Add(lblSprite);
-            Controls.Add(lblSpriteZero);
-            Controls.Add(lblMntMaid);
-            Controls.Add(lblMntMaidZero);
-            Controls.Add(lblRootBeer);
-            Controls.Add(lblDrPepper);
-            Controls.Add(lblFanta);
-            Controls.Add(lblZeroCola);
-            Controls.Add(lblDietCola);
-            Controls.Add(lblCola);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "MainForm";
-            Text = "Free Style";
-            ((System.ComponentModel.ISupportInitialize)picCola).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picColaDiet).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picColaZero).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picFanta).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picDrPepper).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picSprite).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picSpriteZero).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picMMLemon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picMMLemonZero).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picRootBeer).EndInit();
-            grpSize.ResumeLayout(false);
-            grpSize.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)InventoryBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)FreeStyleDBDataSet).EndInit();
-            ((System.ComponentModel.ISupportInitialize)OrdersDataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)OrdersBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)OrderFluidInfoDataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)OrderFluidInfoBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)InventoryDataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)OrdersDataGridViewWDP).EndInit();
-            FillByOrdersToolStrip.ResumeLayout(false);
-            FillByOrdersToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)InventoryBindingNavigator).EndInit();
-            InventoryBindingNavigator.ResumeLayout(false);
-            InventoryBindingNavigator.PerformLayout();
-            Load += new EventHandler(MainForm_Load);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(1002, 785);
+            this.Controls.Add(this.FillByOrdersToolStrip);
+            this.Controls.Add(this.OrdersDataGridViewWDP);
+            this.Controls.Add(this.btnGetOrderReport);
+            this.Controls.Add(this.lblEndDate);
+            this.Controls.Add(this.lblStartDate);
+            this.Controls.Add(this.DTPEnd);
+            this.Controls.Add(this.DTPStart);
+            this.Controls.Add(this.btnOrderInventoryAfterSelection);
+            this.Controls.Add(this.cklbInventory);
+            this.Controls.Add(this.btnLocationMgRp);
+            this.Controls.Add(this.btnMaintenanceRp);
+            this.Controls.Add(this.InventoryDataGridView);
+            this.Controls.Add(this.OrderFluidInfoDataGridView);
+            this.Controls.Add(this.OrdersDataGridView);
+            this.Controls.Add(this.InventoryBindingNavigator);
+            this.Controls.Add(this.lblFlavorCount);
+            this.Controls.Add(this.btnResetFlavors);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.grpSize);
+            this.Controls.Add(this.btnMixDisp);
+            this.Controls.Add(this.btnOrderRp);
+            this.Controls.Add(this.btnInventoryRp);
+            this.Controls.Add(this.btnReOrder);
+            this.Controls.Add(this.picRootBeer);
+            this.Controls.Add(this.picMMLemonZero);
+            this.Controls.Add(this.picMMLemon);
+            this.Controls.Add(this.picSpriteZero);
+            this.Controls.Add(this.picSprite);
+            this.Controls.Add(this.picDrPepper);
+            this.Controls.Add(this.picFanta);
+            this.Controls.Add(this.picColaZero);
+            this.Controls.Add(this.picColaDiet);
+            this.Controls.Add(this.picCola);
+            this.Controls.Add(this.lblSprite);
+            this.Controls.Add(this.lblSpriteZero);
+            this.Controls.Add(this.lblMntMaid);
+            this.Controls.Add(this.lblMntMaidZero);
+            this.Controls.Add(this.lblRootBeer);
+            this.Controls.Add(this.lblDrPepper);
+            this.Controls.Add(this.lblFanta);
+            this.Controls.Add(this.lblZeroCola);
+            this.Controls.Add(this.lblDietCola);
+            this.Controls.Add(this.lblCola);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "MainForm";
+            this.Text = "Free Style";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picCola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picColaDiet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picColaZero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFanta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDrPepper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSprite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSpriteZero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMMLemon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMMLemonZero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRootBeer)).EndInit();
+            this.grpSize.ResumeLayout(false);
+            this.grpSize.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FreeStyleDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderFluidInfoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderFluidInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridViewWDP)).EndInit();
+            this.FillByOrdersToolStrip.ResumeLayout(false);
+            this.FillByOrdersToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryBindingNavigator)).EndInit();
+            this.InventoryBindingNavigator.ResumeLayout(false);
+            this.InventoryBindingNavigator.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
