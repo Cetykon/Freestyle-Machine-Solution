@@ -12,12 +12,10 @@ namespace Coca_Cola_Project
     /// 
     /// Project used to learn how to program.
     /// If any changes are made, be sure to trace variables,
-    /// variables can be tightly coupled.
+    /// MixCount is tightly coupled.
     /// </summary>
     public partial class MainForm
     {
-        // Counter for loops
-        private int intCounter = 0;
         // Create variables needed
         private int MixCount = 0;
         private int intFlavorSelecCount = 0;
@@ -172,7 +170,7 @@ namespace Coca_Cola_Project
             string strLowlvlFluids = "";
             string strSyrupSt = "";
 
-            for (intCounter = 0; intCounter <= 9; intCounter++)
+            for (int intCounter = 0; intCounter <= 9; intCounter++)
             {
                 // Add all Flavors and their current amount of liquid to a string
                 strSyrupSt = strSyrupSt + StrSodaNames[intCounter] + ": " + dblSyrupBoxs[intCounter].ToString("N2") + "oz" + Constants.vbNewLine;
@@ -226,20 +224,12 @@ namespace Coca_Cola_Project
             // if Date selection is already visible hide it. 
             if (lblStartDate.Visible == true & lblEndDate.Visible == true)
             {
-                lblStartDate.Visible = false;
-                lblEndDate.Visible = false;
-                DTPStart.Visible = false;
-                DTPEnd.Visible = false;
-                btnGetOrderReport.Visible = false;
+                HideDateSelection();
             }
             else
             {
                 // if date selection wasn't already visible the make it visible
-                lblStartDate.Visible = true;
-                lblEndDate.Visible = true;
-                DTPStart.Visible = true;
-                DTPEnd.Visible = true;
-                btnGetOrderReport.Visible = true;
+                DisplayTimeSelection();
             }
         }
 
@@ -437,11 +427,7 @@ namespace Coca_Cola_Project
 
 
             // hide the date selection and its correspoding objects
-            lblStartDate.Visible = false;
-            lblEndDate.Visible = false;
-            DTPStart.Visible = false;
-            DTPEnd.Visible = false;
-            btnGetOrderReport.Visible = false;
+            HideDateSelection();
         }
 
         // Location Management Report
@@ -877,6 +863,25 @@ namespace Coca_Cola_Project
             showbtnMain();
         }
 
+        private void InventoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            Validate();
+            InventoryBindingSource.EndEdit();
+            TableAdapterManager.UpdateAll(FreeStyleDBDataSet);
+        }
+
+        private void FillByOrdersToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                OrdersTableAdapter.FillByOrders(FreeStyleDBDataSet.Orders, StartDateToolStripTextBox.Text, EndDateToolStripTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         // private sub to show the group box for cup sizes
         private void showgrpSize()
         {
@@ -891,30 +896,7 @@ namespace Coca_Cola_Project
             grpSize.Visible = false;
 
         }
-        // private sub that hides the main ui buttons
-        private void hidebtnMain()
-        {
 
-            btnMixDisp.Visible = false;
-            btnReOrder.Visible = false;
-            btnInventoryRp.Visible = false;
-            btnOrderRp.Visible = false;
-            btnResetFlavors.Visible = false;
-            lblFlavorCount.Visible = false;
-
-        }
-        // private sd that shows the main ui buttons
-        private void showbtnMain()
-        {
-
-            btnMixDisp.Visible = true;
-            btnReOrder.Visible = true;
-            btnInventoryRp.Visible = true;
-            btnOrderRp.Visible = true;
-            btnResetFlavors.Visible = true;
-            lblFlavorCount.Visible = true;
-
-        }
         // private sub that counts the amount of flavors picked
         private void MixCountCheck()
         {
@@ -1059,24 +1041,17 @@ namespace Coca_Cola_Project
         private void DisplayStats()
         {
             // if their is only one flavor, display the amount 
-            if (MixCount == 1)
+            switch (MixCount)
             {
-                Interaction.MsgBox("You Selected:" + Constants.vbNewLine + FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
-
-            }
-
-            // if their 2 flavors, display the amount 
-            else if (MixCount == 2)
-            {
-                Interaction.MsgBox("You Selected:" + Constants.vbNewLine + FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + SecondFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
-
-            }
-
-            // if their is 3 flavors, display the amount 
-            else if (MixCount == 3)
-            {
-                Interaction.MsgBox("You Selected:" + Constants.vbNewLine + FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + SecondFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + ThirdFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
-
+                case 1:
+                    Interaction.MsgBox("You Selected:" + Constants.vbNewLine + FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
+                    break;
+                case 2:
+                    Interaction.MsgBox("You Selected:" + Constants.vbNewLine + FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + SecondFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
+                    break;
+                case 3:
+                    Interaction.MsgBox("You Selected:" + Constants.vbNewLine + FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + SecondFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + ThirdFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
+                    break;
             }
         }
 
@@ -1207,8 +1182,9 @@ namespace Coca_Cola_Project
         // Checks if any of our Fluids are running low
         private void ResourcesLowCheck()
         {
-            int intCounter = 0;
+
             string strMessage = "";
+            int intCounter = 0;
 
             while (intCounter < 10)
             {
@@ -1232,21 +1208,6 @@ namespace Coca_Cola_Project
                 Interaction.MsgBox("The following liquids Are running Low:" + Constants.vbNewLine + strMessage);
 
             }
-        }
-
-        // Hides the lbls used to show selections
-        private void HideSyrupSelection()
-        {
-            lblCola.Visible = false;
-            lblDietCola.Visible = false;
-            lblZeroCola.Visible = false;
-            lblFanta.Visible = false;
-            lblDrPepper.Visible = false;
-            lblSprite.Visible = false;
-            lblSpriteZero.Visible = false;
-            lblMntMaid.Visible = false;
-            lblMntMaidZero.Visible = false;
-            lblRootBeer.Visible = false;
         }
 
         private void InsertOrderinfo()
@@ -1278,35 +1239,62 @@ namespace Coca_Cola_Project
             OrderFluidInfoTableAdapter.Fill(FreeStyleDBDataSet.OrderFluidInfo);
         }
 
-        private void InventoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        // Hides the lbls used to show selections
+        private void HideSyrupSelection()
         {
-            Validate();
-            InventoryBindingSource.EndEdit();
-            TableAdapterManager.UpdateAll(FreeStyleDBDataSet);
+            lblCola.Visible = false;
+            lblDietCola.Visible = false;
+            lblZeroCola.Visible = false;
+            lblFanta.Visible = false;
+            lblDrPepper.Visible = false;
+            lblSprite.Visible = false;
+            lblSpriteZero.Visible = false;
+            lblMntMaid.Visible = false;
+            lblMntMaidZero.Visible = false;
+            lblRootBeer.Visible = false;
         }
 
-        private void FillByOrdersToolStripButton_Click(object sender, EventArgs e)
+        private void HideDateSelection()
         {
-            try
-            {
-                OrdersTableAdapter.FillByOrders(FreeStyleDBDataSet.Orders, StartDateToolStripTextBox.Text, EndDateToolStripTextBox.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            lblStartDate.Visible = false;
+            lblEndDate.Visible = false;
+            DTPStart.Visible = false;
+            DTPEnd.Visible = false;
+            btnGetOrderReport.Visible = false;
         }
 
-        private void FillByOrdersToolStripButton_Click_1(object sender, EventArgs e)
+        private void DisplayTimeSelection()
         {
-            try
-            {
-                OrdersTableAdapter.FillByOrders(FreeStyleDBDataSet.Orders, StartDateToolStripTextBox.Text, EndDateToolStripTextBox.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            lblStartDate.Visible = true;
+            lblEndDate.Visible = true;
+            DTPStart.Visible = true;
+            DTPEnd.Visible = true;
+            btnGetOrderReport.Visible = true;
+        }
+
+        // private sub that hides the main ui buttons
+        private void hidebtnMain()
+        {
+
+            btnMixDisp.Visible = false;
+            btnReOrder.Visible = false;
+            btnInventoryRp.Visible = false;
+            btnOrderRp.Visible = false;
+            btnResetFlavors.Visible = false;
+            lblFlavorCount.Visible = false;
+
+        }
+        // private sd that shows the main ui buttons
+        private void showbtnMain()
+        {
+
+            btnMixDisp.Visible = true;
+            btnReOrder.Visible = true;
+            btnInventoryRp.Visible = true;
+            btnOrderRp.Visible = true;
+            btnResetFlavors.Visible = true;
+            lblFlavorCount.Visible = true;
+
         }
     }
 }
