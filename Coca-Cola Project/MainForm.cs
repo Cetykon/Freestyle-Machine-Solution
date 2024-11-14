@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using Microsoft.VisualBasic;
+﻿using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
+using System;
+using System.Windows.Forms;
 
 namespace Coca_Cola_Project
 {
@@ -143,10 +143,7 @@ namespace Coca_Cola_Project
                 cklbInventory.Visible = true;
                 btnOrderInventoryAfterSelection.Visible = true;
             }
-
-
         }
-
 
         private void btnOrderInventoryAfterSelection_Click(object sender, EventArgs e)
         {
@@ -200,7 +197,6 @@ namespace Coca_Cola_Project
             strSyrupSt = strSyrupSt + Constants.vbNewLine + "Co2: " + dblCo2Box.ToString("N2") + "oz" + Constants.vbNewLine;
 
             Interaction.MsgBox("Syrup and Co2 Stats:" + Constants.vbNewLine + Constants.vbNewLine + strSyrupSt + Constants.vbNewLine + "Fluids at low threshold:" + Constants.vbNewLine + Constants.vbNewLine + strLowlvlFluids + Constants.vbNewLine);
-
         }
         // Maintenance Report
         private void btnMaintenanceRp_Click(object sender, EventArgs e)
@@ -225,8 +221,6 @@ namespace Coca_Cola_Project
             }
 
             Interaction.MsgBox("Capacity--Current Amount--Expiration Date--Last Fill Date" + Constants.vbNewLine + MaintenanceReport);
-
-
         }
         // Order Report
         private void btnSodaSt_Click(object sender, EventArgs e)
@@ -249,9 +243,6 @@ namespace Coca_Cola_Project
                 DTPEnd.Visible = true;
                 btnGetOrderReport.Visible = true;
             }
-
-
-
         }
 
         private void btnGetOrderReport_Click(object sender, EventArgs e)
@@ -551,8 +542,6 @@ namespace Coca_Cola_Project
             {
                 Interaction.MsgBox("Data for retrival not available" + Constants.vbNewLine + "An order needs to be made first.");
             }
-
-
         }
 
         private void btnMixDisp_Click(object sender, EventArgs e)
@@ -571,7 +560,6 @@ namespace Coca_Cola_Project
                 // Hide the main ui
                 hidebtnMain();
             }
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -595,7 +583,6 @@ namespace Coca_Cola_Project
 
             FillByOrdersToolStrip.Visible = false;
             InventoryBindingNavigator.Visible = false;
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -603,7 +590,6 @@ namespace Coca_Cola_Project
             // Hide cup size ui and show main ui
             hidegrpSize();
             showbtnMain();
-
         }
         // Button just resets selected flavors
         private void btnResetFlavors_Click(object sender, EventArgs e)
@@ -615,7 +601,6 @@ namespace Coca_Cola_Project
             // Resets the flavors that where picked
             ResetSetFlavors();
             HideSyrupSelection();
-
 
         }
 
@@ -674,7 +659,6 @@ namespace Coca_Cola_Project
                 {
                     Interaction.MsgBox("Couln't upload data");
                 }
-
             }
 
             // Deselect Option
@@ -691,7 +675,6 @@ namespace Coca_Cola_Project
             showbtnMain();
 
             // Update DataBase with order 
-
         }
 
         private void rdSixTeenOz_Click(object sender, EventArgs e)
@@ -743,7 +726,6 @@ namespace Coca_Cola_Project
                 {
                     Interaction.MsgBox("Couln't upload data");
                 }
-
             }
 
 
@@ -881,7 +863,6 @@ namespace Coca_Cola_Project
                 {
                     Interaction.MsgBox("Couln't upload data");
                 }
-
             }
 
             // Deselect Option
@@ -896,7 +877,6 @@ namespace Coca_Cola_Project
             // Hide cup size ui and show main ui
             hidegrpSize();
             showbtnMain();
-
         }
 
         // private sub to show the group box for cup sizes
@@ -957,7 +937,6 @@ namespace Coca_Cola_Project
                 Interaction.MsgBox("Oops! You can only mix 3 flavors");
 
             }
-
         }
         // private sub that uses the unique flavor number to set the name of the flavor to show stats
         private void SetFlavors()
@@ -1076,8 +1055,6 @@ namespace Coca_Cola_Project
                     }
                     break;
             }
-
-
         }
         // Display that stats for the different size of cups selected
         // Ask to dispence by pressing OK
@@ -1102,9 +1079,7 @@ namespace Coca_Cola_Project
             {
                 Interaction.MsgBox("You Selected:" + Constants.vbNewLine + FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + SecondFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + ThirdFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
 
-
             }
-
         }
 
         // private sub tha calculates the amount of syrup and co2 needed
@@ -1232,7 +1207,6 @@ namespace Coca_Cola_Project
 
                 dblCo2Box -= OzOfCo2;
             }
-
         }
 
         // Checks if any of our Fluids are running low
@@ -1263,7 +1237,6 @@ namespace Coca_Cola_Project
                 Interaction.MsgBox("The following liquids Are running Low:" + Constants.vbNewLine + strMessage);
 
             }
-
         }
 
         // Hides the lbls used to show selections
@@ -1279,7 +1252,6 @@ namespace Coca_Cola_Project
             lblMntMaid.Visible = false;
             lblMntMaidZero.Visible = false;
             lblRootBeer.Visible = false;
-
         }
 
         private void InsertOrderinfo()
@@ -1316,7 +1288,6 @@ namespace Coca_Cola_Project
             Validate();
             InventoryBindingSource.EndEdit();
             TableAdapterManager.UpdateAll(FreeStyleDBDataSet);
-
         }
 
         private void FillByOrdersToolStripButton_Click(object sender, EventArgs e)
@@ -1329,7 +1300,6 @@ namespace Coca_Cola_Project
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void FillByOrdersToolStripButton_Click_1(object sender, EventArgs e)
@@ -1342,7 +1312,6 @@ namespace Coca_Cola_Project
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
     }
 }
