@@ -42,9 +42,7 @@ namespace Coca_Cola_Project
         // Get todays date
         private DateTime TodaysDate;
         // Check for flavor Availability 
-        private bool FlavorOneAvailable = true;
-        private bool FlavorTwoAvailable = true;
-        private bool FlavorThreeAvailable = true;
+        private bool[] flavorAvailability = new bool[] { true, true, true };
 
         public MainForm()
         {
@@ -618,7 +616,7 @@ namespace Coca_Cola_Project
             // Check for low fluids
             ResourcesLowCheck();
 
-            if (FlavorOneAvailable == true & FlavorTwoAvailable == true & FlavorThreeAvailable == true)
+            if (flavorAvailability[0] == true & flavorAvailability[1] == true & flavorAvailability[2] == true)
             {
                 try
                 {
@@ -689,7 +687,7 @@ namespace Coca_Cola_Project
             SubtractLiquidUsed();
             // Check for low fluids
             ResourcesLowCheck();
-            if (FlavorOneAvailable == true & FlavorTwoAvailable == true & FlavorThreeAvailable == true)
+            if (flavorAvailability[0] == true & flavorAvailability[1] == true & flavorAvailability[2] == true)
             {
                 try
                 {
@@ -757,7 +755,7 @@ namespace Coca_Cola_Project
             SubtractLiquidUsed();
             // Check for low fluids
             ResourcesLowCheck();
-            if (FlavorOneAvailable == true & FlavorTwoAvailable == true & FlavorThreeAvailable == true)
+            if (flavorAvailability[0] == true & flavorAvailability[1] == true & flavorAvailability[2] == true)
             {
                 try
                 {
@@ -825,7 +823,7 @@ namespace Coca_Cola_Project
             SubtractLiquidUsed();
             // Check for low fluids
             ResourcesLowCheck();
-            if (FlavorOneAvailable == true & FlavorTwoAvailable == true & FlavorThreeAvailable == true)
+            if (flavorAvailability[0] == true & flavorAvailability[1] == true & flavorAvailability[2] == true)
             {
                 try
                 {
@@ -1106,11 +1104,8 @@ namespace Coca_Cola_Project
             FirstFlavorID = 0;
             SecondFlavorID = 0;
             ThirdFlavorID = 0;
-            FlavorOneAvailable = true;
-            FlavorTwoAvailable = true;
-            FlavorThreeAvailable = true;
 
-
+            flavorAvailability = new bool[] { true, true, true };
         }
 
         // private sub to close application
@@ -1127,59 +1122,59 @@ namespace Coca_Cola_Project
             if (dblSyrupBoxs[FirstFlavorID] - OzOfFlavor <= 0d)
             {
 
-                FlavorOneAvailable = false;
+                flavorAvailability[0] = false;
 
             }
 
             if (dblSyrupBoxs[SecondFlavorID] - OzOfFlavor <= 0d)
             {
 
-                FlavorTwoAvailable = false;
+                flavorAvailability[1] = false;
 
             }
 
             if (dblSyrupBoxs[ThirdFlavorID] - OzOfFlavor <= 0d)
             {
 
-                FlavorThreeAvailable = false;
+                flavorAvailability[2] = false;
 
             }
 
-            if (FlavorOneAvailable == false & FlavorTwoAvailable == false & FlavorThreeAvailable == false)
+            if (flavorAvailability[0] == false & flavorAvailability[1] == false & flavorAvailability[2] == false)
             {
 
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[FirstFlavorID] + Constants.vbNewLine + StrSodaNames[SecondFlavorID] + Constants.vbNewLine + StrSodaNames[ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (FlavorOneAvailable == false & FlavorTwoAvailable == false)
+            else if (flavorAvailability[0] == false & flavorAvailability[1] == false)
             {
 
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[FirstFlavorID] + Constants.vbNewLine + StrSodaNames[SecondFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (FlavorTwoAvailable == false & FlavorThreeAvailable == false)
+            else if (flavorAvailability[1] == false & flavorAvailability[2] == false)
             {
 
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[SecondFlavorID] + Constants.vbNewLine + StrSodaNames[ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (FlavorOneAvailable == false & FlavorThreeAvailable == false)
+            else if (flavorAvailability[0] == false & flavorAvailability[2] == false)
             {
 
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[FirstFlavorID] + Constants.vbNewLine + StrSodaNames[ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (FlavorOneAvailable == false)
+            else if (flavorAvailability[0] == false)
             {
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[FirstFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (FlavorTwoAvailable == false)
+            else if (flavorAvailability[1] == false)
             {
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[SecondFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (FlavorThreeAvailable == false)
+            else if (flavorAvailability[2] == false)
             {
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
