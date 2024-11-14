@@ -51,194 +51,84 @@ namespace Coca_Cola_Project
             InitializeComponent();
         }
 
-        // Next ten button clicks are for the soda buttons
+        // Method to handle soda flavor selection
+        // Passing the label for lable control in this case to make it visible
+        private void SelectFlavor(int flavorID, Label labelControl, int indexFlavor)
+        {
+            // Check if the flavor is already selected
+            if (FirstFlavorID == flavorID || SecondFlavorID == flavorID || ThirdFlavorID == flavorID)
+            {
+                Interaction.MsgBox("Flavor Already Selected");
+                return;
+            }
+
+            // Proceed only if the mix count limit is not reached
+            if (MixCount < 3)
+            {
+                // Display the selection label
+                labelControl.Visible = true;
+
+                // Update the mix count and flavor index
+                MixCountCheck();
+                IndexFlavor = indexFlavor;
+
+                // Set and display selected flavors
+                SetFlavors();
+                ShowNumPickFlavors();
+            }
+        }
+
+        // Event handlers for each soda button click
         private void picCola_Click(object sender, EventArgs e)
         {
-
-
-            // Check if flavor is already selected
-            if (FirstFlavor == "Coca-Cola" | SecondFlavor == "Coca-Cola" | ThirdFlavor == "Coca-Cola")
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-            // Shows Selection background
-            else if (MixCount != 3)
-            {
-                lblCola.Visible = true;
-                // Count how many flavors are being use
-                MixCountCheck();
-                // Each flavor has a unique reference number
-                IndexFlavor = 1;
-                // Set the flavor dispance by using the unique reference flavor num
-                SetFlavors();
-                // Display the number of flavors that have being picked
-                ShowNumPickFlavors();
-
-            }
-
+            SelectFlavor(1, lblCola, 1);
         }
 
         private void picColaDiet_Click(object sender, EventArgs e)
         {
-            if (FirstFlavorID == 1 | SecondFlavorID == 1 | ThirdFlavorID == 1)
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-
-            else if (MixCount != 3)
-            {
-                lblDietCola.Visible = true;
-                MixCountCheck();
-                IndexFlavor = 2;
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-
+            SelectFlavor(2, lblDietCola, 2);
         }
 
         private void picColaZero_Click(object sender, EventArgs e)
         {
-            if (FirstFlavorID == 2 | SecondFlavorID == 2 | ThirdFlavorID == 2)
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-
-            else if (MixCount != 3)
-            {
-                lblZeroCola.Visible = true;
-                MixCountCheck();
-                IndexFlavor = 3;
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-
+            SelectFlavor(3, lblZeroCola, 3);
         }
 
         private void picFanta_Click(object sender, EventArgs e)
         {
-            if (FirstFlavorID == 3 | SecondFlavorID == 3 | ThirdFlavorID == 3)
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-
-            else if (MixCount != 3)
-            {
-                lblFanta.Visible = true;
-                MixCountCheck();
-                IndexFlavor = 4;
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-
+            SelectFlavor(4, lblFanta, 4);
         }
 
         private void picDrPepper_Click(object sender, EventArgs e)
         {
-            if (FirstFlavorID == 4 | SecondFlavorID == 4 | ThirdFlavorID == 4)
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-
-            else if (MixCount != 3)
-            {
-                lblDrPepper.Visible = true;
-                MixCountCheck();
-                IndexFlavor = 5;
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-
+            SelectFlavor(5, lblDrPepper, 5);
         }
 
         private void picSprite_Click(object sender, EventArgs e)
         {
-            if (FirstFlavorID == 5 | SecondFlavorID == 5 | ThirdFlavorID == 5)
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-
-            else if (MixCount != 3)
-            {
-                lblSprite.Visible = true;
-                MixCountCheck();
-                IndexFlavor = 6;
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-
+            SelectFlavor(6, lblSprite, 6);
         }
 
         private void picSpriteZero_Click(object sender, EventArgs e)
         {
-            if (FirstFlavorID == 6 | SecondFlavorID == 6 | ThirdFlavorID == 6)
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-
-            else if (MixCount != 3)
-            {
-                lblSpriteZero.Visible = true;
-                MixCountCheck();
-                IndexFlavor = 7;
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-
+            SelectFlavor(7, lblSpriteZero, 7);
         }
 
         private void picMMLemon_Click(object sender, EventArgs e)
         {
-            if (FirstFlavorID == 7 | SecondFlavorID == 7 | ThirdFlavorID == 7)
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-
-            else if (MixCount != 3)
-            {
-                lblMntMaid.Visible = true;
-                MixCountCheck();
-                IndexFlavor = 8;
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-
+            SelectFlavor(8, lblMntMaid, 8);
         }
 
         private void picMMLemonZero_Click(object sender, EventArgs e)
         {
-            if (FirstFlavorID == 8 | SecondFlavorID == 8 | ThirdFlavorID == 8)
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-
-            else if (MixCount != 3)
-            {
-                lblMntMaidZero.Visible = true;
-                MixCountCheck();
-                IndexFlavor = 9;
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-
+            SelectFlavor(9, lblMntMaidZero, 9);
         }
 
         private void picRootBeer_Click(object sender, EventArgs e)
         {
-            if (FirstFlavorID == 9 | SecondFlavorID == 9 | ThirdFlavorID == 9)
-            {
-                Interaction.MsgBox("Flavor Already Selecected");
-            }
-
-            else if (MixCount != 3)
-            {
-                lblRootBeer.Visible = true;
-                MixCountCheck();
-                IndexFlavor = 10;
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-
+            SelectFlavor(10, lblRootBeer, 10);
         }
+
 
         // Button to reorder syrup and co2
         private void btnReOrder_Click(object sender, EventArgs e)
