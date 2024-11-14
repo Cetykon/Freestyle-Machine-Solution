@@ -1073,141 +1073,120 @@ namespace Coca_Cola_Project
         private void SetFlavors()
         {
             // Check the flavor selected in what order to assing the name of drink
-            if (MixCount == 1)
+            switch (MixCount)
             {
+                case 1:
+                    FirstFlavorID = IndexFlavor - 1;
+                    switch (IndexFlavor)
+                    {
+                        case 1:
+                            FirstFlavor = "Coca-Cola";
+                            break;
+                        case 2:
+                            FirstFlavor = "Coca-cola Diet";
+                            break;
+                        case 3:
+                            FirstFlavor = "Coca-cola Zero";
+                            break;
+                        case 4:
+                            FirstFlavor = "Fanta";
+                            break;
+                        case 5:
+                            FirstFlavor = "DrPepper";
+                            break;
+                        case 6:
+                            FirstFlavor = "Sprite";
+                            break;
+                        case 7:
+                            FirstFlavor = "SpriteZero";
+                            break;
+                        case 8:
+                            FirstFlavor = "Minute Maid Lemonade";
+                            break;
+                        case 9:
+                            FirstFlavor = "Minute Maid Lemonade Zero";
+                            break;
+                        case 10:
+                            FirstFlavor = "Root Bear";
+                            break;
+                    }
+                    break;
 
-                FirstFlavorID = IndexFlavor - 1;
-                if (IndexFlavor == 1)
-                {
-                    FirstFlavor = "Coca-Cola";
-                }
-                else if (IndexFlavor == 2)
-                {
-                    FirstFlavor = "Coca-cola Diet";
-                }
-                else if (IndexFlavor == 3)
-                {
-                    FirstFlavor = "Coca-cola Zero";
-                }
-                else if (IndexFlavor == 4)
-                {
-                    FirstFlavor = "Fanta";
-                }
-                else if (IndexFlavor == 5)
-                {
-                    FirstFlavor = "DrPepper";
-                }
-                else if (IndexFlavor == 6)
-                {
-                    FirstFlavor = "Sprite";
-                }
-                else if (IndexFlavor == 7)
-                {
-                    FirstFlavor = "SpriteZero";
-                }
-                else if (IndexFlavor == 8)
-                {
-                    FirstFlavor = "Minute Maid Lemonade";
-                }
-                else if (IndexFlavor == 9)
-                {
-                    FirstFlavor = "Minute Maid Lemonade Zero";
-                }
-                else if (IndexFlavor == 10)
-                {
-                    FirstFlavor = "Root Bear";
-                }
-            }
-            else if (MixCount == 2)
-            {
+                case 2:
+                    SecondFlavorID = IndexFlavor - 1;
+                    switch (IndexFlavor)
+                    {
+                        case 1:
+                            SecondFlavor = "Coca-Cola";
+                            break;
+                        case 2:
+                            SecondFlavor = "Coca-cola Diet";
+                            break;
+                        case 3:
+                            SecondFlavor = "Coca-cola Zero";
+                            break;
+                        case 4:
+                            SecondFlavor = "Fanta";
+                            break;
+                        case 5:
+                            SecondFlavor = "DrPepper";
+                            break;
+                        case 6:
+                            SecondFlavor = "Sprite";
+                            break;
+                        case 7:
+                            SecondFlavor = "SpriteZero";
+                            break;
+                        case 8:
+                            SecondFlavor = "Minute Maid Lemonade";
+                            break;
+                        case 9:
+                            SecondFlavor = "Minute Maid Lemonade Zero";
+                            break;
+                        case 10:
+                            SecondFlavor = "Root Bear";
+                            break;
+                    }
+                    break;
 
-                SecondFlavorID = IndexFlavor - 1;
-                if (IndexFlavor == 1)
-                {
-                    SecondFlavor = "Coca-Cola";
-                }
-                else if (IndexFlavor == 2)
-                {
-                    SecondFlavor = "Coca-cola Diet";
-                }
-                else if (IndexFlavor == 3)
-                {
-                    SecondFlavor = "Coca-cola Zero";
-                }
-                else if (IndexFlavor == 4)
-                {
-                    SecondFlavor = "Fanta";
-                }
-                else if (IndexFlavor == 5)
-                {
-                    SecondFlavor = "DrPepper";
-                }
-                else if (IndexFlavor == 6)
-                {
-                    SecondFlavor = "Sprite";
-                }
-                else if (IndexFlavor == 7)
-                {
-                    SecondFlavor = "SpriteZero";
-                }
-                else if (IndexFlavor == 8)
-                {
-                    SecondFlavor = "Minute Maid Lemonade";
-                }
-                else if (IndexFlavor == 9)
-                {
-                    SecondFlavor = "Minute Maid Lemonade Zero";
-                }
-                else if (IndexFlavor == 10)
-                {
-                    SecondFlavor = "Root Bear";
-                }
+                case 3:
+                    ThirdFlavorID = IndexFlavor - 1;
+                    switch (IndexFlavor)
+                    {
+                        case 1:
+                            ThirdFlavor = "Coca-Cola";
+                            break;
+                        case 2:
+                            ThirdFlavor = "Coca-cola Diet";
+                            break;
+                        case 3:
+                            ThirdFlavor = "Coca-cola Zero";
+                            break;
+                        case 4:
+                            ThirdFlavor = "Fanta";
+                            break;
+                        case 5:
+                            ThirdFlavor = "DrPepper";
+                            break;
+                        case 6:
+                            ThirdFlavor = "Sprite";
+                            break;
+                        case 7:
+                            ThirdFlavor = "SpriteZero";
+                            break;
+                        case 8:
+                            ThirdFlavor = "Minute Maid Lemonade";
+                            break;
+                        case 9:
+                            ThirdFlavor = "Minute Maid Lemonade Zero";
+                            break;
+                        case 10:
+                            ThirdFlavor = "Root Bear";
+                            break;
+                    }
+                    break;
             }
-            else if (MixCount == 3)
-            {
 
-                ThirdFlavorID = IndexFlavor - 1;
-                if (IndexFlavor == 1)
-                {
-                    ThirdFlavor = "Coca-Cola";
-                }
-                else if (IndexFlavor == 2)
-                {
-                    ThirdFlavor = "Coca-cola Diet";
-                }
-                else if (IndexFlavor == 3)
-                {
-                    ThirdFlavor = "Coca-cola Zero";
-                }
-                else if (IndexFlavor == 4)
-                {
-                    ThirdFlavor = "Fanta";
-                }
-                else if (IndexFlavor == 5)
-                {
-                    ThirdFlavor = "DrPepper";
-                }
-                else if (IndexFlavor == 6)
-                {
-                    ThirdFlavor = "Sprite";
-                }
-                else if (IndexFlavor == 7)
-                {
-                    ThirdFlavor = "SpriteZero";
-                }
-                else if (IndexFlavor == 8)
-                {
-                    ThirdFlavor = "Minute Maid Lemonade";
-                }
-                else if (IndexFlavor == 9)
-                {
-                    ThirdFlavor = "Minute Maid Lemonade Zero";
-                }
-                else if (IndexFlavor == 10)
-                {
-                    ThirdFlavor = "Root Bear";
-                }
-            }
 
         }
         // Display that stats for the different size of cups selected
