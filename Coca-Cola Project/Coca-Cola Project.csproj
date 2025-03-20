@@ -91,7 +91,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBUtil.cs" />
     <Compile Include="FluidLevelReport.cs" />
+    <Compile Include="LocationManagementReport.cs" />
     <Compile Include="MaintenanceReport.cs" />
     <Compile Include="OrderReport.cs" />
     <Compile Include="OzToDispense.cs" />
