@@ -23,9 +23,7 @@ namespace Coca_Cola_Project
         private double OzPicked = 0d;
         private double OzOfFlavor = 0d;
         private double OzOfCo2 = 0d;
-        // Array to keep track of Syrup Used
-        private double[] flavors.dblSyrupBoxs = new double[] { 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d };
-        private string[] flavors.StrSodaNames = new string[] { "Coca-Cola", "Coca-Cola Diet", "Coca-Cola Zero", "Fanta", "Dr Pepper", "Sprite", "Sprite Zero", "Minute Maid Lemonade", "Minute Maid Lemonade Zero", "Root Beer" };
+
         // Co2 Container
         private double dblCo2Box = 170d;
         // Array for cost of drinks
