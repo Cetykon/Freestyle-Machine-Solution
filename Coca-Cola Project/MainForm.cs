@@ -697,19 +697,6 @@ namespace Coca_Cola_Project
         }
 
 
-
-        //public void setflavorSelectionLogic.FlavorAvailability(double[] flavors.dblSyrupBoxs, double ozToDispense.OzOfFlavor, int[] flavorIDs, boolean[] flavorSelectionLogic.flavorAvailability)
-        //{
-        //    for (int i = 0; i < flavorIDs.length; i++)
-        //    {
-        //        if (flavors.dblSyrupBoxs[flavorIDs[i]] - ozToDispense.OzOfFlavor <= 0d)
-        //        {
-        //            flavorSelectionLogic.flavorAvailability[i] = false;
-        //        }
-        //    }
-        //}
-
-
         // substract the amount of liquid use from eaither the syrupbox or the co2 box
         private void SubtractLiquidUsed()
         {
@@ -831,12 +818,6 @@ namespace Coca_Cola_Project
         }
 
 
-        // private sub to close application
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Close();
-
-        }
 
         // Hides the lbls used to show selections
         private void HideSyrupSelection()
@@ -893,6 +874,13 @@ namespace Coca_Cola_Project
             btnOrderRp.Visible = true;
             btnResetFlavors.Visible = true;
             lblFlavorCount.Visible = true;
+
+        }
+
+        // private sub to close application
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Close();
 
         }
     }
