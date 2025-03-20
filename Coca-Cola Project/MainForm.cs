@@ -31,6 +31,7 @@ namespace Coca_Cola_Project
         FlavorSelectionLogic flavorSelectionLogic = new FlavorSelectionLogic();
         Flavors flavors = new Flavors();
         OzToDispense ozToDispense = new OzToDispense();
+        DBUtil DBUtil = new DBUtil();
 
         public MainForm()
         {
@@ -378,9 +379,8 @@ namespace Coca_Cola_Project
                     InsertOrderinfo();
 
                     // Update Inventorys Current amount
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
+                    DBUtil.UpdateInventory(flavors, flavorSelectionLogic);
+
                     // Retrive data from data base and store it in data set object
                     InventoryTableAdapter.Fill(FreeStyleDBDataSet.Inventory);
                 }
@@ -433,7 +433,6 @@ namespace Coca_Cola_Project
             {
                 try
                 {
-
                     // Set current date
                     TodaysDate = DateTime.Today;
                     // Update DataBase with order 
@@ -445,9 +444,8 @@ namespace Coca_Cola_Project
                     InsertOrderinfo();
 
                     // Update Inventorys Current amount
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
+                    DBUtil.UpdateInventory(flavors, flavorSelectionLogic);
+
                     // Retrive data from data base and store it in data set object
                     InventoryTableAdapter.Fill(FreeStyleDBDataSet.Inventory);
                 }
@@ -501,7 +499,6 @@ namespace Coca_Cola_Project
             {
                 try
                 {
-
                     // Set current date
                     TodaysDate = DateTime.Today;
                     // Update DataBase with order 
@@ -513,9 +510,8 @@ namespace Coca_Cola_Project
                     InsertOrderinfo();
 
                     // Update Inventorys Current amount
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
+                    DBUtil.UpdateInventory(flavors, flavorSelectionLogic);
+
                     // Retrive data from data base and store it in data set object
                     InventoryTableAdapter.Fill(FreeStyleDBDataSet.Inventory);
                 }
@@ -569,7 +565,6 @@ namespace Coca_Cola_Project
             {
                 try
                 {
-
                     // Set current date
                     TodaysDate = DateTime.Today;
                     // Update DataBase with order 
@@ -581,9 +576,8 @@ namespace Coca_Cola_Project
                     InsertOrderinfo();
 
                     // Update Inventorys Current amount
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
+                    DBUtil.UpdateInventory(flavors, flavorSelectionLogic);
+
                     InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblCo2Box, 10, 10);
                     // Retrive data from data base and store it in data set object
                     InventoryTableAdapter.Fill(FreeStyleDBDataSet.Inventory);
