@@ -18,15 +18,14 @@ namespace Coca_Cola_Project
     public partial class MainForm
     {
         // Create variables needed
-        //private int flavorSelectionLogic.MixCount = 0;
         private int intFlavorSelecCount = 0;
 
         private double OzPicked = 0d;
         private double OzOfFlavor = 0d;
         private double OzOfCo2 = 0d;
         // Array to keep track of Syrup Used
-        private double[] dblSyrupBoxs = new double[] { 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d };
-        private string[] StrSodaNames = new string[] { "Coca-Cola", "Coca-Cola Diet", "Coca-Cola Zero", "Fanta", "Dr Pepper", "Sprite", "Sprite Zero", "Minute Maid Lemonade", "Minute Maid Lemonade Zero", "Root Beer" };
+        private double[] flavors.dblSyrupBoxs = new double[] { 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d };
+        private string[] flavors.StrSodaNames = new string[] { "Coca-Cola", "Coca-Cola Diet", "Coca-Cola Zero", "Fanta", "Dr Pepper", "Sprite", "Sprite Zero", "Minute Maid Lemonade", "Minute Maid Lemonade Zero", "Root Beer" };
         // Co2 Container
         private double dblCo2Box = 170d;
         // Array for cost of drinks
@@ -39,6 +38,7 @@ namespace Coca_Cola_Project
 
         // Initializing Flavor Selection Logic
         FlavorSelectionLogic flavorSelectionLogic = new FlavorSelectionLogic();
+        Flavors flavors = new Flavors();
 
         public MainForm()
         {
@@ -154,12 +154,12 @@ namespace Coca_Cola_Project
             for (int intCounter = 0; intCounter <= 9; intCounter++)
             {
                 // Add all Flavors and their current amount of liquid to a string
-                strSyrupSt = strSyrupSt + StrSodaNames[intCounter] + ": " + dblSyrupBoxs[intCounter].ToString("N2") + "oz" + Constants.vbNewLine;
+                strSyrupSt = strSyrupSt + flavors.StrSodaNames[intCounter] + ": " + flavors.dblSyrupBoxs[intCounter].ToString("N2") + "oz" + Constants.vbNewLine;
 
                 // Add fluids that are in a low threshold to a string
-                if (dblSyrupBoxs[intCounter] < 12d)
+                if (flavors.dblSyrupBoxs[intCounter] < 12d)
                 {
-                    strLowlvlFluids = strLowlvlFluids + StrSodaNames[intCounter] + ": " + dblSyrupBoxs[intCounter].ToString("N2") + "oz" + Constants.vbNewLine;
+                    strLowlvlFluids = strLowlvlFluids + flavors.StrSodaNames[intCounter] + ": " + flavors.dblSyrupBoxs[intCounter].ToString("N2") + "oz" + Constants.vbNewLine;
                 }
                 if (dblCo2Box < 54d)
                 {
@@ -253,7 +253,7 @@ namespace Coca_Cola_Project
                 // A "Most Requested" flavor
                 int dblMostRequestedFlavorID = 0;
                 int dblMostRequestedFlavorCount = 0;
-                string strMostRequestedFlavorWDP = StrSodaNames[0];
+                string strMostRequestedFlavorWDP = flavors.StrSodaNames[0];
                 try
                 {
 
@@ -271,7 +271,7 @@ namespace Coca_Cola_Project
 
                             dblMostRequestedFlavorID = RequestedCounter;
 
-                            strMostRequestedFlavorWDP = StrSodaNames[dblMostRequestedFlavorID];
+                            strMostRequestedFlavorWDP = flavors.StrSodaNames[dblMostRequestedFlavorID];
 
                             dblMostRequestedFlavorCount = (int)OrderFluidInfoTableAdapter.SelectCountofFluidIDWDP(RequestedCounter, StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
                         }
@@ -279,7 +279,7 @@ namespace Coca_Cola_Project
                         else if (dblMostRequestedFlavorCount == dblMostRequestedFlavorCountPlusOne)
                         {
 
-                            strMostRequestedFlavorWDP = strMostRequestedFlavorWDP + ", " + StrSodaNames[RequestedCounter];
+                            strMostRequestedFlavorWDP = strMostRequestedFlavorWDP + ", " + flavors.StrSodaNames[RequestedCounter];
 
                         }
 
@@ -296,7 +296,7 @@ namespace Coca_Cola_Project
 
                 int dblLeastRequestedFlavorID = 0;
                 int dblLeastRequestedFlavorCount = 0;
-                string strLeastRequestedFlavorWDP = StrSodaNames[0];
+                string strLeastRequestedFlavorWDP = flavors.StrSodaNames[0];
 
 
                 try
@@ -304,7 +304,7 @@ namespace Coca_Cola_Project
                     int dblLestRequestedFlavorCountPlusOne = 0;
 
                     dblLeastRequestedFlavorCount = (int)OrderFluidInfoTableAdapter.SelectCountofFluidIDWDP(0, StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
-                    strLeastRequestedFlavorWDP = StrSodaNames[0];
+                    strLeastRequestedFlavorWDP = flavors.StrSodaNames[0];
 
                     for (int LeastCounter = 1; LeastCounter <= 9; LeastCounter++)
                     {
@@ -316,7 +316,7 @@ namespace Coca_Cola_Project
 
                             dblLeastRequestedFlavorID = LeastCounter;
 
-                            strLeastRequestedFlavorWDP = StrSodaNames[dblLeastRequestedFlavorID];
+                            strLeastRequestedFlavorWDP = flavors.StrSodaNames[dblLeastRequestedFlavorID];
 
                             dblLeastRequestedFlavorCount = (int)OrderFluidInfoTableAdapter.SelectCountofFluidIDWDP(LeastCounter, StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
                         }
@@ -325,7 +325,7 @@ namespace Coca_Cola_Project
                         {
 
 
-                            strLeastRequestedFlavorWDP = strLeastRequestedFlavorWDP + ", " + StrSodaNames[LeastCounter];
+                            strLeastRequestedFlavorWDP = strLeastRequestedFlavorWDP + ", " + flavors.StrSodaNames[LeastCounter];
 
 
                         }
@@ -423,10 +423,10 @@ namespace Coca_Cola_Project
                 double dblAverageRevenue = 0d;
                 int dblMostRequestedFlavorID = 0;
                 int dblMostRequestedFlavorCount = 0;
-                string strMostRequestedFlavor = StrSodaNames[0];
+                string strMostRequestedFlavor = flavors.StrSodaNames[0];
                 int dblLeastRequestedFlavorID = 0;
                 int dblLeastRequestedFlavorCount = 0;
-                string strLeastRequestedFlavor = StrSodaNames[0];
+                string strLeastRequestedFlavor = flavors.StrSodaNames[0];
 
                 int dblMostRequestedFlavorCountPlusOne = 0;
                 int dblLestRequestedFlavorCountPlusOne = 0;
@@ -436,7 +436,7 @@ namespace Coca_Cola_Project
                 dblAverageOrderSize = (double)OrderFluidInfoTableAdapter.SelectAverageOrderSize(10);
                 dblAverageRevenue = dblTotalRevenueFromMachine / dblTotalNumberOfOrders;
 
-                // strMostRequestedFlavor = StrSodaNames(Me.OrderFluidInfoTableAdapter.SelectMaxFluidUsed()).ToString()
+                // strMostRequestedFlavor = flavors.StrSodaNames(Me.OrderFluidInfoTableAdapter.SelectMaxFluidUsed()).ToString()
 
                 dblMostRequestedFlavorCount = Conversions.ToInteger(OrderFluidInfoTableAdapter.SelectCountOfSpecifyOrder(0));
 
@@ -451,7 +451,7 @@ namespace Coca_Cola_Project
 
                         dblMostRequestedFlavorID = RequestedCounter;
 
-                        strMostRequestedFlavor = StrSodaNames[dblMostRequestedFlavorID];
+                        strMostRequestedFlavor = flavors.StrSodaNames[dblMostRequestedFlavorID];
 
                         dblMostRequestedFlavorCount = Conversions.ToInteger(OrderFluidInfoTableAdapter.SelectCountOfSpecifyOrder(RequestedCounter));
                     }
@@ -460,7 +460,7 @@ namespace Coca_Cola_Project
                     {
 
 
-                        strMostRequestedFlavor = strMostRequestedFlavor + ", " + StrSodaNames[RequestedCounter];
+                        strMostRequestedFlavor = strMostRequestedFlavor + ", " + flavors.StrSodaNames[RequestedCounter];
 
 
                     }
@@ -468,7 +468,7 @@ namespace Coca_Cola_Project
                 }
 
                 dblLeastRequestedFlavorCount = Conversions.ToInteger(OrderFluidInfoTableAdapter.SelectCountOfSpecifyOrder(0));
-                strLeastRequestedFlavor = StrSodaNames[0];
+                strLeastRequestedFlavor = flavors.StrSodaNames[0];
 
                 for (int LeastCounter = 1; LeastCounter <= 9; LeastCounter++)
                 {
@@ -480,7 +480,7 @@ namespace Coca_Cola_Project
 
                         dblLeastRequestedFlavorID = LeastCounter;
 
-                        strLeastRequestedFlavor = StrSodaNames[dblLeastRequestedFlavorID];
+                        strLeastRequestedFlavor = flavors.StrSodaNames[dblLeastRequestedFlavorID];
 
                         dblLeastRequestedFlavorCount = Conversions.ToInteger(OrderFluidInfoTableAdapter.SelectCountOfSpecifyOrder(LeastCounter));
                     }
@@ -489,7 +489,7 @@ namespace Coca_Cola_Project
                     {
 
 
-                        strLeastRequestedFlavor = strLeastRequestedFlavor + ", " + StrSodaNames[LeastCounter];
+                        strLeastRequestedFlavor = strLeastRequestedFlavor + ", " + flavors.StrSodaNames[LeastCounter];
 
 
                     }
@@ -544,7 +544,7 @@ namespace Coca_Cola_Project
             btnOrderInventoryAfterSelection.Visible = false;
             // Udate current Fluid from data base
             for (int SyrupUpdate = 0; SyrupUpdate <= 9; SyrupUpdate++)
-                dblSyrupBoxs[SyrupUpdate] = (double)InventoryTableAdapter.SelectCurrentAmount(SyrupUpdate);
+                flavors.dblSyrupBoxs[SyrupUpdate] = (double)InventoryTableAdapter.SelectCurrentAmount(SyrupUpdate);
 
             FillByOrdersToolStrip.Visible = false;
             InventoryBindingNavigator.Visible = false;
@@ -603,9 +603,9 @@ namespace Coca_Cola_Project
                     InsertOrderinfo();
 
                     // Update Inventorys Current amount
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
                     // Retrive data from data base and store it in data set object
                     InventoryTableAdapter.Fill(FreeStyleDBDataSet.Inventory);
                 }
@@ -670,9 +670,9 @@ namespace Coca_Cola_Project
                     InsertOrderinfo();
 
                     // Update Inventorys Current amount
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
                     // Retrive data from data base and store it in data set object
                     InventoryTableAdapter.Fill(FreeStyleDBDataSet.Inventory);
                 }
@@ -738,9 +738,9 @@ namespace Coca_Cola_Project
                     InsertOrderinfo();
 
                     // Update Inventorys Current amount
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
                     // Retrive data from data base and store it in data set object
                     InventoryTableAdapter.Fill(FreeStyleDBDataSet.Inventory);
                 }
@@ -806,9 +806,9 @@ namespace Coca_Cola_Project
                     InsertOrderinfo();
 
                     // Update Inventorys Current amount
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
                     InventoryTableAdapter.UpdateInventoryFluidLvl(dblCo2Box, 10, 10);
                     // Retrive data from data base and store it in data set object
                     InventoryTableAdapter.Fill(FreeStyleDBDataSet.Inventory);
@@ -1044,11 +1044,11 @@ namespace Coca_Cola_Project
             flavorAvailability = new bool[] { true, true, true };
         }
 
-        //public void setFlavorAvailability(double[] dblSyrupBoxs, double OzOfFlavor, int[] flavorIDs, boolean[] flavorAvailability)
+        //public void setFlavorAvailability(double[] flavors.dblSyrupBoxs, double OzOfFlavor, int[] flavorIDs, boolean[] flavorAvailability)
         //{
         //    for (int i = 0; i < flavorIDs.length; i++)
         //    {
-        //        if (dblSyrupBoxs[flavorIDs[i]] - OzOfFlavor <= 0d)
+        //        if (flavors.dblSyrupBoxs[flavorIDs[i]] - OzOfFlavor <= 0d)
         //        {
         //            flavorAvailability[i] = false;
         //        }
@@ -1061,21 +1061,21 @@ namespace Coca_Cola_Project
         {
 
 
-            if (dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] - OzOfFlavor <= 0d)
+            if (flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] - OzOfFlavor <= 0d)
             {
 
                 flavorAvailability[0] = false;
 
             }
 
-            if (dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] - OzOfFlavor <= 0d)
+            if (flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] - OzOfFlavor <= 0d)
             {
 
                 flavorAvailability[1] = false;
 
             }
 
-            if (dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] - OzOfFlavor <= 0d)
+            if (flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] - OzOfFlavor <= 0d)
             {
 
                 flavorAvailability[2] = false;
@@ -1085,40 +1085,40 @@ namespace Coca_Cola_Project
             if (flavorAvailability[0] == false & flavorAvailability[1] == false & flavorAvailability[2] == false)
             {
 
-                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
+                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else if (flavorAvailability[0] == false & flavorAvailability[1] == false)
             {
 
-                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + "Please Try Another.");
+                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else if (flavorAvailability[1] == false & flavorAvailability[2] == false)
             {
 
-                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
+                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else if (flavorAvailability[0] == false & flavorAvailability[2] == false)
             {
 
-                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
+                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else if (flavorAvailability[0] == false)
             {
-                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + "Please Try Another.");
+                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else if (flavorAvailability[1] == false)
             {
-                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + "Please Try Another.");
+                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else if (flavorAvailability[2] == false)
             {
-                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
+                Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else
@@ -1126,20 +1126,20 @@ namespace Coca_Cola_Project
 
                 if (flavorSelectionLogic.MixCount == 1)
                 {
-                    dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
                 }
 
                 else if (flavorSelectionLogic.MixCount == 2)
                 {
-                    dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
-                    dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= OzOfFlavor;
                 }
 
                 else if (flavorSelectionLogic.MixCount == 3)
                 {
-                    dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
-                    dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= OzOfFlavor;
-                    dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] -= OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] -= OzOfFlavor;
                 }
 
                 dblCo2Box -= OzOfCo2;
@@ -1155,9 +1155,9 @@ namespace Coca_Cola_Project
 
             while (intCounter < 10)
             {
-                if (dblSyrupBoxs[intCounter] <= 12d)
+                if (flavors.dblSyrupBoxs[intCounter] <= 12d)
                 {
-                    strMessage = strMessage + Constants.vbNewLine + StrSodaNames[intCounter] + " :" + dblSyrupBoxs[intCounter].ToString("N2") + " oz left";
+                    strMessage = strMessage + Constants.vbNewLine + flavors.StrSodaNames[intCounter] + " :" + flavors.dblSyrupBoxs[intCounter].ToString("N2") + " oz left";
 
                 }
 
