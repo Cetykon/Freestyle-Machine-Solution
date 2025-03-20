@@ -1,4 +1,6 @@
-﻿namespace Coca_Cola_Project
+﻿using Microsoft.VisualBasic;
+
+namespace Coca_Cola_Project
 {
 
     internal class FlavorSelectionLogic
@@ -9,15 +11,69 @@
         public int SecondFlavorID;
         public string ThirdFlavor = "N/A";
         public int ThirdFlavorID;
+        public int MixCount = 0;
 
-        // keep as global
         public int IndexFlavor = 0;
 
+        // Method to handle soda flavor selection
+        public bool SelectFlavor(int flavorID, int indexFlavor)
+        {
+            bool labelControlVisible = false;
+
+            // Check if the flavor is already selected
+            if (this.FirstFlavorID == flavorID || this.SecondFlavorID == flavorID || this.ThirdFlavorID == flavorID)
+            {
+                Interaction.MsgBox("Flavor Already Selected");
+                return false;
+            }
+
+            // Proceed only if the mix count limit is not reached
+            if (this.MixCount < 3)
+            {
+                // Display the selection label
+                labelControlVisible = true;
+
+                // Update the mix count and flavor index
+                MixCountCheck();
+                this.IndexFlavor = indexFlavor;
+
+                // Set and display selected flavors
+                this.SetFlavors();
+
+
+            }
+
+            return labelControlVisible;
+        }
+
+        // private sub that counts the amount of flavors picked
+        private void MixCountCheck()
+        {
+            if (this.MixCount == 0)
+            {
+                this.MixCount = 1;
+            }
+
+            else if (this.MixCount < 3)
+            {
+                this.MixCount += 1;
+            }
+
+            // if more than 3 flavors are picked you are alerted
+            else
+            {
+                this.MixCount = 3;
+                Interaction.MsgBox("Oops! You can only mix 3 flavors");
+
+            }
+        }
+
+
         // private sub that uses the unique flavor number to set the name of the flavor to show stats
-        private void SetFlavors(int MixCount)
+        private void SetFlavors()
         {
             // Check the flavor selected in what order to assing the name of drink
-            switch (MixCount)
+            switch (this.MixCount)
             {
                 case 1:
                     this.FirstFlavorID = IndexFlavor - 1;

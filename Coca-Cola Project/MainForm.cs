@@ -12,13 +12,13 @@ namespace Coca_Cola_Project
     /// 
     /// Project used to learn how to program.
     /// If any changes are made, be sure to trace variables,
-    /// MixCount is tightly coupled.
+    /// flavorSelectionLogic.MixCount is tightly coupled.
     /// 
     /// </summary>
     public partial class MainForm
     {
         // Create variables needed
-        private int MixCount = 0;
+        //private int flavorSelectionLogic.MixCount = 0;
         private int intFlavorSelecCount = 0;
 
         private double OzPicked = 0d;
@@ -45,82 +45,65 @@ namespace Coca_Cola_Project
             InitializeComponent();
         }
 
-        // Method to handle soda flavor selection
-        // Passing the label for lable control in this case to make it visible
-        private void SelectFlavor(int flavorID, Label labelControl, int indexFlavor)
-        {
-            // Check if the flavor is already selected
-            if (flavorSelectionLogic.FirstFlavorID == flavorID || flavorSelectionLogic.SecondFlavorID == flavorID || flavorSelectionLogic.ThirdFlavorID == flavorID)
-            {
-                Interaction.MsgBox("Flavor Already Selected");
-                return;
-            }
-
-            // Proceed only if the mix count limit is not reached
-            if (MixCount < 3)
-            {
-                // Display the selection label
-                labelControl.Visible = true;
-
-                // Update the mix count and flavor index
-                MixCountCheck();
-                flavorSelectionLogic.IndexFlavor = indexFlavor;
-
-                // Set and display selected flavors
-                SetFlavors();
-                ShowNumPickFlavors();
-            }
-        }
-
         // Event handlers for each soda button click
         private void picCola_Click(object sender, EventArgs e)
         {
-            SelectFlavor(0, lblCola, 1);
+            lblCola.Visible = flavorSelectionLogic.SelectFlavor(0, 1);
+            ShowNumPickFlavors();
         }
 
         private void picColaDiet_Click(object sender, EventArgs e)
         {
-            SelectFlavor(1, lblDietCola, 2);
+            lblDietCola.Visible = flavorSelectionLogic.SelectFlavor(1, 2);
+            ShowNumPickFlavors();
         }
 
         private void picColaZero_Click(object sender, EventArgs e)
         {
-            SelectFlavor(2, lblZeroCola, 3);
+            lblZeroCola.Visible = flavorSelectionLogic.SelectFlavor(2, 3);
+            ShowNumPickFlavors();
         }
 
         private void picFanta_Click(object sender, EventArgs e)
         {
-            SelectFlavor(3, lblFanta, 4);
+            lblFanta.Visible = flavorSelectionLogic.SelectFlavor(3, 4);
+            ShowNumPickFlavors();
         }
 
         private void picDrPepper_Click(object sender, EventArgs e)
         {
-            SelectFlavor(4, lblDrPepper, 5);
+            lblDrPepper.Visible = flavorSelectionLogic.SelectFlavor(4, 5);
+            ShowNumPickFlavors();
         }
 
         private void picSprite_Click(object sender, EventArgs e)
         {
-            SelectFlavor(5, lblSprite, 6);
+            lblSprite.Visible = flavorSelectionLogic.SelectFlavor(5, 6);
+            ShowNumPickFlavors();
         }
 
         private void picSpriteZero_Click(object sender, EventArgs e)
         {
-            SelectFlavor(6, lblSpriteZero, 7);
+            lblSpriteZero.Visible = flavorSelectionLogic.SelectFlavor(6, 7);
+            ShowNumPickFlavors();
         }
 
         private void picMMLemon_Click(object sender, EventArgs e)
         {
-            SelectFlavor(7, lblMntMaid, 8);
+            lblMntMaid.Visible = flavorSelectionLogic.SelectFlavor(7, 8);
+            ShowNumPickFlavors();
         }
 
         private void picMMLemonZero_Click(object sender, EventArgs e)
         {
-            SelectFlavor(8, lblMntMaidZero, 9);
+            lblMntMaidZero.Visible = flavorSelectionLogic.SelectFlavor(8, 9);
+            ShowNumPickFlavors();
         }
 
         private void picRootBeer_Click(object sender, EventArgs e)
         {
-            SelectFlavor(9, lblRootBeer, 10);
+            lblRootBeer.Visible = flavorSelectionLogic.SelectFlavor(9, 10);
+            ShowNumPickFlavors();
         }
 
 
@@ -529,7 +512,7 @@ namespace Coca_Cola_Project
         private void btnMixDisp_Click(object sender, EventArgs e)
         {
             // Check if you have at least one flavor selected
-            if (MixCount == 0)
+            if (flavorSelectionLogic.MixCount == 0)
             {
                 Interaction.MsgBox("You Need to pick at least 1 Flavor");
             }
@@ -577,7 +560,7 @@ namespace Coca_Cola_Project
         private void btnResetFlavors_Click(object sender, EventArgs e)
         {
             // Resets the count of flavors selected
-            MixCount = 0;
+            flavorSelectionLogic.MixCount = 0;
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
@@ -646,7 +629,7 @@ namespace Coca_Cola_Project
             // Deselect Option
             rdEightOz.Checked = false;
             // Resets the count of flavors selected
-            MixCount = 0;
+            flavorSelectionLogic.MixCount = 0;
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
@@ -715,7 +698,7 @@ namespace Coca_Cola_Project
             // Deselect Option
             rdSixTeenOz.Checked = false;
             // Resets the count of flavors selected
-            MixCount = 0;
+            flavorSelectionLogic.MixCount = 0;
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
@@ -782,7 +765,7 @@ namespace Coca_Cola_Project
             // Deselect Option
             rdTwentyFourOz.Checked = false;
             // Resets the count of flavors selected
-            MixCount = 0;
+            flavorSelectionLogic.MixCount = 0;
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
@@ -850,7 +833,7 @@ namespace Coca_Cola_Project
             // Deselect Option
             rdThirtyTwoOz.Checked = false;
             // Resets the count of flavors selected
-            MixCount = 0;
+            flavorSelectionLogic.MixCount = 0;
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
@@ -895,32 +878,12 @@ namespace Coca_Cola_Project
 
         }
 
-        // private sub that counts the amount of flavors picked
-        private void MixCountCheck()
-        {
-            if (MixCount == 0)
-            {
-                MixCount = 1;
-            }
 
-            else if (MixCount < 3)
-            {
-                MixCount += 1;
-            }
-
-            // if more than 3 flavors are picked you are alerted
-            else
-            {
-                MixCount = 3;
-                Interaction.MsgBox("Oops! You can only mix 3 flavors");
-
-            }
-        }
         // private sub that uses the unique flavor number to set the name of the flavor to show stats
         private void SetFlavors()
         {
             // Check the flavor selected in what order to assing the name of drink
-            switch (MixCount)
+            switch (flavorSelectionLogic.MixCount)
             {
                 case 1:
                     flavorSelectionLogic.FirstFlavorID = flavorSelectionLogic.IndexFlavor - 1;
@@ -1039,7 +1002,7 @@ namespace Coca_Cola_Project
         private void DisplayStats()
         {
             // if their is only one flavor, display the amount 
-            switch (MixCount)
+            switch (flavorSelectionLogic.MixCount)
             {
                 case 1:
                     Interaction.MsgBox("You Selected:" + Constants.vbNewLine + flavorSelectionLogic.FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
@@ -1056,7 +1019,7 @@ namespace Coca_Cola_Project
         // private sub tha calculates the amount of syrup and co2 needed
         private void CalcSyrupUsed()
         {
-            OzOfFlavor = OzPicked / 2d / MixCount;
+            OzOfFlavor = OzPicked / 2d / flavorSelectionLogic.MixCount;
 
             OzOfCo2 = OzPicked / 2d;
 
@@ -1065,7 +1028,7 @@ namespace Coca_Cola_Project
         // private sub to show the amount of flavors picked
         private void ShowNumPickFlavors()
         {
-            lblFlavorCount.Text = "Flavors Picked: " + MixCount;
+            lblFlavorCount.Text = "Flavors Picked: " + flavorSelectionLogic.MixCount;
         }
 
         // private sub that resets the name of flavors picked
@@ -1161,18 +1124,18 @@ namespace Coca_Cola_Project
             else
             {
 
-                if (MixCount == 1)
+                if (flavorSelectionLogic.MixCount == 1)
                 {
                     dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
                 }
 
-                else if (MixCount == 2)
+                else if (flavorSelectionLogic.MixCount == 2)
                 {
                     dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
                     dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= OzOfFlavor;
                 }
 
-                else if (MixCount == 3)
+                else if (flavorSelectionLogic.MixCount == 3)
                 {
                     dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
                     dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= OzOfFlavor;
@@ -1220,18 +1183,18 @@ namespace Coca_Cola_Project
             int intLastOrderNum = 0;
             intLastOrderNum = Conversions.ToInteger(OrdersTableAdapter.GetMaxOrderID());
             // Inserts order info 
-            if (MixCount == 1)
+            if (flavorSelectionLogic.MixCount == 1)
             {
                 OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "no", OzOfFlavor);
                 OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "no", OzOfCo2);
             }
-            else if (MixCount == 2)
+            else if (flavorSelectionLogic.MixCount == 2)
             {
                 OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "yes", OzOfFlavor);
                 OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.SecondFlavorID, "yes", OzOfFlavor);
                 OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "yes", OzOfCo2);
             }
-            else if (MixCount == 3)
+            else if (flavorSelectionLogic.MixCount == 3)
             {
                 OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "yes", OzOfFlavor);
                 OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.SecondFlavorID, "yes", OzOfFlavor);
