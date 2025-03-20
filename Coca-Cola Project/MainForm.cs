@@ -643,6 +643,13 @@ namespace Coca_Cola_Project
             showbtnMain();
         }
 
+        private void InventoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            Validate();
+            InventoryBindingSource.EndEdit();
+            TableAdapterManager.UpdateAll(FreeStyleDBDataSet);
+        }
+
         private void FillByOrdersToolStripButton_Click_1(object sender, EventArgs e)
         {
             try
