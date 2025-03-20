@@ -98,6 +98,11 @@ namespace Coca_Cola_Project
             ShowNumPickFlavors();
         }
 
+        // private sub to show the amount of flavors picked
+        private void ShowNumPickFlavors()
+        {
+            lblFlavorCount.Text = "Flavors Picked: " + flavorSelectionLogic.MixCount;
+        }
 
         // Button to reorder syrup and co2
         private void btnReOrder_Click(object sender, EventArgs e)
@@ -167,13 +172,6 @@ namespace Coca_Cola_Project
 
             Interaction.MsgBox("Syrup and Co2 Stats:" + Constants.vbNewLine + Constants.vbNewLine + strSyrupSt + Constants.vbNewLine + "Fluids at low threshold:" + Constants.vbNewLine + Constants.vbNewLine + strLowlvlFluids + Constants.vbNewLine);
         }
-        // Maintenance Report
-        private void btnMaintenanceRp_Click(object sender, EventArgs e)
-        {
-            MaintenanceReport maintenanceReport = new MaintenanceReport();
-            Interaction.MsgBox(maintenanceReport.GetReport());
-        }
-        // Order Report
         private void btnSodaSt_Click(object sender, EventArgs e)
         {
             // if Date selection is already visible hide it. 
@@ -188,198 +186,24 @@ namespace Coca_Cola_Project
             }
         }
 
+        // Maintenance Report
+        private void btnMaintenanceRp_Click(object sender, EventArgs e)
+        {
+            MaintenanceReport maintenanceReport = new MaintenanceReport();
+            Interaction.MsgBox(maintenanceReport.GetReport());
+        }
+
+        // Order Report
         private void btnGetOrderReport_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // used the selected date to input into the database select statement
-                var StartDateRp = DTPStart.Value;
-                // Dim strStarDateRp As String = StartDateRp.ToString("yyyy-MM-dd")
-                var EndDateRP = DTPEnd.Value;
-                // Dim strEndDateRp As String = EndDateRP.ToString("yyyy-MM-dd")
-                string strOrderReport;
+            // used the selected date to input into the database select statement
+            DateTime StartDateRp = DTPStart.Value;
+            // Dim strStarDateRp As String = StartDateRp.ToString("yyyy-MM-dd")
+            DateTime EndDateRP = DTPEnd.Value;
+            // Dim strEndDateRp As String = EndDateRP.ToString("yyyy-MM-dd")
 
-                // Required data For order info - Order number, Order line number, Order Date, Flavor associated with the line number, Total dollar amount for the order 
-                int intCountOfOrderWDP = (int)OrdersTableAdapter.SelectCountOfOrderWDP(StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
-
-
-                // Dim TableStringWDP As String = ""
-                // Dim OrderIDWDP As Object
-
-                // For intRowIndex As Integer = 0 To intCountOfOrderWDP
-                // OrderIDWDP = OrdersDataGridViewWDP.Rows(intRowIndex).Cells(0).Value
-                // TableStringWDP = OrderIDWDP.ToString() & " - "
-                // OrderIDWDP = OrdersDataGridViewWDP.Rows(intRowIndex).Cells(1).Value
-                // TableStringWDP = OrderIDWDP.ToString() & " - "
-                // OrderIDWDP = OrdersDataGridViewWDP.Rows(intRowIndex).Cells(2).Value
-                // TableStringWDP = OrderIDWDP.ToString() & " - " & vbNewLine
-
-                // Next
-
-                // MsgBox(TableStringWDP)
-
-
-
-
-                // A total dollar amount of all orders on the report
-                double dblTotalAmountWDP = (double)OrdersTableAdapter.SelectTotalOrderAmountGivenStartAndEndDate(StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
-
-                // A "Most Requested" flavor
-                int dblMostRequestedFlavorID = 0;
-                int dblMostRequestedFlavorCount = 0;
-                string strMostRequestedFlavorWDP = flavors.StrSodaNames[0];
-                try
-                {
-
-                    int dblMostRequestedFlavorCountPlusOne = 0;
-
-                    dblMostRequestedFlavorCount = (int)OrderFluidInfoTableAdapter.SelectCountofFluidIDWDP(0, StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
-
-                    for (int RequestedCounter = 1; RequestedCounter <= 9; RequestedCounter++)
-                    {
-
-                        dblMostRequestedFlavorCountPlusOne = (int)OrderFluidInfoTableAdapter.SelectCountofFluidIDWDP(RequestedCounter, StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
-
-                        if (dblMostRequestedFlavorCount < dblMostRequestedFlavorCountPlusOne)
-                        {
-
-                            dblMostRequestedFlavorID = RequestedCounter;
-
-                            strMostRequestedFlavorWDP = flavors.StrSodaNames[dblMostRequestedFlavorID];
-
-                            dblMostRequestedFlavorCount = (int)OrderFluidInfoTableAdapter.SelectCountofFluidIDWDP(RequestedCounter, StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
-                        }
-
-                        else if (dblMostRequestedFlavorCount == dblMostRequestedFlavorCountPlusOne)
-                        {
-
-                            strMostRequestedFlavorWDP = strMostRequestedFlavorWDP + ", " + flavors.StrSodaNames[RequestedCounter];
-
-                        }
-
-                    }
-                }
-
-                catch (Exception ex)
-                {
-                    Interaction.MsgBox("Failed to get Most Requested Flavor");
-                    strMostRequestedFlavorWDP = "Unavailable";
-                }
-
-                // A "Least Requested" flavor
-
-                int dblLeastRequestedFlavorID = 0;
-                int dblLeastRequestedFlavorCount = 0;
-                string strLeastRequestedFlavorWDP = flavors.StrSodaNames[0];
-
-
-                try
-                {
-                    int dblLestRequestedFlavorCountPlusOne = 0;
-
-                    dblLeastRequestedFlavorCount = (int)OrderFluidInfoTableAdapter.SelectCountofFluidIDWDP(0, StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
-                    strLeastRequestedFlavorWDP = flavors.StrSodaNames[0];
-
-                    for (int LeastCounter = 1; LeastCounter <= 9; LeastCounter++)
-                    {
-                        // Get Least Requested flavor
-                        dblLestRequestedFlavorCountPlusOne = (int)OrderFluidInfoTableAdapter.SelectCountofFluidIDWDP(LeastCounter, StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
-
-                        if (dblLeastRequestedFlavorCount > dblLestRequestedFlavorCountPlusOne)
-                        {
-
-                            dblLeastRequestedFlavorID = LeastCounter;
-
-                            strLeastRequestedFlavorWDP = flavors.StrSodaNames[dblLeastRequestedFlavorID];
-
-                            dblLeastRequestedFlavorCount = (int)OrderFluidInfoTableAdapter.SelectCountofFluidIDWDP(LeastCounter, StartDateRp.ToString("MM/dd/yyyy"), EndDateRP.ToString("MM/dd/yyyy"));
-                        }
-
-                        else if (dblLeastRequestedFlavorCount == dblLestRequestedFlavorCountPlusOne)
-                        {
-
-
-                            strLeastRequestedFlavorWDP = strLeastRequestedFlavorWDP + ", " + flavors.StrSodaNames[LeastCounter];
-
-
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Interaction.MsgBox("Failed to get Least Requested Flavor");
-                    strLeastRequestedFlavorWDP = "Unavailable";
-                }
-
-                // The most common size dispensed for all of the orders (8,16,24,32)
-                // Dim dblCo2Used() As Double = {4, 8, 12, 16}
-                string strMostCommonSizeWDP;
-
-
-
-                try
-                {
-                    strMostCommonSizeWDP = "8 oz";
-                    // The date string fail to convert to date for some reason!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    // , StartDateRp.ToString("d"), EndDateRP.ToString("d")
-                    int intCo2CountOf8oz = Conversions.ToInteger(OrderFluidInfoTableAdapter.SelectTimesofCo2WasUsedGivenStartDateandEndateOfOrder(4d, StartDateRp.ToString("d"), EndDateRP.ToString("d")));
-                    int intCo2CountOf16oz = Conversions.ToInteger(OrderFluidInfoTableAdapter.SelectTimesofCo2WasUsedGivenStartDateandEndateOfOrder(8d, StartDateRp.ToString("d"), EndDateRP.ToString("d")));
-                    int intCo2CountOf24oz = Conversions.ToInteger(OrderFluidInfoTableAdapter.SelectTimesofCo2WasUsedGivenStartDateandEndateOfOrder(12d, StartDateRp.ToString("d"), EndDateRP.ToString("d")));
-                    int intCo2CountOf32oz = Conversions.ToInteger(OrderFluidInfoTableAdapter.SelectTimesofCo2WasUsedGivenStartDateandEndateOfOrder(16d, StartDateRp.ToString("d"), EndDateRP.ToString("d")));
-
-
-
-                    if (intCo2CountOf8oz < intCo2CountOf16oz)
-                    {
-                        strMostCommonSizeWDP = "16 oz";
-                    }
-                    else if (intCo2CountOf8oz == intCo2CountOf16oz)
-                    {
-                        strMostCommonSizeWDP = strMostCommonSizeWDP + ", 16 oz";
-                    }
-
-                    if (intCo2CountOf16oz < intCo2CountOf24oz)
-                    {
-                        strMostCommonSizeWDP = "24 oz";
-                    }
-                    else if (intCo2CountOf16oz == intCo2CountOf24oz)
-                    {
-                        strMostCommonSizeWDP = strMostCommonSizeWDP + ", 24 oz";
-                    }
-
-                    if (intCo2CountOf24oz < intCo2CountOf32oz)
-                    {
-                        strMostCommonSizeWDP = "32 oz";
-                    }
-                    else if (intCo2CountOf24oz == intCo2CountOf32oz)
-                    {
-                        strMostCommonSizeWDP = strMostCommonSizeWDP + ", 32 oz";
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Interaction.MsgBox("Unable to get Most sizes chosen");
-                    strMostCommonSizeWDP = "Unavailable";
-                }
-
-
-                // Get data base values
-
-
-
-                // Message formatting
-                strOrderReport = StartDateRp.ToString("d") + Constants.vbNewLine + EndDateRP.ToString("d") + Constants.vbNewLine + dblTotalAmountWDP.ToString("N2") + Constants.vbNewLine + strMostCommonSizeWDP + Constants.vbNewLine + strMostRequestedFlavorWDP + Constants.vbNewLine + strLeastRequestedFlavorWDP;
-
-                Interaction.MsgBox(strOrderReport);
-            }
-
-            catch (Exception ex)
-            {
-                Interaction.MsgBox("Not Enough Data inputed to create report!" + Constants.vbNewLine + "or" + Constants.vbNewLine + "Check input date as only data between the dates will be Reported.");
-            }
-
-            // testing area
-
+            OrderReport orderReport = new OrderReport();
+            Interaction.MsgBox(orderReport.GetReport(StartDateRp, EndDateRP, flavors));
 
             // hide the date selection and its correspoding objects
             HideDateSelection();
@@ -853,124 +677,6 @@ namespace Coca_Cola_Project
         }
 
 
-        // private sub that uses the unique flavor number to set the name of the flavor to show stats
-        private void SetFlavors()
-        {
-            // Check the flavor selected in what order to assing the name of drink
-            switch (flavorSelectionLogic.MixCount)
-            {
-                case 1:
-                    flavorSelectionLogic.FirstFlavorID = flavorSelectionLogic.IndexFlavor - 1;
-                    switch (flavorSelectionLogic.IndexFlavor)
-                    {
-                        case 1:
-                            flavorSelectionLogic.FirstFlavor = "Coca-Cola";
-                            break;
-                        case 2:
-                            flavorSelectionLogic.FirstFlavor = "Coca-cola Diet";
-                            break;
-                        case 3:
-                            flavorSelectionLogic.FirstFlavor = "Coca-cola Zero";
-                            break;
-                        case 4:
-                            flavorSelectionLogic.FirstFlavor = "Fanta";
-                            break;
-                        case 5:
-                            flavorSelectionLogic.FirstFlavor = "DrPepper";
-                            break;
-                        case 6:
-                            flavorSelectionLogic.FirstFlavor = "Sprite";
-                            break;
-                        case 7:
-                            flavorSelectionLogic.FirstFlavor = "SpriteZero";
-                            break;
-                        case 8:
-                            flavorSelectionLogic.FirstFlavor = "Minute Maid Lemonade";
-                            break;
-                        case 9:
-                            flavorSelectionLogic.FirstFlavor = "Minute Maid Lemonade Zero";
-                            break;
-                        case 10:
-                            flavorSelectionLogic.FirstFlavor = "Root Bear";
-                            break;
-                    }
-                    break;
-
-                case 2:
-                    flavorSelectionLogic.SecondFlavorID = flavorSelectionLogic.IndexFlavor - 1;
-                    switch (flavorSelectionLogic.IndexFlavor)
-                    {
-                        case 1:
-                            flavorSelectionLogic.SecondFlavor = "Coca-Cola";
-                            break;
-                        case 2:
-                            flavorSelectionLogic.SecondFlavor = "Coca-cola Diet";
-                            break;
-                        case 3:
-                            flavorSelectionLogic.SecondFlavor = "Coca-cola Zero";
-                            break;
-                        case 4:
-                            flavorSelectionLogic.SecondFlavor = "Fanta";
-                            break;
-                        case 5:
-                            flavorSelectionLogic.SecondFlavor = "DrPepper";
-                            break;
-                        case 6:
-                            flavorSelectionLogic.SecondFlavor = "Sprite";
-                            break;
-                        case 7:
-                            flavorSelectionLogic.SecondFlavor = "SpriteZero";
-                            break;
-                        case 8:
-                            flavorSelectionLogic.SecondFlavor = "Minute Maid Lemonade";
-                            break;
-                        case 9:
-                            flavorSelectionLogic.SecondFlavor = "Minute Maid Lemonade Zero";
-                            break;
-                        case 10:
-                            flavorSelectionLogic.SecondFlavor = "Root Bear";
-                            break;
-                    }
-                    break;
-
-                case 3:
-                    flavorSelectionLogic.ThirdFlavorID = flavorSelectionLogic.IndexFlavor - 1;
-                    switch (flavorSelectionLogic.IndexFlavor)
-                    {
-                        case 1:
-                            flavorSelectionLogic.ThirdFlavor = "Coca-Cola";
-                            break;
-                        case 2:
-                            flavorSelectionLogic.ThirdFlavor = "Coca-cola Diet";
-                            break;
-                        case 3:
-                            flavorSelectionLogic.ThirdFlavor = "Coca-cola Zero";
-                            break;
-                        case 4:
-                            flavorSelectionLogic.ThirdFlavor = "Fanta";
-                            break;
-                        case 5:
-                            flavorSelectionLogic.ThirdFlavor = "DrPepper";
-                            break;
-                        case 6:
-                            flavorSelectionLogic.ThirdFlavor = "Sprite";
-                            break;
-                        case 7:
-                            flavorSelectionLogic.ThirdFlavor = "SpriteZero";
-                            break;
-                        case 8:
-                            flavorSelectionLogic.ThirdFlavor = "Minute Maid Lemonade";
-                            break;
-                        case 9:
-                            flavorSelectionLogic.ThirdFlavor = "Minute Maid Lemonade Zero";
-                            break;
-                        case 10:
-                            flavorSelectionLogic.ThirdFlavor = "Root Bear";
-                            break;
-                    }
-                    break;
-            }
-        }
         // Display that stats for the different size of cups selected
         // Ask to dispence by pressing OK
         private void DisplayStats()
@@ -990,11 +696,6 @@ namespace Coca_Cola_Project
             }
         }
 
-        // private sub to show the amount of flavors picked
-        private void ShowNumPickFlavors()
-        {
-            lblFlavorCount.Text = "Flavors Picked: " + flavorSelectionLogic.MixCount;
-        }
 
 
         //public void setflavorSelectionLogic.FlavorAvailability(double[] flavors.dblSyrupBoxs, double ozToDispense.OzOfFlavor, int[] flavorIDs, boolean[] flavorSelectionLogic.flavorAvailability)
