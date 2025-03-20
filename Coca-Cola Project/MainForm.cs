@@ -31,8 +31,7 @@ namespace Coca_Cola_Project
         private double[] dblDrinkCost = new double[] { 2d, 2.5d, 3d, 3.5d };
         // Get todays date
         private DateTime TodaysDate;
-        // Check for flavor Availability 
-        private bool[] flavorAvailability = new bool[] { true, true, true };
+
 
         // Initializing Flavor Selection Logic
         FlavorSelectionLogic flavorSelectionLogic = new FlavorSelectionLogic();
@@ -562,7 +561,7 @@ namespace Coca_Cola_Project
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
-            ResetSetFlavors();
+            flavorSelectionLogic.ResetSetFlavors();
             HideSyrupSelection();
 
         }
@@ -581,7 +580,7 @@ namespace Coca_Cola_Project
             // Check for low fluids
             ResourcesLowCheck();
 
-            if (flavorAvailability[0] == true & flavorAvailability[1] == true & flavorAvailability[2] == true)
+            if (flavorSelectionLogic.flavorAvailability[0] == true & flavorSelectionLogic.flavorAvailability[1] == true & flavorSelectionLogic.flavorAvailability[2] == true)
             {
                 try
                 {
@@ -631,7 +630,7 @@ namespace Coca_Cola_Project
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
-            ResetSetFlavors();
+            flavorSelectionLogic.ResetSetFlavors();
             HideSyrupSelection();
             // Hide cup size ui and show main ui
             hidegrpSize();
@@ -652,7 +651,7 @@ namespace Coca_Cola_Project
             SubtractLiquidUsed();
             // Check for low fluids
             ResourcesLowCheck();
-            if (flavorAvailability[0] == true & flavorAvailability[1] == true & flavorAvailability[2] == true)
+            if (flavorSelectionLogic.flavorAvailability[0] == true & flavorSelectionLogic.flavorAvailability[1] == true & flavorSelectionLogic.flavorAvailability[2] == true)
             {
                 try
                 {
@@ -700,7 +699,7 @@ namespace Coca_Cola_Project
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
-            ResetSetFlavors();
+            flavorSelectionLogic.ResetSetFlavors();
             HideSyrupSelection();
             // Hide cup size ui and show main ui
             hidegrpSize();
@@ -720,7 +719,7 @@ namespace Coca_Cola_Project
             SubtractLiquidUsed();
             // Check for low fluids
             ResourcesLowCheck();
-            if (flavorAvailability[0] == true & flavorAvailability[1] == true & flavorAvailability[2] == true)
+            if (flavorSelectionLogic.flavorAvailability[0] == true & flavorSelectionLogic.flavorAvailability[1] == true & flavorSelectionLogic.flavorAvailability[2] == true)
             {
                 try
                 {
@@ -767,7 +766,7 @@ namespace Coca_Cola_Project
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
-            ResetSetFlavors();
+            flavorSelectionLogic.ResetSetFlavors();
             HideSyrupSelection();
             // Hide cup size ui and show main ui
             hidegrpSize();
@@ -788,7 +787,7 @@ namespace Coca_Cola_Project
             SubtractLiquidUsed();
             // Check for low fluids
             ResourcesLowCheck();
-            if (flavorAvailability[0] == true & flavorAvailability[1] == true & flavorAvailability[2] == true)
+            if (flavorSelectionLogic.flavorAvailability[0] == true & flavorSelectionLogic.flavorAvailability[1] == true & flavorSelectionLogic.flavorAvailability[2] == true)
             {
                 try
                 {
@@ -835,7 +834,7 @@ namespace Coca_Cola_Project
             // Show the number of picked flavors
             ShowNumPickFlavors();
             // Resets the flavors that where picked
-            ResetSetFlavors();
+            flavorSelectionLogic.ResetSetFlavors();
             HideSyrupSelection();
             // Hide cup size ui and show main ui
             hidegrpSize();
@@ -1029,26 +1028,14 @@ namespace Coca_Cola_Project
             lblFlavorCount.Text = "Flavors Picked: " + flavorSelectionLogic.MixCount;
         }
 
-        // private sub that resets the name of flavors picked
-        private void ResetSetFlavors()
-        {
-            flavorSelectionLogic.FirstFlavor = "N/A";
-            flavorSelectionLogic.SecondFlavor = "N/A";
-            flavorSelectionLogic.ThirdFlavor = "N/A";
-            flavorSelectionLogic.FirstFlavorID = 0;
-            flavorSelectionLogic.SecondFlavorID = 0;
-            flavorSelectionLogic.ThirdFlavorID = 0;
 
-            flavorAvailability = new bool[] { true, true, true };
-        }
-
-        //public void setFlavorAvailability(double[] flavors.dblSyrupBoxs, double OzOfFlavor, int[] flavorIDs, boolean[] flavorAvailability)
+        //public void setflavorSelectionLogic.FlavorAvailability(double[] flavors.dblSyrupBoxs, double OzOfFlavor, int[] flavorIDs, boolean[] flavorSelectionLogic.flavorAvailability)
         //{
         //    for (int i = 0; i < flavorIDs.length; i++)
         //    {
         //        if (flavors.dblSyrupBoxs[flavorIDs[i]] - OzOfFlavor <= 0d)
         //        {
-        //            flavorAvailability[i] = false;
+        //            flavorSelectionLogic.flavorAvailability[i] = false;
         //        }
         //    }
         //}
@@ -1062,59 +1049,59 @@ namespace Coca_Cola_Project
             if (flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] - OzOfFlavor <= 0d)
             {
 
-                flavorAvailability[0] = false;
+                flavorSelectionLogic.flavorAvailability[0] = false;
 
             }
 
             if (flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] - OzOfFlavor <= 0d)
             {
 
-                flavorAvailability[1] = false;
+                flavorSelectionLogic.flavorAvailability[1] = false;
 
             }
 
             if (flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] - OzOfFlavor <= 0d)
             {
 
-                flavorAvailability[2] = false;
+                flavorSelectionLogic.flavorAvailability[2] = false;
 
             }
 
-            if (flavorAvailability[0] == false & flavorAvailability[1] == false & flavorAvailability[2] == false)
+            if (flavorSelectionLogic.flavorAvailability[0] == false & flavorSelectionLogic.flavorAvailability[1] == false & flavorSelectionLogic.flavorAvailability[2] == false)
             {
 
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (flavorAvailability[0] == false & flavorAvailability[1] == false)
+            else if (flavorSelectionLogic.flavorAvailability[0] == false & flavorSelectionLogic.flavorAvailability[1] == false)
             {
 
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (flavorAvailability[1] == false & flavorAvailability[2] == false)
+            else if (flavorSelectionLogic.flavorAvailability[1] == false & flavorSelectionLogic.flavorAvailability[2] == false)
             {
 
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (flavorAvailability[0] == false & flavorAvailability[2] == false)
+            else if (flavorSelectionLogic.flavorAvailability[0] == false & flavorSelectionLogic.flavorAvailability[2] == false)
             {
 
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (flavorAvailability[0] == false)
+            else if (flavorSelectionLogic.flavorAvailability[0] == false)
             {
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (flavorAvailability[1] == false)
+            else if (flavorSelectionLogic.flavorAvailability[1] == false)
             {
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
-            else if (flavorAvailability[2] == false)
+            else if (flavorSelectionLogic.flavorAvailability[2] == false)
             {
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }

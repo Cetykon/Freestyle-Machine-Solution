@@ -15,6 +15,10 @@ namespace Coca_Cola_Project
 
         public int IndexFlavor = 0;
 
+        // Check for flavor Availability 
+        public bool[] flavorAvailability = new bool[] { true, true, true };
+
+
         // Method to handle soda flavor selection
         public bool SelectFlavor(int flavorID, int indexFlavor)
         {
@@ -66,6 +70,19 @@ namespace Coca_Cola_Project
                 Interaction.MsgBox("Oops! You can only mix 3 flavors");
 
             }
+        }
+
+        //  resets the flavors picked
+        public void ResetSetFlavors()
+        {
+            this.FirstFlavor = "N/A";
+            this.SecondFlavor = "N/A";
+            this.ThirdFlavor = "N/A";
+            this.FirstFlavorID = 0;
+            this.SecondFlavorID = 0;
+            this.ThirdFlavorID = 0;
+
+            this.flavorAvailability = new bool[] { true, true, true };
         }
 
 
