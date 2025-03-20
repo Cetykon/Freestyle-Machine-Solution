@@ -20,10 +20,6 @@ namespace Coca_Cola_Project
         // Create variables needed
         private int intFlavorSelecCount = 0;
 
-        private double OzPicked = 0d;
-        private double OzOfFlavor = 0d;
-        private double OzOfCo2 = 0d;
-
         // Co2 Container
         private double dblCo2Box = 170d;
         // Array for cost of drinks
@@ -36,6 +32,7 @@ namespace Coca_Cola_Project
         // Initializing Flavor Selection Logic
         FlavorSelectionLogic flavorSelectionLogic = new FlavorSelectionLogic();
         Flavors flavors = new Flavors();
+        OzToDispense ozToDispense = new OzToDispense();
 
         public MainForm()
         {
@@ -570,9 +567,9 @@ namespace Coca_Cola_Project
         {
 
             // Set the amount of soda to dispense
-            OzPicked = 8d;
+            ozToDispense.OzPicked = 8d;
             // Make the calculation to dispense the right amount of syrup and co2
-            CalcSyrupUsed();
+            ozToDispense.CalcSyrupUsed(flavorSelectionLogic.MixCount);
             // Display the amount of syrup and co2 was dispense
             DisplayStats();
             // Subtract Syrup and Co2 Used
@@ -642,9 +639,9 @@ namespace Coca_Cola_Project
         private void rdSixTeenOz_Click(object sender, EventArgs e)
         {
             // Set the amount of soda to dispense
-            OzPicked = 16d;
+            ozToDispense.OzPicked = 16d;
             // Make the calculation to dispense the right amount of syrup and co2
-            CalcSyrupUsed();
+            ozToDispense.CalcSyrupUsed(flavorSelectionLogic.MixCount);
             // Display the amount of syrup and co2 was dispense
             DisplayStats();
             // Subtract Syrup and Co2 Used
@@ -710,9 +707,9 @@ namespace Coca_Cola_Project
         private void rdTwentyFourOz_Click(object sender, EventArgs e)
         {
             // Set the amount of soda to dispense
-            OzPicked = 24d;
+            ozToDispense.OzPicked = 24d;
             // Make the calculation to dispense the right amount of syrup and co2
-            CalcSyrupUsed();
+            ozToDispense.CalcSyrupUsed(flavorSelectionLogic.MixCount);
             // Display the amount of syrup and co2 was dispense
             DisplayStats();
             // Subtract Syrup and Co2 Used
@@ -778,9 +775,9 @@ namespace Coca_Cola_Project
         private void rdThirtyTwoOz_Click(object sender, EventArgs e)
         {
             // Set the amount of soda to dispense
-            OzPicked = 32d;
+            ozToDispense.OzPicked = 32d;
             // Make the calculation to dispense the right amount of syrup and co2
-            CalcSyrupUsed();
+            ozToDispense.CalcSyrupUsed(flavorSelectionLogic.MixCount);
             // Display the amount of syrup and co2 was dispense
             DisplayStats();
             // Subtract Syrup and Co2 Used
@@ -1002,38 +999,29 @@ namespace Coca_Cola_Project
             switch (flavorSelectionLogic.MixCount)
             {
                 case 1:
-                    Interaction.MsgBox("You Selected:" + Constants.vbNewLine + flavorSelectionLogic.FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
+                    Interaction.MsgBox("You Selected:" + Constants.vbNewLine + flavorSelectionLogic.FirstFlavor + " Syrup:  " + ozToDispense.OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + ozToDispense.OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
                     break;
                 case 2:
-                    Interaction.MsgBox("You Selected:" + Constants.vbNewLine + flavorSelectionLogic.FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + flavorSelectionLogic.SecondFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
+                    Interaction.MsgBox("You Selected:" + Constants.vbNewLine + flavorSelectionLogic.FirstFlavor + " Syrup:  " + ozToDispense.OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + flavorSelectionLogic.SecondFlavor + " Syrup:  " + ozToDispense.OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + ozToDispense.OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
                     break;
                 case 3:
-                    Interaction.MsgBox("You Selected:" + Constants.vbNewLine + flavorSelectionLogic.FirstFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + flavorSelectionLogic.SecondFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + flavorSelectionLogic.ThirdFlavor + " Syrup:  " + OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
+                    Interaction.MsgBox("You Selected:" + Constants.vbNewLine + flavorSelectionLogic.FirstFlavor + " Syrup:  " + ozToDispense.OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + flavorSelectionLogic.SecondFlavor + " Syrup:  " + ozToDispense.OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + flavorSelectionLogic.ThirdFlavor + " Syrup:  " + ozToDispense.OzOfFlavor.ToString("N2") + "oz" + Constants.vbNewLine + "Co2 Used:  " + ozToDispense.OzOfCo2.ToString("N2") + "oz" + Constants.vbNewLine + Constants.vbNewLine + "Press Ok to dispense:", MsgBoxStyle.OkCancel);
                     break;
             }
         }
 
-        // private sub tha calculates the amount of syrup and co2 needed
-        private void CalcSyrupUsed()
-        {
-            OzOfFlavor = OzPicked / 2d / flavorSelectionLogic.MixCount;
-
-            OzOfCo2 = OzPicked / 2d;
-
-        }
-
-        // private sub to show the amount of flavors picked
+        flavorSelectionLogic.MixCount      // private sub to show the amount of flavors picked
         private void ShowNumPickFlavors()
         {
             lblFlavorCount.Text = "Flavors Picked: " + flavorSelectionLogic.MixCount;
         }
 
 
-        //public void setflavorSelectionLogic.FlavorAvailability(double[] flavors.dblSyrupBoxs, double OzOfFlavor, int[] flavorIDs, boolean[] flavorSelectionLogic.flavorAvailability)
+        //public void setflavorSelectionLogic.FlavorAvailability(double[] flavors.dblSyrupBoxs, double ozToDispense.OzOfFlavor, int[] flavorIDs, boolean[] flavorSelectionLogic.flavorAvailability)
         //{
         //    for (int i = 0; i < flavorIDs.length; i++)
         //    {
-        //        if (flavors.dblSyrupBoxs[flavorIDs[i]] - OzOfFlavor <= 0d)
+        //        if (flavors.dblSyrupBoxs[flavorIDs[i]] - ozToDispense.OzOfFlavor <= 0d)
         //        {
         //            flavorSelectionLogic.flavorAvailability[i] = false;
         //        }
@@ -1046,21 +1034,21 @@ namespace Coca_Cola_Project
         {
 
 
-            if (flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] - OzOfFlavor <= 0d)
+            if (flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] - ozToDispense.OzOfFlavor <= 0d)
             {
 
                 flavorSelectionLogic.flavorAvailability[0] = false;
 
             }
 
-            if (flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] - OzOfFlavor <= 0d)
+            if (flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] - ozToDispense.OzOfFlavor <= 0d)
             {
 
                 flavorSelectionLogic.flavorAvailability[1] = false;
 
             }
 
-            if (flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] - OzOfFlavor <= 0d)
+            if (flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] - ozToDispense.OzOfFlavor <= 0d)
             {
 
                 flavorSelectionLogic.flavorAvailability[2] = false;
@@ -1111,23 +1099,23 @@ namespace Coca_Cola_Project
 
                 if (flavorSelectionLogic.MixCount == 1)
                 {
-                    flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= ozToDispense.OzOfFlavor;
                 }
 
                 else if (flavorSelectionLogic.MixCount == 2)
                 {
-                    flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
-                    flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= ozToDispense.OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= ozToDispense.OzOfFlavor;
                 }
 
                 else if (flavorSelectionLogic.MixCount == 3)
                 {
-                    flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= OzOfFlavor;
-                    flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= OzOfFlavor;
-                    flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] -= OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] -= ozToDispense.OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] -= ozToDispense.OzOfFlavor;
+                    flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] -= ozToDispense.OzOfFlavor;
                 }
 
-                dblCo2Box -= OzOfCo2;
+                dblCo2Box -= ozToDispense.OzOfCo2;
             }
         }
 
@@ -1170,21 +1158,21 @@ namespace Coca_Cola_Project
             // Inserts order info 
             if (flavorSelectionLogic.MixCount == 1)
             {
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "no", OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "no", OzOfCo2);
+                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "no", ozToDispense.OzOfFlavor);
+                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "no", ozToDispense.OzOfCo2);
             }
             else if (flavorSelectionLogic.MixCount == 2)
             {
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "yes", OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.SecondFlavorID, "yes", OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "yes", OzOfCo2);
+                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "yes", ozToDispense.OzOfFlavor);
+                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.SecondFlavorID, "yes", ozToDispense.OzOfFlavor);
+                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "yes", ozToDispense.OzOfCo2);
             }
             else if (flavorSelectionLogic.MixCount == 3)
             {
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "yes", OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.SecondFlavorID, "yes", OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.ThirdFlavorID, "yes", OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "yes", OzOfCo2);
+                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "yes", ozToDispense.OzOfFlavor);
+                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.SecondFlavorID, "yes", ozToDispense.OzOfFlavor);
+                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.ThirdFlavorID, "yes", ozToDispense.OzOfFlavor);
+                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "yes", ozToDispense.OzOfCo2);
             }
 
             // Retrive data from data base and store it in data set object
