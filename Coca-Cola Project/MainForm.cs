@@ -354,6 +354,7 @@ namespace Coca_Cola_Project
             hidegrpSize();
             showbtnMain();
         }
+
         // Button just resets selected flavors
         private void btnResetFlavors_Click(object sender, EventArgs e)
         {
@@ -640,13 +641,6 @@ namespace Coca_Cola_Project
             // Hide cup size ui and show main ui
             hidegrpSize();
             showbtnMain();
-        }
-
-        private void InventoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            Validate();
-            InventoryBindingSource.EndEdit();
-            TableAdapterManager.UpdateAll(FreeStyleDBDataSet);
         }
 
         private void FillByOrdersToolStripButton_Click_1(object sender, EventArgs e)
