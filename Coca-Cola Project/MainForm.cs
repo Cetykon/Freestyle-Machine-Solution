@@ -376,7 +376,7 @@ namespace Coca_Cola_Project
                     // ---------------------------------------------------------------------------------------
 
                     // Order Info table
-                    InsertOrderinfo();
+                    DBUtil.InsertOrderInfo(flavorSelectionLogic, ozToDispense);
 
                     // Update Inventorys Current amount
                     DBUtil.UpdateInventory(flavors, flavorSelectionLogic);
@@ -441,7 +441,7 @@ namespace Coca_Cola_Project
                     OrdersTableAdapter.Fill(FreeStyleDBDataSet.Orders);
 
                     // Order Info table
-                    InsertOrderinfo();
+                    DBUtil.InsertOrderInfo(flavorSelectionLogic, ozToDispense);
 
                     // Update Inventorys Current amount
                     DBUtil.UpdateInventory(flavors, flavorSelectionLogic);
@@ -507,7 +507,7 @@ namespace Coca_Cola_Project
                     OrdersTableAdapter.Fill(FreeStyleDBDataSet.Orders);
 
                     // Order Info table
-                    InsertOrderinfo();
+                    DBUtil.InsertOrderInfo(flavorSelectionLogic, ozToDispense);
 
                     // Update Inventorys Current amount
                     DBUtil.UpdateInventory(flavors, flavorSelectionLogic);
@@ -573,7 +573,7 @@ namespace Coca_Cola_Project
                     OrdersTableAdapter.Fill(FreeStyleDBDataSet.Orders);
 
                     // Order Info table
-                    InsertOrderinfo();
+                    DBUtil.InsertOrderInfo(flavorSelectionLogic, ozToDispense);
 
                     // Update Inventorys Current amount
                     DBUtil.UpdateInventory(flavors, flavorSelectionLogic);
@@ -748,37 +748,6 @@ namespace Coca_Cola_Project
                 flavors.dblCo2Box -= ozToDispense.OzOfCo2;
             }
         }
-
-        private void InsertOrderinfo()
-        {
-            // Get last order ID number from the orders table and add one
-            int intLastOrderNum = 0;
-            intLastOrderNum = Conversions.ToInteger(OrdersTableAdapter.GetMaxOrderID());
-            // Inserts order info 
-            if (flavorSelectionLogic.MixCount == 1)
-            {
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "no", ozToDispense.OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "no", ozToDispense.OzOfCo2);
-            }
-            else if (flavorSelectionLogic.MixCount == 2)
-            {
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "yes", ozToDispense.OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.SecondFlavorID, "yes", ozToDispense.OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "yes", ozToDispense.OzOfCo2);
-            }
-            else if (flavorSelectionLogic.MixCount == 3)
-            {
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.FirstFlavorID, "yes", ozToDispense.OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.SecondFlavorID, "yes", ozToDispense.OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, flavorSelectionLogic.ThirdFlavorID, "yes", ozToDispense.OzOfFlavor);
-                OrderFluidInfoTableAdapter.InsertOrderInfo(intLastOrderNum, 10, "yes", ozToDispense.OzOfCo2);
-            }
-
-            // Retrive data from data base and store it in data set object
-            OrderFluidInfoTableAdapter.Fill(FreeStyleDBDataSet.OrderFluidInfo);
-        }
-
-
 
         // Hides the lbls used to show selections
         private void HideSyrupSelection()
