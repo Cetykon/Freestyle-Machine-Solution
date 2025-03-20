@@ -20,8 +20,6 @@ namespace Coca_Cola_Project
         // Create variables needed
         private int intFlavorSelecCount = 0;
 
-        // Co2 Container
-        private double dblCo2Box = 170d;
         // Array for cost of drinks
         // 8oz,16oz,24oz,32oz
         private double[] dblDrinkCost = new double[] { 2d, 2.5d, 3d, 3.5d };
@@ -155,9 +153,9 @@ namespace Coca_Cola_Project
                 {
                     strLowlvlFluids = strLowlvlFluids + flavors.StrSodaNames[intCounter] + ": " + flavors.dblSyrupBoxs[intCounter].ToString("N2") + "oz" + Constants.vbNewLine;
                 }
-                if (dblCo2Box < 54d)
+                if (flavors.dblCo2Box < 54d)
                 {
-                    strLowlvlFluids = strLowlvlFluids + Constants.vbNewLine + "Co2: " + dblCo2Box.ToString("N2");
+                    strLowlvlFluids = strLowlvlFluids + Constants.vbNewLine + "Co2: " + flavors.dblCo2Box.ToString("N2");
                 }
             }
 
@@ -165,7 +163,7 @@ namespace Coca_Cola_Project
             {
                 strLowlvlFluids = "No Fluid Found!";
             }
-            strSyrupSt = strSyrupSt + Constants.vbNewLine + "Co2: " + dblCo2Box.ToString("N2") + "oz" + Constants.vbNewLine;
+            strSyrupSt = strSyrupSt + Constants.vbNewLine + "Co2: " + flavors.dblCo2Box.ToString("N2") + "oz" + Constants.vbNewLine;
 
             Interaction.MsgBox("Syrup and Co2 Stats:" + Constants.vbNewLine + Constants.vbNewLine + strSyrupSt + Constants.vbNewLine + "Fluids at low threshold:" + Constants.vbNewLine + Constants.vbNewLine + strLowlvlFluids + Constants.vbNewLine);
         }
@@ -575,7 +573,7 @@ namespace Coca_Cola_Project
             // Subtract Syrup and Co2 Used
             SubtractLiquidUsed();
             // Check for low fluids
-            ResourcesLowCheck();
+            flavors.ResourcesLowCheck();
 
             if (flavorSelectionLogic.flavorAvailability[0] == true & flavorSelectionLogic.flavorAvailability[1] == true & flavorSelectionLogic.flavorAvailability[2] == true)
             {
@@ -647,7 +645,7 @@ namespace Coca_Cola_Project
             // Subtract Syrup and Co2 Used
             SubtractLiquidUsed();
             // Check for low fluids
-            ResourcesLowCheck();
+            flavors.ResourcesLowCheck();
             if (flavorSelectionLogic.flavorAvailability[0] == true & flavorSelectionLogic.flavorAvailability[1] == true & flavorSelectionLogic.flavorAvailability[2] == true)
             {
                 try
@@ -715,7 +713,7 @@ namespace Coca_Cola_Project
             // Subtract Syrup and Co2 Used
             SubtractLiquidUsed();
             // Check for low fluids
-            ResourcesLowCheck();
+            flavors.ResourcesLowCheck();
             if (flavorSelectionLogic.flavorAvailability[0] == true & flavorSelectionLogic.flavorAvailability[1] == true & flavorSelectionLogic.flavorAvailability[2] == true)
             {
                 try
@@ -783,7 +781,7 @@ namespace Coca_Cola_Project
             // Subtract Syrup and Co2 Used
             SubtractLiquidUsed();
             // Check for low fluids
-            ResourcesLowCheck();
+            flavors.ResourcesLowCheck();
             if (flavorSelectionLogic.flavorAvailability[0] == true & flavorSelectionLogic.flavorAvailability[1] == true & flavorSelectionLogic.flavorAvailability[2] == true)
             {
                 try
@@ -803,7 +801,7 @@ namespace Coca_Cola_Project
                     InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID], flavorSelectionLogic.FirstFlavorID, flavorSelectionLogic.FirstFlavorID);
                     InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID], flavorSelectionLogic.SecondFlavorID, flavorSelectionLogic.SecondFlavorID);
                     InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID], flavorSelectionLogic.ThirdFlavorID, flavorSelectionLogic.ThirdFlavorID);
-                    InventoryTableAdapter.UpdateInventoryFluidLvl(dblCo2Box, 10, 10);
+                    InventoryTableAdapter.UpdateInventoryFluidLvl(flavors.dblCo2Box, 10, 10);
                     // Retrive data from data base and store it in data set object
                     InventoryTableAdapter.Fill(FreeStyleDBDataSet.Inventory);
                 }
@@ -1010,7 +1008,7 @@ namespace Coca_Cola_Project
             }
         }
 
-        flavorSelectionLogic.MixCount      // private sub to show the amount of flavors picked
+        // private sub to show the amount of flavors picked
         private void ShowNumPickFlavors()
         {
             lblFlavorCount.Text = "Flavors Picked: " + flavorSelectionLogic.MixCount;
@@ -1115,40 +1113,10 @@ namespace Coca_Cola_Project
                     flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] -= ozToDispense.OzOfFlavor;
                 }
 
-                dblCo2Box -= ozToDispense.OzOfCo2;
+                flavors.dblCo2Box -= ozToDispense.OzOfCo2;
             }
         }
 
-        // Checks if any of our Fluids are running low
-        private void ResourcesLowCheck()
-        {
-
-            string strMessage = "";
-            int intCounter = 0;
-
-            while (intCounter < 10)
-            {
-                if (flavors.dblSyrupBoxs[intCounter] <= 12d)
-                {
-                    strMessage = strMessage + Constants.vbNewLine + flavors.StrSodaNames[intCounter] + " :" + flavors.dblSyrupBoxs[intCounter].ToString("N2") + " oz left";
-
-                }
-
-                intCounter += 1;
-
-            }
-
-            if (dblCo2Box < 54d)
-            {
-                strMessage = strMessage + Constants.vbNewLine + "Co2 :" + dblCo2Box.ToString("N2") + " oz left";
-            }
-
-            if (!string.IsNullOrEmpty(strMessage))
-            {
-                Interaction.MsgBox("The following liquids Are running Low:" + Constants.vbNewLine + strMessage);
-
-            }
-        }
 
         private void InsertOrderinfo()
         {
