@@ -24,8 +24,6 @@ namespace Coca_Cola_Project
         private double OzPicked = 0d;
         private double OzOfFlavor = 0d;
         private double OzOfCo2 = 0d;
-        // keep as global
-        private int IndexFlavor = 0;
         // Array to keep track of Syrup Used
         private double[] dblSyrupBoxs = new double[] { 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d, 34d };
         private string[] StrSodaNames = new string[] { "Coca-Cola", "Coca-Cola Diet", "Coca-Cola Zero", "Fanta", "Dr Pepper", "Sprite", "Sprite Zero", "Minute Maid Lemonade", "Minute Maid Lemonade Zero", "Root Beer" };
@@ -66,7 +64,7 @@ namespace Coca_Cola_Project
 
                 // Update the mix count and flavor index
                 MixCountCheck();
-                IndexFlavor = indexFlavor;
+                flavorSelectionLogic.IndexFlavor = indexFlavor;
 
                 // Set and display selected flavors
                 SetFlavors();
@@ -925,8 +923,8 @@ namespace Coca_Cola_Project
             switch (MixCount)
             {
                 case 1:
-                    flavorSelectionLogic.FirstFlavorID = IndexFlavor - 1;
-                    switch (IndexFlavor)
+                    flavorSelectionLogic.FirstFlavorID = flavorSelectionLogic.IndexFlavor - 1;
+                    switch (flavorSelectionLogic.IndexFlavor)
                     {
                         case 1:
                             flavorSelectionLogic.FirstFlavor = "Coca-Cola";
@@ -962,8 +960,8 @@ namespace Coca_Cola_Project
                     break;
 
                 case 2:
-                    flavorSelectionLogic.SecondFlavorID = IndexFlavor - 1;
-                    switch (IndexFlavor)
+                    flavorSelectionLogic.SecondFlavorID = flavorSelectionLogic.IndexFlavor - 1;
+                    switch (flavorSelectionLogic.IndexFlavor)
                     {
                         case 1:
                             flavorSelectionLogic.SecondFlavor = "Coca-Cola";
@@ -999,8 +997,8 @@ namespace Coca_Cola_Project
                     break;
 
                 case 3:
-                    flavorSelectionLogic.ThirdFlavorID = IndexFlavor - 1;
-                    switch (IndexFlavor)
+                    flavorSelectionLogic.ThirdFlavorID = flavorSelectionLogic.IndexFlavor - 1;
+                    switch (flavorSelectionLogic.IndexFlavor)
                     {
                         case 1:
                             flavorSelectionLogic.ThirdFlavor = "Coca-Cola";
