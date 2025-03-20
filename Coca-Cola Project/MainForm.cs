@@ -301,7 +301,7 @@ namespace Coca_Cola_Project
                 Interaction.MsgBox(strLocationMgRp);
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 Interaction.MsgBox("Data for retrival not available" + Constants.vbNewLine + "An order needs to be made first.");
             }
@@ -704,46 +704,37 @@ namespace Coca_Cola_Project
 
             if (flavors.dblSyrupBoxs[flavorSelectionLogic.FirstFlavorID] - ozToDispense.OzOfFlavor <= 0d)
             {
-
                 flavorSelectionLogic.flavorAvailability[0] = false;
-
             }
 
             if (flavors.dblSyrupBoxs[flavorSelectionLogic.SecondFlavorID] - ozToDispense.OzOfFlavor <= 0d)
             {
-
                 flavorSelectionLogic.flavorAvailability[1] = false;
-
             }
 
             if (flavors.dblSyrupBoxs[flavorSelectionLogic.ThirdFlavorID] - ozToDispense.OzOfFlavor <= 0d)
             {
-
                 flavorSelectionLogic.flavorAvailability[2] = false;
-
             }
+
 
             if (flavorSelectionLogic.flavorAvailability[0] == false & flavorSelectionLogic.flavorAvailability[1] == false & flavorSelectionLogic.flavorAvailability[2] == false)
             {
-
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else if (flavorSelectionLogic.flavorAvailability[0] == false & flavorSelectionLogic.flavorAvailability[1] == false)
             {
-
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else if (flavorSelectionLogic.flavorAvailability[1] == false & flavorSelectionLogic.flavorAvailability[2] == false)
             {
-
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.SecondFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
             else if (flavorSelectionLogic.flavorAvailability[0] == false & flavorSelectionLogic.flavorAvailability[2] == false)
             {
-
                 Interaction.MsgBox("Sorry! We Don't Have:" + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.FirstFlavorID] + Constants.vbNewLine + flavors.StrSodaNames[flavorSelectionLogic.ThirdFlavorID] + Constants.vbNewLine + "Please Try Another.");
             }
 
@@ -786,7 +777,6 @@ namespace Coca_Cola_Project
                 flavors.dblCo2Box -= ozToDispense.OzOfCo2;
             }
         }
-
 
         private void InsertOrderinfo()
         {

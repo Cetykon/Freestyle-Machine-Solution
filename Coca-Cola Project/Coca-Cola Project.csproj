@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MaintenanceReport.cs" />
+    <Compile Include="OrderReport.cs" />
     <Compile Include="OzToDispense.cs" />
     <Compile Include="Flavors.cs" />
     <Compile Include="FlavorSelectionLogic.cs" />

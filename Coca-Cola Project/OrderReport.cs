@@ -6,8 +6,8 @@ namespace Coca_Cola_Project
 {
     internal class OrderReport
     {
-        FreeStyleDBDataSetTableAdapters.OrdersTableAdapter OrdersTableAdapter = new FreeStyleDBDataSetTableAdapters.OrdersTableAdapter;
-        FreeStyleDBDataSetTableAdapters.OrderFluidInfoTableAdapter OrderFluidInfoTableAdapter = new FreeStyleDBDataSetTableAdapters.OrderFluidInfoTableAdapter;
+        FreeStyleDBDataSetTableAdapters.OrdersTableAdapter OrdersTableAdapter = new FreeStyleDBDataSetTableAdapters.OrdersTableAdapter();
+        FreeStyleDBDataSetTableAdapters.OrderFluidInfoTableAdapter OrderFluidInfoTableAdapter = new FreeStyleDBDataSetTableAdapters.OrderFluidInfoTableAdapter();
         public string GetReport(DateTime StartDateRp, DateTime EndDateRP, Flavors flavors)
         {
             try
