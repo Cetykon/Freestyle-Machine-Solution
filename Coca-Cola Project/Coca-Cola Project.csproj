@@ -91,6 +91,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MaintenanceReport.cs" />
     <Compile Include="OzToDispense.cs" />
     <Compile Include="Flavors.cs" />
     <Compile Include="FlavorSelectionLogic.cs" />

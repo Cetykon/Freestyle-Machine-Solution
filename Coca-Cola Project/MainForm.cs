@@ -170,26 +170,8 @@ namespace Coca_Cola_Project
         // Maintenance Report
         private void btnMaintenanceRp_Click(object sender, EventArgs e)
         {
-            string MaintenanceReport = "";
-            double CurrentAmount;
-            double Capacity;
-            DateTime ExpirationDate;
-            DateTime LastFillDate;
-
-
-            for (int MaintenanceCount = 0; MaintenanceCount <= 10; MaintenanceCount++)
-            {
-                CurrentAmount = (double)InventoryTableAdapter.SelectCurrentAmount(MaintenanceCount);
-                Capacity = Conversions.ToDouble(InventoryTableAdapter.SelectCapacity(MaintenanceCount));
-
-                ExpirationDate = (DateTime)InventoryTableAdapter.SelectExpirationDate(MaintenanceCount);
-                LastFillDate = Conversions.ToDate(InventoryTableAdapter.SelectLastFillDate(MaintenanceCount).ToString());
-
-                MaintenanceReport = MaintenanceReport + Capacity.ToString("N2") + "--" + CurrentAmount.ToString("N2") + "--" + ExpirationDate.ToString("MM/dd/yyyy") + "--" + LastFillDate.ToString("MM/dd/yyyy") + Constants.vbNewLine;
-
-            }
-
-            Interaction.MsgBox("Capacity--Current Amount--Expiration Date--Last Fill Date" + Constants.vbNewLine + MaintenanceReport);
+            MaintenanceReport maintenanceReport = new MaintenanceReport();
+            Interaction.MsgBox(maintenanceReport.GetReport());
         }
         // Order Report
         private void btnSodaSt_Click(object sender, EventArgs e)
